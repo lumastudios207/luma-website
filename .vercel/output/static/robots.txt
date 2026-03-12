@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://lumastudios.co/sitemap-index.xml
