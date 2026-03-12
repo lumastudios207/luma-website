@@ -1,0 +1,109 @@
+---
+// Static markup only — JS behavior is in ContactFormIsland
+---
+
+<div class="dialog_popup flex items-center" data-lenis-prevent>
+  <div class="header_top sticky">
+    <div class="container">
+      <div class="header_popuo">
+        <div class="in_to_header_go flex items-center justify-between">
+          <div class="logo_hea_scro">
+            <a href="/">
+              <img class="logo_desktop" src="/img/logo.svg" alt="Luma Studios" width="171">
+              <img class="logo_mobile" src="/img/logo_mobile.svg" alt="Luma Studios" width="40">
+            </a>
+          </div>
+          <div class="wrap_btn_sgg">
+            <button class="button_clos_rem flex items-center justify-center" data-popup-close>
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 18.7081L35.2911 36.0001L35.9983 35.293L18.7071 18.001L36.0001 0.707088L35.293 0L18 17.2938L0.707126 0L0 0.707088L17.293 18.001L0.00182489 35.293L0.708948 36.0001L18 18.7081Z" fill="white"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form_contact">
+    <div class="container">
+      <div class="container_form">
+        <div id="form_contact">
+          <h2 class="title_section" data-anim-popup>Interested in working with us?</h2>
+          <div class="form_subtitle" data-anim-popup>Fill out the form below and we'll send you a PDF that explains how our clients usually engage with us and what we charge for our design services.</div>
+          <div class="form_go" data-anim-popup>
+            <form method="post" id="contact_form_el">
+              <input type="text" hidden name="adventure" value="I have a one-time project">
+              <div class="row_form_inp grid grid-cols-2">
+                <div class="form_group">
+                  <input type="text" placeholder="Your Name" name="name" class="name form_control">
+                  <small class="error_message"></small>
+                  <span class="underline_inp"></span>
+                </div>
+                <div class="form_group">
+                  <input type="email" placeholder="Your E-mail" name="email" class="email form_control">
+                  <small class="error_message"></small>
+                  <span class="underline_inp"></span>
+                </div>
+              </div>
+              <div class="row_form_inp">
+                <div class="form_group">
+                  <input type="text" placeholder="Company" name="company" class="company form_control">
+                  <small class="error_message"></small>
+                  <span class="underline_inp"></span>
+                </div>
+              </div>
+              <div class="footer_form">
+                <div class="flex items-center justify-end">
+                  <div class="close_button" data-popup-close>Cancel</div>
+                  <button type="submit" class="btn_anim submit_form">
+                    <span class="default_btn_bg"></span>
+                    <span class="cb-btn_cta-title">
+                      <span data-text="Submit">Submit</span>
+                    </span>
+                    <span class="cb-btn_cta-ripple">
+                      <span style="background-color: #212121;"></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="mess_thanks hidden" id="thanks_message">
+          <div class="container_form" data-anim-popup>
+            <div class="thansk_wrapp_go">
+              <div class="decor_top_sg">
+                <img src="/img/triangle.png" alt="" width="90" loading="lazy">
+              </div>
+              <div class="decor_top_sg2">
+                <img src="/img/cube_3d.png" alt="" width="64" loading="lazy">
+              </div>
+              <div class="decor_top_sg3">
+                <svg width="259" height="279" viewBox="0 0 259 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0H259V248.342C259 265.274 245.274 279 228.342 279H0V0Z" fill="#2C2C2C"/>
+                  <path d="M259 255V0L186 220.857C186 220.857 207.098 216.618 229.422 226.63C253.022 237.215 259 255 259 255Z" fill="url(#paint0_linear_1046_64444)"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_1046_64444" x1="213.679" y1="139.789" x2="259" y2="140.693" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#919191"/>
+                      <stop offset="1" stop-color="#2F2F2F"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="subtitle_formgg">Thank you!</div>
+              <div class="item_tzg">Your message has been sent!</div>
+              <div class="item_tzg">We'll email our pricing PDF within 24 hours.</div>
+              <div class="wrp_ok_thanks">
+                <div class="inline-block">
+                  <a href="#" class="btn_primary flex items-center justify-center no_df_transition" data-reset-form>
+                    <span class="text_btn">OK</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

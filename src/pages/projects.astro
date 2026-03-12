@@ -1,0 +1,302 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import QuoteBlock from '../components/ui/QuoteBlock.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Marketing Website Projects — Luma Studios",
+  "description": "Portfolio of marketing website design projects by Luma Studios including Secureframe, Constructo, Evocalize, ScreenSteps, and Splitero.",
+  "url": "https://lumastudios.co/projects"
+};
+---
+
+<PageLayout
+  title="Marketing Website Projects | Luma Studios"
+  description="Browse our portfolio of marketing website design projects — Secureframe, Constructo, Evocalize, ScreenSteps, and Splitero."
+  canonicalUrl="https://lumastudios.co/projects"
+  ogImage="https://lumastudios.co/img/og-image.jpg"
+  jsonLd={jsonLd}
+  headerVariant="projects"
+  hasTabSlider={true}
+>
+  <section class="default_first_pt section_projects overflow-hidden">
+    <div class="container">
+      <div class="headint_sec">
+        <h1 class="title_section text-center">Marketing website projects</h1>
+      </div>
+      <div class="tabs_wrap">
+        <div class="swiper" id="tab_sel_projects">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide item_proj_thum">
+              <div class="tab_project">Secureframe</div>
+            </div>
+            <div class="swiper-slide item_proj_thum">
+              <div class="tab_project">Constructo</div>
+            </div>
+            <div class="swiper-slide item_proj_thum">
+              <div class="tab_project">Evocalize</div>
+            </div>
+            <div class="swiper-slide item_proj_thum">
+              <div class="tab_project">ScreenSteps</div>
+            </div>
+            <div class="swiper-slide item_proj_thum">
+              <div class="tab_project">Splitero</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabs_content_wrap">
+      <div class="swiper" id="content_sel_projects">
+        <div class="swiper-wrapper">
+          <!-- Secureframe -->
+          <div class="swiper-slide">
+            <div class="container" first-load-delay>
+              <div class="project_info flex" data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".98">
+                <div class="logo_project flex-none flex items-center justify-center">
+                  <img width="403" src="/img/secureframe.svg" alt="Secureframe">
+                </div>
+                <div class="wrap_descr_proj flex items-center">
+                  <div class="descr_project">
+                    <div class="in_to_de_proj">
+                      Secureframe is a software company specializing in compliance automation. They offer AI-powered tools to streamline compliance tasks, allowing businesses to manage security, risk, and compliance more efficiently. Secureframe's platform features automated evidence collection, continuous monitoring, and risk management, all supported by a team of experts, providing a comprehensive solution for compliance needs in one place.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap_img_project grid grid-cols-2">
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/secureframe/1.webp" alt="Secureframe marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/secureframe/2.webp" alt="Secureframe marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/secureframe/3.webp" alt="Secureframe marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/secureframe/4.webp" alt="Secureframe marketing design">
+                </div>
+              </div>
+            </div>
+            <QuoteBlock
+              quote="The guys at Luma Studios helped us on a number of fronts. They designed our marketing site, created effective pitch decks that helped us raise millions from investors, designed our conference signage and billboards. We were super impressed with the quality of their work, turn-around time, and responsiveness throughout the process."
+              name="Shrav Mehta"
+              title="Founder and CEO"
+              company="Secureframe"
+              personImg="/img/image_quote.webp"
+              logoSrc="/img/secureframe.svg"
+            />
+          </div>
+          <!-- Constructo -->
+          <div class="swiper-slide">
+            <div class="container">
+              <div class="project_info flex" data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".98">
+                <div class="logo_project flex-none flex items-center justify-center">
+                  <img src="/img/constructo.png" alt="Constructo">
+                </div>
+                <div class="wrap_descr_proj flex items-center">
+                  <div class="descr_project">
+                    <div class="in_to_de_proj">Constructo is a cutting-edge platform for residential construction service providers. It integrates tools for 3D scanning, as-built drawings, and permit-ready plans, enhancing project efficiency. With features like project management and specialized services, Constructo streamlines workflow and is backed by expert support, offering an all-in-one solution for construction projects.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap_img_project grid grid-cols-2">
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/constructo/1.webp" alt="Constructo marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/constructo/2.webp" alt="Constructo marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/constructo/3.webp" alt="Constructo marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/constructo/4.webp" alt="Constructo marketing design">
+                </div>
+              </div>
+            </div>
+            <QuoteBlock
+              quote="Luma Studios was instrumental in helping me lay the marketing foundation at Constructo. In less than 90 days, we designed a 20-page site from scratch, created a bundle of sales collateral, and polished up our pitch deck for raising seed. They're fast, effective, and a pleasure to work with."
+              name="KC Karnes"
+              title="VP of Marketing"
+              company="Constructo"
+              personImg="/img/image_KC.webp"
+              logoSrc="/img/constructo.png"
+            />
+          </div>
+          <!-- Evocalize -->
+          <div class="swiper-slide">
+            <div class="container">
+              <div class="project_info flex" data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".98">
+                <div class="logo_project flex-none flex items-center justify-center">
+                  <img src="/img/evocalize.svg" alt="Evocalize">
+                </div>
+                <div class="wrap_descr_proj flex items-center">
+                  <div class="descr_project">
+                    <div class="in_to_de_proj">Evocalize is a dynamic platform revolutionizing digital marketing for franchises. It simplifies complex local digital marketing across various channels like Google, Facebook, Instagram, TikTok, and YouTube, ensuring consistency and local relevance. Tailored for industries like real estate, mortgage, and restaurants, it empowers franchisees to become digital marketing powerhouses with just a few clicks, driving real, measurable results.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap_img_project grid grid-cols-2">
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/evocalize/1.webp" alt="Evocalize marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/evocalize/2.webp" alt="Evocalize marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/evocalize/3.webp" alt="Evocalize marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/evocalize/4.webp" alt="Evocalize marketing design">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ScreenSteps -->
+          <div class="swiper-slide">
+            <div class="container">
+              <div class="project_info flex" data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".98">
+                <div class="logo_project flex-none flex items-center justify-center">
+                  <img src="/img/screensteps.svg" alt="ScreenSteps">
+                </div>
+                <div class="wrap_descr_proj flex items-center">
+                  <div class="descr_project">
+                    <div class="in_to_de_proj">ScreenSteps is an innovative knowledge base software aimed at boosting employee performance. It offers easy-to-create digital guides, training courses, and tools for SOPs and decision trees. The platform streamlines onboarding and complex procedures, ensuring employees have access to accurate, up-to-date information.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap_img_project grid grid-cols-2">
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/screensteps/1.webp" alt="ScreenSteps marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/screensteps/2.webp" alt="ScreenSteps marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/screensteps/3.webp" alt="ScreenSteps marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/screensteps/4.webp" alt="ScreenSteps marketing design">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Splitero -->
+          <div class="swiper-slide">
+            <div class="container">
+              <div class="project_info flex" data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".98">
+                <div class="logo_project flex-none flex items-center justify-center">
+                  <img src="/img/splitero.svg" alt="Splitero">
+                </div>
+                <div class="wrap_descr_proj flex items-center">
+                  <div class="descr_project">
+                    <div class="in_to_de_proj">Splitero is a fintech company offering a novel approach for homeowners to tap into their home equity. Their unique model involves Splitero investing in homes by giving owners a cash amount upfront, in return for a portion of the home's future value appreciation. This arrangement allows homeowners to access their equity without monthly repayments or incurring new debt.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap_img_project grid grid-cols-2">
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/splitero/1.webp" alt="Splitero marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/splitero/2.webp" alt="Splitero marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/splitero/3.webp" alt="Splitero marketing design">
+                </div>
+                <div class="item_img_proj" data-show-down-mobile data-swiper-parallax-opacity="0" data-swiper-parallax-scale=".95">
+                  <img class="img-responsive" src="/img/marketing/splitero/4.webp" alt="Splitero marketing design">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faqs">
+    <div class="container">
+      <div class="headint_sec">
+        <h2 class="title_section text-center" data-show-down>Frequently Asked Questions</h2>
+      </div>
+      <div class="js-accordion">
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>What types of companies do you typically work with?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">We work with B2B SaaS companies, technology startups, and growing businesses that need a strong marketing presence. Our clients range from early-stage startups to established companies with hundreds of employees.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>What is included in your website design package?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">Our website design package includes research and discovery, information architecture, wireframing, visual design, prototyping, and developer handoff. We can also provide front-end development for an additional fee.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>How long does a typical website design project take?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">A typical marketing website design project takes 6–12 weeks from kickoff to final delivery, depending on scope and complexity. We can accommodate faster timelines for clients with urgent needs.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>Do you work with clients outside of the United States?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">Yes, we work with clients globally. Our team is distributed and we're experienced at collaborating remotely across time zones. We've worked with companies in North America, Europe, and beyond.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>What is your design process like?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">We start with a discovery phase to understand your business, audience, and goals. From there we move to strategy and architecture, then design, then iteration based on your feedback. We work in Figma and share progress regularly throughout the project.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>Can you help with copywriting?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">We can provide copy direction and light copywriting as part of a design project. For extensive copywriting needs, we partner with experienced copywriters who specialize in SaaS and technology brands.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>Do you offer ongoing design retainer services?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">Yes, many of our clients engage us on a monthly retainer for ongoing design work. This is ideal for companies that need continuous support for website updates, marketing materials, and new campaigns.</div>
+          </div>
+        </div>
+        <div class="js-accordion__group">
+          <div class="js-accordion__menu flex items-center justify-between">
+            <div>How do I get started?</div>
+            <span class="js-accordion__icon"></span>
+          </div>
+          <div class="js-accordion__content">
+            <div class="body_accord_g">The best way to get started is to book a free 30-minute call. We'll discuss your project, timeline, and budget, and determine if we're a good fit for each other. You can also fill out our contact form to receive our pricing PDF.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,347 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import QuoteBlock from '../components/ui/QuoteBlock.astro';
+import GetStartCTA from '../components/ui/GetStartCTA.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Brand Design Projects — Luma Studios",
+  "description": "Portfolio of brand identity design projects by Luma Studios including Wild Maine Seafood, Midnight Coffee, and BlueFly.",
+  "url": "https://lumastudios.co/branding-projects"
+};
+---
+
+<PageLayout
+  title="Brand Design Projects | Luma Studios"
+  description="Explore our brand identity design work — Wild Maine Seafood, Midnight Coffee, BlueFly, and more. Visual identities that resonate and elevate."
+  canonicalUrl="https://lumastudios.co/branding-projects"
+  ogImage="https://lumastudios.co/img/og-image.jpg"
+  jsonLd={jsonLd}
+  headerVariant="default"
+>
+  <section class="home_first" first-load-delay>
+    <div class="container">
+      <div class="brand_prodjs wrap_hom_infr relative z_1 text-center">
+        <div class="cube_border_2" data-first-anim-mob></div>
+        <div class="build_proj">
+          <div class="prodj_buod_s">
+            <h1 class="heading_home buil_proj_heading">
+              Brand design
+            </h1>
+            <div class="line_simpl">
+              <div class="cube_prodj">
+                <div class="decor_top_cube">
+                  <img src="/img/cube_3d.png" alt="" width="82" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="descr_home_fir">
+            At Luma, brand development isn't just a service — it's a strategic partnership. We dive deep to uncover what makes your business distinct and craft visual identities that resonate with your audience and elevate your story. From the first spark of an idea to a fully realized brand experience, we shape work that's thoughtful, purposeful, and memorable.
+          </div>
+          <div class="line_simpl center_lims" data-first-anim></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wild Maine Seafood -->
+  <section class="caapabilities_bl dark_bg overflow-hidden">
+    <div class="container">
+      <div class="headint_sec">
+        <h2 class="title_section text-center">Wild Maine Seafood</h2>
+        <div class="description_section text-center">
+          Wild Maine Seafood is a distributor of premium seafood products in the New England region.
+        </div>
+        <div class="address_fls description_section">
+          York, Maine
+        </div>
+      </div>
+      <div class="website_examples grid grid-cols-2">
+        <div class="item_row_webs one-row">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/wild/1.webp" loading="lazy" alt="Wild Maine Seafood — Brand Symbol">
+            </div>
+            <div class="caption_imags">Brand Symbol</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/wild/2.webp" loading="lazy" alt="Wild Maine Seafood — Logotype">
+            </div>
+            <div class="caption_imags">Logotype</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/wild/3.webp" loading="lazy" alt="Wild Maine Seafood — Logotype Options">
+            </div>
+            <div class="caption_imags">Logotype Options</div>
+          </div>
+        </div>
+        <div class="item_row_webs one-row wrapper_grid_1">
+          <div class="item_row_webs">
+            <div class="item_website_img">
+              <div class="image_wb_wrap">
+                <img class="img-responsive w-full" src="/img/brandings/wild/4.webp" loading="lazy" alt="Wild Maine Seafood — Logo Usage Guidelines">
+              </div>
+              <div class="caption_imags">Logo Usage Guidelines</div>
+            </div>
+          </div>
+          <div class="grid right_sfd">
+            <div class="item_row_webs">
+              <div class="item_website_img">
+                <div class="image_wb_wrap">
+                  <img class="img-responsive w-full" src="/img/brandings/wild/5.webp" loading="lazy" alt="Wild Maine Seafood — Color Palette">
+                </div>
+                <div class="caption_imags">Color Palette</div>
+              </div>
+            </div>
+            <div class="item_row_webs">
+              <div class="item_website_img">
+                <div class="image_wb_wrap">
+                  <img class="img-responsive w-full" src="/img/brandings/wild/6.webp" loading="lazy" alt="Wild Maine Seafood — Logotype on Backgrounds">
+                </div>
+                <div class="caption_imags">Logotype on Backgrounds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/wild/7.webp" loading="lazy" alt="Wild Maine Seafood — Stamp Option">
+            </div>
+            <div class="caption_imags">Stamp Option</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/wild/8.webp" loading="lazy" alt="Wild Maine Seafood — Stamp Option">
+            </div>
+            <div class="caption_imags">Stamp Option</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrapper_light_bg">
+    <QuoteBlock
+      quote="The team at Luma Studios has an incredible eye for detail. They took the time to understand our regional competition and designed beautiful visual identity that has significantly elevated our presence in the region. We finally have a look that's as premium as the products we sell."
+      name="Sean Reardon"
+      title="Marketing Lead"
+      company="Wild Maine Seafood"
+      personImg="/img/image_quote_sean.webp"
+      logoSrc="/img/wildmaine.svg"
+    />
+  </div>
+
+  <!-- Midnight Coffee -->
+  <section class="caapabilities_bl dark_bg overflow-hidden">
+    <div class="container">
+      <div class="headint_sec">
+        <h2 class="title_section text-center">Midnight Coffee</h2>
+        <div class="description_section text-center">
+          Midnight Coffee is a locally-owned chain of coffee shops in Iowa.
+        </div>
+        <div class="address_fls description_section">
+          Cedar Rapids, Iowa
+        </div>
+      </div>
+      <div class="website_examples grid grid-cols-2">
+        <div class="item_row_webs one-row">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/1.webp" loading="lazy" alt="Midnight Coffee — Coffee Packaging">
+            </div>
+            <div class="caption_imags">Coffee Packaging</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/2.webp" loading="lazy" alt="Midnight Coffee — Paper Cup Design">
+            </div>
+            <div class="caption_imags">Paper Cup Design</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/3.webp" loading="lazy" alt="Midnight Coffee — Paper Cup Carrier Concept">
+            </div>
+            <div class="caption_imags">Paper Cup Carrier Concept</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/4.webp" loading="lazy" alt="Midnight Coffee — Logomark Architecture">
+            </div>
+            <div class="caption_imags">Logomark Architecture</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/5.webp" loading="lazy" alt="Midnight Coffee — Apparel Design">
+            </div>
+            <div class="caption_imags">Apparel Design</div>
+          </div>
+        </div>
+        <div class="item_row_webs wrapper_grid_threee one-row">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/6.webp" loading="lazy" alt="Midnight Coffee — Color Palette">
+            </div>
+            <div class="caption_imags">Color Palette</div>
+          </div>
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/7.webp" loading="lazy" alt="Midnight Coffee — Logo Usage Guidelines">
+            </div>
+            <div class="caption_imags">Logo Usage Guidelines</div>
+          </div>
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/8.webp" loading="lazy" alt="Midnight Coffee — Coffee Packaging Guidelines">
+            </div>
+            <div class="caption_imags">Coffee Packaging Guidelines</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/9.webp" loading="lazy" alt="Midnight Coffee — Baked Goods Packaging">
+            </div>
+            <div class="caption_imags">Baked Goods Packaging</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/10.webp" loading="lazy" alt="Midnight Coffee — To-Go Bag Design">
+            </div>
+            <div class="caption_imags">To-Go Bag Design</div>
+          </div>
+        </div>
+        <div class="item_row_webs wrapper_grid_threee one-row">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/11.webp" loading="lazy" alt="Midnight Coffee — Logo Variations">
+            </div>
+            <div class="caption_imags">Logo Variations</div>
+          </div>
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/12.webp" loading="lazy" alt="Midnight Coffee — Logo Background Alternatives">
+            </div>
+            <div class="caption_imags">Logo Background Alternatives</div>
+          </div>
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/midnight/13.webp" loading="lazy" alt="Midnight Coffee — Stamps">
+            </div>
+            <div class="caption_imags">Stamps</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrapper_light_bg">
+    <QuoteBlock
+      quote="We are absolutely thrilled with the brand identity the team at Luma developed for Midnight Coffee. From the very first mood board to the final design, they perfectly captured the 'midnight' aesthetic we were dreaming of — moody, sophisticated, and inviting. They also helped design our merch and packaging for coffee beans which has already received so many compliments from our customers."
+      name="Alex Nelson"
+      title="Owner"
+      company="Midnight Coffee"
+      personImg="/img/image_quote_alex.webp"
+      logoSrc="/img/mc.svg"
+    />
+  </div>
+
+  <!-- BlueFly -->
+  <section class="caapabilities_bl dark_bg overflow-hidden">
+    <div class="container">
+      <div class="headint_sec">
+        <h2 class="title_section text-center">BlueFly</h2>
+        <div class="description_section text-center">
+          Bluefly is a Drupal development studio and technology collective based in Maine.
+        </div>
+        <div class="address_fls description_section">
+          Portland, Maine
+        </div>
+      </div>
+      <div class="website_examples grid grid-cols-2">
+        <div class="item_row_webs one-row">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/1.webp" loading="lazy" alt="BlueFly — Logo Anatomy">
+            </div>
+            <div class="caption_imags">Logo Anatomy</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/2.webp" loading="lazy" alt="BlueFly — Logo Background Alternatives">
+            </div>
+            <div class="caption_imags">Logo Background Alternatives</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/3.webp" loading="lazy" alt="BlueFly — Logo and Logomark Combo">
+            </div>
+            <div class="caption_imags">Logo and Logomark Combo</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/4.webp" loading="lazy" alt="BlueFly — Monochrome Logo Versions">
+            </div>
+            <div class="caption_imags">Monochrome Logo Versions</div>
+          </div>
+        </div>
+        <div class="item_row_webs">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/5.webp" loading="lazy" alt="BlueFly — Color Palette">
+            </div>
+            <div class="caption_imags">Color Palette</div>
+          </div>
+        </div>
+        <div class="item_row_webs wrapper_grid_threee one-row">
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/6.webp" loading="lazy" alt="BlueFly — Typography">
+            </div>
+            <div class="caption_imags">Fonts</div>
+          </div>
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/7.webp" loading="lazy" alt="BlueFly — Typography">
+            </div>
+            <div class="caption_imags">Fonts</div>
+          </div>
+          <div class="item_website_img">
+            <div class="image_wb_wrap">
+              <img class="img-responsive w-full" src="/img/brandings/bluefly/8.webp" loading="lazy" alt="BlueFly — Typography">
+            </div>
+            <div class="caption_imags">Fonts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GetStartCTA />
+</PageLayout>

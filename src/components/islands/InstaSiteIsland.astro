@@ -1,0 +1,143 @@
+---
+// InstaSite island — pricing toggle, video modal, lead form
+---
+
+<script>
+const RECAPTCHA_SITE_KEY = '6LcOa54kAAAAAFliwhUE_-0FJb60-IwQc7NeSZ80';
+
+// =============================================
+// PLAN CARD ACCORDION (per-feature)
+// =============================================
+document.querySelectorAll<HTMLButtonElement>('.lp-plan-card__feature-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.lp-plan-card');
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    // Close all in the same card first
+    card?.querySelectorAll<HTMLButtonElement>('.lp-plan-card__feature-toggle').forEach((other) => {
+      other.setAttribute('aria-expanded', 'false');
+      (other.nextElementSibling as HTMLElement | null)?.classList.remove('is-open');
+    });
+
+    // Open clicked one unless it was already open
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      (btn.nextElementSibling as HTMLElement | null)?.classList.add('is-open');
+    }
+  });
+});
+
+// =============================================
+// PRICING TOGGLE
+// =============================================
+const monthlyBtn = document.getElementById('is-toggle-monthly');
+const annualBtn = document.getElementById('is-toggle-annual');
+const priceEls = document.querySelectorAll('[data-monthly][data-annual]');
+const savingsEls = document.querySelectorAll('[data-savings]');
+
+function setMonthly() {
+  monthlyBtn?.classList.add('is-active');
+  annualBtn?.classList.remove('is-active');
+  priceEls.forEach((el) => {
+    (el as HTMLElement).textContent = (el as HTMLElement).dataset.monthly || '';
+  });
+  savingsEls.forEach((el) => { (el as HTMLElement).textContent = ''; });
+}
+
+function setAnnual() {
+  annualBtn?.classList.add('is-active');
+  monthlyBtn?.classList.remove('is-active');
+  priceEls.forEach((el) => {
+    (el as HTMLElement).textContent = (el as HTMLElement).dataset.annual || '';
+  });
+  savingsEls.forEach((el) => {
+    (el as HTMLElement).textContent = (el as HTMLElement).dataset.savings || '';
+  });
+}
+
+monthlyBtn?.addEventListener('click', setMonthly);
+annualBtn?.addEventListener('click', setAnnual);
+setAnnual(); // default to annual
+
+// =============================================
+// VIDEO MODAL
+// =============================================
+const modal = document.getElementById('is-video-modal');
+const iframe = document.getElementById('is-video-iframe') as HTMLIFrameElement | null;
+const VIMEO_URL = 'https://player.vimeo.com/video/1163684603?autoplay=1';
+
+document.querySelectorAll('[data-video-open]').forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (modal && iframe) {
+      iframe.src = VIMEO_URL;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+function closeModal() {
+  if (modal && iframe) {
+    modal.classList.remove('is-open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+}
+
+document.getElementById('is-video-close')?.addEventListener('click', closeModal);
+modal?.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// =============================================
+// LEAD CAPTURE FORM
+// =============================================
+const form = document.getElementById('is-lead-form') as HTMLFormElement | null;
+const successMsg = document.getElementById('is-form-success');
+const errorMsg = document.getElementById('is-form-error');
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const submitBtn = form.querySelector<HTMLButtonElement>('.is-form__submit');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+
+  if (successMsg) successMsg.classList.remove('is-visible');
+  if (errorMsg) errorMsg.classList.remove('is-visible');
+
+  try {
+    const token = await new Promise<string>((resolve) => {
+      (window as any).grecaptcha.ready(() => {
+        (window as any).grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'instasite_contact' }).then(resolve);
+      });
+    });
+
+    const data = {
+      firstName: (form.querySelector<HTMLInputElement>('[name="firstName"]')?.value || '').trim(),
+      lastName: (form.querySelector<HTMLInputElement>('[name="lastName"]')?.value || '').trim(),
+      company: (form.querySelector<HTMLInputElement>('[name="company"]')?.value || '').trim(),
+      email: (form.querySelector<HTMLInputElement>('[name="email"]')?.value || '').trim(),
+      phone: (form.querySelector<HTMLInputElement>('[name="phone"]')?.value || '').trim(),
+      recaptchaToken: token,
+    };
+
+    const res = await fetch('/api/instasite-contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) throw new Error('Server error');
+
+    form.reset();
+    if (successMsg) successMsg.classList.add('is-visible');
+  } catch {
+    if (errorMsg) errorMsg.classList.add('is-visible');
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Book My Free Session'; }
+  }
+});
+</script>

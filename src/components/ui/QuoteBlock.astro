@@ -1,0 +1,57 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  title: string;
+  company: string;
+  personImg: string;
+  logoSrc: string;
+  logoClass?: string;
+}
+const { quote, name, title, company, personImg, logoSrc, logoClass = '' } = Astro.props;
+---
+
+<div class="quote_blk dark_bg">
+  <div class="container">
+    <div class="container_smaller">
+      <div class="quote_wrap">
+        <div class="quote_decor_top fadeInUp" data-scroll data-scroll-offset="15%">
+          <div class="line_gksg">
+            <svg width="1724" height="154" viewBox="0 0 1724 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.492188 153.498L158.992 0.998047L1724 0.998047" stroke="#464646"/>
+            </svg>
+            <div class="quote_cub_bb">
+              <img src="/img/cube_3d.png" alt="" width="98" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="quote_icon" item-class-toggle>
+          <svg width="70" height="54" viewBox="0 0 70 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28.718 0.993164C9.77208 2.7664 0 13.0117 0 30.35V53.9932H29.9145V27.1976H18.547C18.547 19.3166 21.339 15.3761 28.718 13.6028V0.993164ZM68.8034 0.993164C49.8576 2.7664 40.0855 13.0117 40.0855 30.35V53.9932H70V27.1976H58.6325C58.6325 19.3166 61.4245 15.3761 68.8034 13.6028V0.993164Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="quote_text" set:html={`"${quote}"`}></div>
+        <div class="quote_footer flex items-center fadeInUp" data-scroll data-scroll-offset="15%">
+          <div class="decor_quote_foot">
+            <svg class="line_mobile_decor" width="757" height="202" viewBox="0 0 757 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M757 1.49219H201L1 200.992" stroke="#464646"/>
+            </svg>
+            <svg class="lines_small_dev" width="451" height="102" viewBox="0 0 451 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M451 1.49414H101L1 101.244" stroke="#464646"/>
+            </svg>
+            <div class={`image_logo_quot ${logoClass}`}>
+              <img src={logoSrc} alt={company}>
+            </div>
+          </div>
+          <div class="quote_image">
+            <img src={personImg} alt={name} class="img-responsive">
+          </div>
+          <div class="info_quote_g">
+            <div class="name_quote_g">{name}</div>
+            <div class="function_quote_g" set:html={`${title}<br>${company}`}></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

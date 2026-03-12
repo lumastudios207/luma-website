@@ -1,0 +1,70 @@
+---
+interface Props {
+  hasTabSlider?: boolean;
+  hasVerticalSlider?: boolean;
+}
+
+const { hasTabSlider = false, hasVerticalSlider = false } = Astro.props;
+---
+
+<script define:vars={{ hasTabSlider, hasVerticalSlider }}>
+import Swiper from 'swiper/bundle';
+
+const windowWidth = window.outerWidth;
+
+// Vertical auto-cycling slider (case study pages)
+if (hasVerticalSlider) {
+  document.querySelectorAll('.slider_project').forEach((slider) => {
+    new Swiper(slider, {
+      speed: 2000,
+      loop: true,
+      grabCursor: true,
+      spaceBetween: 10,
+      slidesPerView: 1,
+      autoHeight: true,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      direction: 'vertical',
+    });
+  });
+}
+
+// Linked tabs + content swiper (projects page)
+if (hasTabSlider) {
+  const tabEl = document.getElementById('tab_sel_projects');
+  const contentEl = document.getElementById('content_sel_projects');
+  if (tabEl && contentEl) {
+    const tabs = new Swiper(tabEl, {
+      spaceBetween: 0,
+      autoHeight: true,
+      freeMode: true,
+      breakpoints: {
+        320: { slidesPerView: 'auto' },
+        768: { speed: 600, slidesPerView: 5 },
+      },
+    });
+
+    let options = windowWidth >= 768
+      ? {
+          speed: 500,
+          spaceBetween: 0,
+          slidesPerView: 1,
+          autoHeight: true,
+          parallax: true,
+          grabCursor: true,
+          effect: 'fade',
+          fadeEffect: { crossFade: true },
+          thumbs: { swiper: tabs },
+        }
+      : {
+          speed: 500,
+          spaceBetween: 0,
+          slidesPerView: 1,
+          autoHeight: true,
+          parallax: true,
+          thumbs: { swiper: tabs },
+        };
+
+    new Swiper(contentEl, options);
+  }
+}
+</script>

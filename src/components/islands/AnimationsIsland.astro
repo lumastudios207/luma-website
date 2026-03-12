@@ -1,0 +1,205 @@
+---
+// client:load — initializes Lenis, GSAP, ScrollTrigger, scroll header, accordion
+---
+
+<script>
+import Lenis from 'lenis';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+// --- Lenis singleton ---
+export const lenis = new Lenis({ lerp: 0.05, duration: 0.5 });
+(window as any).__lenis = lenis;
+
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time: number) => { lenis.raf(time * 1000); });
+gsap.ticker.lagSmoothing(0);
+
+const windowWidth = window.outerWidth;
+
+// --- Scroll header visibility ---
+window.addEventListener('scroll', () => {
+  const headerScroll = document.querySelector('.header_scroll');
+  if (!headerScroll) return;
+  if (window.scrollY > 700) {
+    headerScroll.classList.add('is_visible');
+  } else {
+    headerScroll.classList.remove('is_visible');
+  }
+}, { passive: true });
+
+// --- Scroll-to links ---
+document.querySelectorAll('[data-scroll-to]').forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const href = (item as HTMLAnchorElement).getAttribute('href')?.replace(/\//g, '');
+    if (href) {
+      lenis.scrollTo(href, { duration: 1.2, offset: -30 });
+    }
+  });
+});
+
+// --- FAQ Accordion ---
+accordionFaq();
+
+// --- Fire animations immediately ---
+animFirstScreen();
+animationsOnScroll();
+
+// =====================================================
+// FIRST SCREEN ANIMATIONS
+// =====================================================
+function animFirstScreen() {
+  if (windowWidth >= 1024) {
+    gsap.from('.heading_home,.descr_home_fir', { y: 10, duration: 0.6, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('[data-first-anim]', { y: 10, duration: 0.6, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.hone_decunder', { delay: 0.3, width: 0, duration: 1, stagger: 0.1, ease: 'power4.out' });
+    gsap.from('.decor_top_cube', { rotation: -40, duration: 1.5, stagger: 0.1, ease: 'power1.out' });
+
+    // marketing page
+    gsap.from('#tab_sel_projects .swiper-slide', { duration: 1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.swiper-slide-visible .project_info,.swiper-slide-visible .item_img_proj', { y: 30, delay: 0.1, duration: 1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+
+    // case study
+    gsap.from('.decor_proj_gg', { y: 30, duration: 1, scale: 1.1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('[data-anim-project]', { y: 30, duration: 0.6, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.cube_de_lef', { x: -200, y: 100, rotation: -50, delay: 1, duration: 1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.square_dec_go', { x: -120, delay: 0.4, scale: 0.8, duration: 1, autoAlpha: 0, ease: 'power1.out' });
+    gsap.from('.preview_secur_frm,.icons_info_sg', { delay: 0.1, x: -30, duration: 1, autoAlpha: 0, stagger: -0.2, ease: 'power1.out' });
+  } else {
+    gsap.from('.heading_home,.descr_home_fir', { y: 10, duration: 0.6, autoAlpha: 0, stagger: 0.2, ease: 'power1.out' });
+    gsap.from('[data-first-anim-mob]', { y: 10, duration: 0.6, autoAlpha: 0, stagger: 0.2, ease: 'power1.out' });
+    gsap.from('.decor_top_cube', { rotation: -40, duration: 1.5, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.triangle_decor', { x: -300, duration: 1.5, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.hone_decunder', { delay: 0.3, width: 0, duration: 1, stagger: 0.1, ease: 'power4.out' });
+
+    // marketing page
+    gsap.from('#tab_sel_projects .swiper-slide', { duration: 1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.logo_project img,.swiper-slide-visible .in_to_de_proj', { y: 30, delay: 0.1, duration: 1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+
+    gsap.to('.item_skill_g .in_to_skill_g', { delay: 0.5, y: 0, duration: 1, autoAlpha: 1, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('[data-anim]', { y: 60, duration: 0.6, autoAlpha: 0, stagger: 0.06, ease: 'power1.out' });
+
+    // case study
+    gsap.from('.decor_proj_gg', { y: 30, duration: 1, scale: 1.1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('[data-anim-project]', { y: 30, duration: 0.6, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.cube_de_lef', { x: 200, y: -100, rotation: -50, delay: 0.4, duration: 1, autoAlpha: 0, stagger: 0.1, ease: 'power1.out' });
+    gsap.from('.square_dec_go', { x: -120, delay: 0.4, scale: 0.8, duration: 1, autoAlpha: 0, ease: 'power1.out' });
+    gsap.from('.preview_secur_frm', { delay: 0.4, y: 30, duration: 1, autoAlpha: 0, stagger: -0.2, ease: 'power1.out' });
+  }
+}
+
+// =====================================================
+// SCROLL ANIMATIONS
+// =====================================================
+function animationsOnScroll() {
+  if (windowWidth >= 1200) {
+    gsap.timeline({
+      scrollTrigger: { trigger: '.main_go', scrub: 0.5, start: 'top top', end: 1000 }
+    }).to('.decor_top_cube img', { rotation: 160, duration: 1, ease: 'none' });
+
+    gsap.timeline({
+      scrollTrigger: { trigger: '.main_go', scrub: 0.5, start: 'top top', end: 2000 }
+    }).to('.home_first .triangle_home', { x: 200, duration: 1, ease: 'none' });
+
+    gsap.timeline({
+      scrollTrigger: { trigger: '.about_ivan', scrub: 0.5, start: 'top bottom', end: '+=170%' }
+    }).to('.triangle_decor_ivan', { x: 80, duration: 1, ease: 'none' });
+
+    gsap.timeline({
+      scrollTrigger: { trigger: '.contact_section', scrub: 1, start: 'top bottom', end: '+=200%' }
+    }).to('.cube_form_go', { rotation: -60, duration: 1, ease: 'none' });
+
+    gsap.utils.toArray<HTMLElement>('.quote_blk').forEach((section) => {
+      const cube = section.querySelector<HTMLElement>('.quote_cub_bb img');
+      if (!cube) return;
+      gsap.timeline({
+        scrollTrigger: { trigger: section, scrub: 1, start: 'top bottom', end: '+=200%' }
+      }).to(cube, { rotation: 60, duration: 1, ease: 'none' });
+    });
+
+    gsap.set('[data-show-down]', { y: 20, autoAlpha: 0 });
+    gsap.utils.toArray<HTMLElement>('[data-show-down]').forEach((item) => {
+      const delay = item.getAttribute('data-delay');
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          scrub: 0,
+          start: 'top 90%',
+          onToggle: () => {
+            gsap.to(item, { delay: delay ? parseFloat(delay) : 0, duration: 1, y: 0, autoAlpha: 1 });
+          }
+        }
+      });
+    });
+  }
+
+  gsap.utils.toArray<HTMLElement>('[item-class-toggle]').forEach((item) => {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        scrub: 0,
+        start: 'top 95%',
+        onToggle: () => { item.classList.add('is-visible'); }
+      }
+    });
+  });
+
+  if (windowWidth < 1200) {
+    gsap.set('[data-show-down-mobile]', { y: 20, autoAlpha: 0 });
+    gsap.utils.toArray<HTMLElement>('[data-show-down-mobile]').forEach((item) => {
+      const delay = item.getAttribute('data-delay');
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          scrub: 0,
+          start: 'top 95%',
+          onToggle: () => {
+            gsap.to(item, { delay: delay ? parseFloat(delay) : 0, duration: 0.7, y: 0, autoAlpha: 1 });
+          }
+        }
+      });
+    });
+  }
+}
+
+// =====================================================
+// FAQ ACCORDION
+// =====================================================
+function accordionFaq() {
+  const accordion = document.querySelector('.js-accordion');
+  if (!accordion) return;
+
+  const groups = gsap.utils.toArray<HTMLElement>('.js-accordion__group');
+  const menus = gsap.utils.toArray<HTMLElement & { animation: gsap.core.Timeline }>('.js-accordion__menu');
+  const animations: gsap.core.Timeline[] = [];
+
+  groups.forEach((group) => createAnimation(group));
+  menus.forEach((menu) => {
+    menu.addEventListener('click', () => toggleAnimation(menu));
+  });
+
+  function toggleAnimation(menu: HTMLElement & { animation: gsap.core.Timeline }) {
+    const selectedReversedState = menu.animation.reversed();
+    animations.forEach((animation) => animation.reverse());
+    menu.animation.reversed(!selectedReversedState);
+  }
+
+  function createAnimation(element: HTMLElement) {
+    const menu = element.querySelector<HTMLElement & { animation: gsap.core.Timeline }>('.js-accordion__menu');
+    const box = element.querySelector<HTMLElement>('.js-accordion__content');
+    const icon = element.querySelector<HTMLElement>('.arrow_toggle');
+    if (!menu || !box) return;
+
+    gsap.set(box, { height: 'auto' });
+
+    const tl = gsap.timeline({ reversed: true, paused: true });
+    tl.from(box, { height: 0, duration: 0.3, ease: 'power1.inOut' });
+    if (icon) tl.to(icon, { duration: 0.25, rotation: -180, ease: 'linear' }, '<');
+
+    menu.animation = tl;
+    animations.push(tl);
+  }
+}
+</script>

@@ -1,0 +1,25 @@
+{
+  "redirects": [
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/projects.php", "destination": "/projects", "permanent": true },
+    { "source": "/branding-projects.php", "destination": "/branding-projects", "permanent": true },
+    { "source": "/secureframe.php", "destination": "/secureframe", "permanent": true },
+    { "source": "/constructo.php", "destination": "/constructo", "permanent": true },
+    { "source": "/splitero.php", "destination": "/splitero", "permanent": true },
+    { "source": "/privacy-policy.php", "destination": "/privacy-policy", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    }
+  ]
+}

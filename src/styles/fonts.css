@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Maison Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/MaisonNeueRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/MaisonNeueMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/MaisonNeueDemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Messina';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/MessinaSerif-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Mulish';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/MulishRegular.woff') format('woff');
+}

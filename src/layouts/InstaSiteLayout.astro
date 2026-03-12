@@ -1,0 +1,57 @@
+---
+import '../styles/fonts.css';
+import '../styles/global.css';
+import '../styles/instasite.css';
+import AnimationsIsland from '../components/islands/AnimationsIsland.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+const {
+  title = 'Managed Websites for Local Businesses | InstaSite by Luma Studios',
+  description = 'Custom websites with no upfront costs, managed hosting, and marketing automation for local businesses.',
+  canonicalUrl = 'https://lumastudios.co/managed-websites',
+} = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <link rel="canonical" href={canonicalUrl} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+
+  <!-- Font preloads -->
+  <link rel="preload" href="/fonts/MaisonNeueRegular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/MaisonNeueDemiBold.woff" as="font" type="font/woff" crossorigin>
+
+  <!-- Google Tag Manager -->
+  <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TS5L8JQ');</script>
+
+  <!-- reCAPTCHA v3 -->
+  <script is:inline src="https://www.google.com/recaptcha/api.js?render=6LcOa54kAAAAAFliwhUE_-0FJb60-IwQc7NeSZ80" async defer></script>
+</head>
+<body class="is-page">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TS5L8JQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <slot />
+
+  <AnimationsIsland />
+</body>
+</html>

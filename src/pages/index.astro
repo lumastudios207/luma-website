@@ -1,0 +1,555 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      name: 'Luma Studios',
+      url: 'https://lumastudios.co',
+      description: 'On-demand design agency helping startups and marketing agencies with graphic design, web design, brand identity, and more.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '63 Federal Street',
+        addressLocality: 'Portland',
+        addressRegion: 'ME',
+        postalCode: '04101',
+        addressCountry: 'US',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Luma Studios',
+      url: 'https://lumastudios.co',
+    },
+  ],
+};
+---
+
+<PageLayout
+  title="Marketing Design Agency - Luma Studios"
+  description="Our design studio helps startups and marketing agencies with a wide range of graphic and web design services."
+  canonicalUrl="https://lumastudios.co/"
+  ogUrl="https://lumastudios.co/"
+  {jsonLd}
+>
+
+<!-- ===================== HERO ===================== -->
+<section class="home_first" first-load-delay>
+  <div class="container">
+    <div class="wrap_hom_infr relative z_1 text-center">
+      <div class="cube_border"></div>
+      <div class="cube_border_2"></div>
+      <div class="triangle_decor">
+        <img class="triangle_home" src="/img/triangle.png" alt="" width="113">
+      </div>
+      <div class="decor_top_cube">
+        <img src="/img/cube_3d.png" alt="" width="82" loading="lazy">
+      </div>
+      <div class="info_blk_home">
+        <h1 class="heading_home">On-Demand <br><span class="blue_color">Design Services</span></h1>
+        <div class="descr_home_fir">Ongoing design support or one-off projects at a price <br>that won't break the bank!</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 images_homm">
+      <div class="item_im_gri" data-show-down-mobile data-delay=".1">
+        <a href="/secureframe" class="link_project">
+          <img class="img-responsive" src="/img/home_img_1.webp" alt="Secureframe project">
+        </a>
+      </div>
+      <div class="item_im_gri" data-show-down-mobile data-delay=".1">
+        <a href="/splitero" class="link_project">
+          <img class="img-responsive" src="/img/home_img_2.webp" alt="Splitero project">
+        </a>
+      </div>
+      <div class="item_im_gri" data-show-down-mobile data-delay=".1">
+        <a href="/constructo" class="link_project">
+          <img class="img-responsive" src="/img/home_img_3.webp" alt="Constructo project">
+        </a>
+      </div>
+    </div>
+    <div class="trusted text-center">
+      <div class="title_trusted">Trusted by</div>
+      <div class="wrap_trusted">
+        <div class="item_trust"><div class="in_to_trust flex items-center justify-center"><img src="/img/logos/client_1.svg" alt="Client"></div></div>
+        <div class="item_trust"><div class="in_to_trust flex items-center justify-center"><img src="/img/logos/client_2.svg" alt="Client"></div></div>
+        <div class="item_trust"><div class="in_to_trust flex items-center justify-center"><img src="/img/logos/client_3.svg" alt="Client"></div></div>
+        <div class="item_trust"><div class="in_to_trust flex items-center justify-center"><img src="/img/logos/client_4.svg" alt="Client"></div></div>
+        <div class="item_trust"><div class="in_to_trust flex items-center justify-center"><img src="/img/logos/client_5.svg" alt="Client"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAPABILITIES ===================== -->
+<section class="caapabilities_bl dark_bg overflow-hidden">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">Our capabilities</h2>
+      <div class="description_section text-center">
+        Our multi-disciplinary team of in-house designers will help you bring your ideas to life in a way that's not just seen but remembered.
+      </div>
+    </div>
+  </div>
+  <div class="container_capab mx-auto">
+    <div class="relative z_1">
+      <div class="capabilities_wrap grid grid-cols-4">
+        <div class="item_capabilities">
+          <div class="title_capab" item-class-toggle>Printed Materials</div>
+          <div class="wrp_items_cap"><ul>
+            <li>Event Banners</li><li>Billboards</li><li>Sales Collateral</li><li>Brochures</li><li>Annual Reports</li>
+          </ul></div>
+        </div>
+        <div class="item_capabilities">
+          <div class="title_capab" item-class-toggle>Digital Assets</div>
+          <div class="wrp_items_cap"><ul>
+            <li>Ad Creative</li><li>Social Media Assets</li><li>eBooks</li><li>Presentations</li><li>Design Systems</li>
+          </ul></div>
+        </div>
+        <div class="item_capabilities">
+          <div class="title_capab" item-class-toggle>Websites</div>
+          <div class="wrp_items_cap"><ul>
+            <li>Custom Website Design</li><li>Landing Pages</li><li>UX Audits</li><li>Webflow &amp; Wordpress Development</li>
+          </ul></div>
+        </div>
+        <div class="item_capabilities">
+          <div class="title_capab" item-class-toggle>Custom Graphics</div>
+          <div class="wrp_items_cap"><ul>
+            <li>Brand Identity</li><li>Illustrations</li><li>Iconography</li><li>Infographics</li><li>Motion Graphics</li>
+          </ul></div>
+        </div>
+      </div>
+      <svg class="decor_cap_1" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H36V36H32.995H0V0Z" fill="#212121"/></svg>
+      <svg class="decor_cap_2" width="99" height="99" viewBox="0 0 99 99" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H99V99H90.7362H0V0Z" fill="#212121"/></svg>
+    </div>
+  </div>
+  <div class="text-center" data-show-down data-show-down-mobile data-delay=".1">
+    <div class="container">
+      <div class="buttons_capabl flex justify-center items-center">
+        <div class="wrap_mob_full">
+          <a href="#" class="btn_anim outline" style="min-width: 110px;" data-popup-show>
+            <span class="default_btn_bg"></span>
+            <span class="cb-btn_cta-title"><span data-text="GET PRICING">GET PRICING</span></span>
+            <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
+          </a>
+        </div>
+        <div class="inline-block wrap_mob_full">
+          <a href="https://calendly.com/iannikov/luma-design" class="btn_anim" target="_blank" style="min-width: 110px;">
+            <span class="default_btn_bg"></span>
+            <span class="cb-btn_cta-title"><span data-text="Book a call">Book a call</span></span>
+            <span class="cb-btn_cta-ripple"><span></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLIENT TESTIMONIALS ===================== -->
+<section class="client_say overflow-hidden">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">What our clients say</h2>
+    </div>
+    <div class="wrap_quote grid grid-cols-2">
+      <div class="item_quote_go">
+        <div class="icon_quote" item-class-toggle>
+          <svg width="35" height="27" viewBox="0 0 35 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.359 0C4.88604 0.886617 0 6.00929 0 14.6784V26.5H14.9573V13.1022H9.27351C9.27351 9.16171 10.6695 7.19145 14.359 6.30483V0ZM34.4017 0C24.9288 0.886617 20.0427 6.00929 20.0427 14.6784V26.5H35V13.1022H29.3162C29.3162 9.16171 30.7123 7.19145 34.4017 6.30483V0Z" fill="white" fill-opacity="0.4"/></svg>
+        </div>
+        <div class="quote_text_descr">"It was a pleasure working with the designers at Luma. Throughout the entire project, they were always responsive and open to our feedback. Communication and project management was top notch, and we are super happy with the results."</div>
+        <div class="quote_user_wrap flex items-center">
+          <div class="quote_photo"><img class="img-responsive" src="/img/quote_peop_1.jpg" alt="Sid Dange"></div>
+          <div class="quote_info">
+            <div class="quote_user_name">Sid Dange</div>
+            <div class="quote_function">Founder and CEO</div>
+            <div class="quote_project">BuildPulse</div>
+          </div>
+        </div>
+      </div>
+      <div class="item_quote_go">
+        <div class="icon_quote" item-class-toggle>
+          <svg width="35" height="27" viewBox="0 0 35 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.359 0C4.88604 0.886617 0 6.00929 0 14.6784V26.5H14.9573V13.1022H9.27351C9.27351 9.16171 10.6695 7.19145 14.359 6.30483V0ZM34.4017 0C24.9288 0.886617 20.0427 6.00929 20.0427 14.6784V26.5H35V13.1022H29.3162C29.3162 9.16171 30.7123 7.19145 34.4017 6.30483V0Z" fill="white" fill-opacity="0.4"/></svg>
+        </div>
+        <div class="quote_text_descr">"The team at Luma was 100% on the projects we worked on together. Speed was immaculate. The customer service aspect was on point. We'll definitely keep using them as a creative partner of our agency."</div>
+        <div class="quote_user_wrap flex items-center">
+          <div class="quote_photo"><img class="img-responsive" src="/img/quote_peop_2.jpg" alt="Chaenara O'Brien"></div>
+          <div class="quote_info">
+            <div class="quote_user_name">Chaenara O'Brien</div>
+            <div class="quote_function">Head of Strategy</div>
+            <div class="quote_project">Thought Bakery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY WORK WITH US ===================== -->
+<section class="why_work_with overflow-hidden dark_bg">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">Why work with us</h2>
+    </div>
+    <div class="wrap_why_work grid grid-cols-2">
+      <div class="item_why_work text-center" data-show-down data-delay=".1">
+        <div class="icon_why_work"><img src="/img/icons/why_work_1.svg" alt=""></div>
+        <div class="title_why_work">Senior In-House Designers</div>
+        <div class="descr_why_work">No matter what projects you have in the pipeline, our team of in-house designers is ready to help. Our designers will collaborate with you in Figma and deliver implementation-ready assets according to your requirements.</div>
+      </div>
+      <div class="item_why_work text-center" data-show-down data-delay=".1">
+        <div class="icon_why_work"><img src="/img/icons/why_work_4.svg" alt=""></div>
+        <div class="title_why_work">Quick Turnarounds</div>
+        <div class="descr_why_work">Small design projects like a set of social media graphics or a conference banner are usually completed within 48 hours. Small web projects like a five-page site are usually completed within two weeks. Either way, we're fast!</div>
+      </div>
+      <div class="item_why_work text-center" data-show-down data-delay=".2">
+        <div class="icon_why_work"><img src="/img/icons/why_work_5.svg" alt=""></div>
+        <div class="title_why_work">Reliable Support</div>
+        <div class="descr_why_work">We'll add you to our Slack channel, so ping us anytime with design questions or urgent requests. We reply the same business day between 9am and 6pm EST!</div>
+      </div>
+      <div class="item_why_work text-center" data-show-down data-delay=".3">
+        <div class="icon_why_work"><img src="/img/icons/why_work_6.svg" alt=""></div>
+        <div class="title_why_work">Easy Task Management</div>
+        <div class="descr_why_work">We'll add you to our Asana board, so you can start adding your design projects right away. This approach works well for clients who use our services on an ongoing basis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED PROJECTS ===================== -->
+<section class="client_say overflow-hidden">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">Featured design projects</h2>
+      <div class="description_section text-center">
+        Our design team has been instrumental in supporting startups and marketing agencies with a wide range of design services. Below are some client project highlights.
+      </div>
+    </div>
+    <div class="wrap_projects grid grid-cols-2">
+      <div class="item_proj_new_g">
+        <a href="/secureframe" class="block image_link">
+          <div class="image_proj_pr"><div class="inn_img_pro"><img class="img-responsive" src="/img/proj_new_1.webp" alt="Secureframe"></div></div>
+        </a>
+        <div>
+          <div class="title_proj_new">Secureframe</div>
+          <div class="badges_proj_g">
+            <div class="item_badg_g flex items-center">Brand Identity</div>
+            <div class="item_badg_g flex items-center">Billboards</div>
+            <div class="item_badg_g flex items-center">Website</div>
+            <div class="item_badg_g flex items-center">Illustrations</div>
+          </div>
+          <div class="descr_proj_new">Secureframe specializes in compliance automation. It offers AI-powered tools that allow businesses to manage security, risk, and compliance more efficiently.</div>
+          <div class="proj_action_bitt">
+            <a href="/secureframe" class="btn_anim outline">
+              <span class="default_btn_bg"></span>
+              <span class="cb-btn_cta-title"><span data-text="View Case Study">View Case Study</span></span>
+              <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="item_proj_new_g">
+        <div class="image_proj_pr"><div class="inn_img_pro"><img class="img-responsive" src="/img/proj_new_2.webp" alt="ScreenSteps"></div></div>
+        <div>
+          <div class="title_proj_new">ScreenSteps</div>
+          <div class="badges_proj_g">
+            <div class="item_badg_g flex items-center">Website</div>
+            <div class="item_badg_g flex items-center">Illustrations</div>
+            <div class="item_badg_g flex items-center">eBooks</div>
+            <div class="item_badg_g flex items-center">Iconography</div>
+          </div>
+          <div class="descr_proj_new">ScreenSteps is building innovative knowledge base software aimed at boosting employee performance. It offers easy-to-create digital guides and training courses.</div>
+        </div>
+      </div>
+      <div class="item_proj_new_g">
+        <div class="image_proj_pr"><div class="inn_img_pro"><img class="img-responsive" src="/img/proj_new_3.webp" alt="Zingtree"></div></div>
+        <div>
+          <div class="title_proj_new">Zingtree</div>
+          <div class="badges_proj_g">
+            <div class="item_badg_g flex items-center">Brand Identity</div>
+            <div class="item_badg_g flex items-center">Website</div>
+            <div class="item_badg_g flex items-center">Animations</div>
+          </div>
+          <div class="descr_proj_new">Zingtree's AI-driven decision tree technology revolutionizes self-service, identifies and applies opportunities for automation, and turns each agent into a specialist.</div>
+        </div>
+      </div>
+      <div class="item_proj_new_g">
+        <a href="/constructo" class="block image_link">
+          <div class="image_proj_pr"><div class="inn_img_pro"><img class="img-responsive" src="/img/proj_new_4.webp" alt="Constructo"></div></div>
+        </a>
+        <div>
+          <div class="title_proj_new">Constructo</div>
+          <div class="badges_proj_g">
+            <div class="item_badg_g flex items-center">Website</div>
+            <div class="item_badg_g flex items-center">Investor Decks</div>
+            <div class="item_badg_g flex items-center">Sales Collateral</div>
+          </div>
+          <div class="descr_proj_new">Constructo is a cutting-edge platform for residential construction service providers. It integrates tools for 3D scanning, as-built drawings, and permit-ready plans.</div>
+          <div class="proj_action_bitt">
+            <a href="/constructo" class="btn_anim outline">
+              <span class="default_btn_bg"></span>
+              <span class="cb-btn_cta-title"><span data-text="View Case Study">View Case Study</span></span>
+              <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="item_proj_new_g">
+        <a href="/splitero" class="block image_link">
+          <div class="image_proj_pr"><div class="inn_img_pro"><img class="img-responsive" src="/img/proj_new_5.webp" alt="Splitero"></div></div>
+        </a>
+        <div>
+          <div class="title_proj_new">Splitero</div>
+          <div class="badges_proj_g">
+            <div class="item_badg_g flex items-center">Infographics</div>
+            <div class="item_badg_g flex items-center">Investor Decks</div>
+            <div class="item_badg_g flex items-center">Landing Pages</div>
+          </div>
+          <div class="descr_proj_new">Splitero is an innovative fintech company that presents a novel approach that enables homeowners to efficiently tap into their home equity.</div>
+          <div class="proj_action_bitt">
+            <a href="/splitero" class="btn_anim outline">
+              <span class="default_btn_bg"></span>
+              <span class="cb-btn_cta-title"><span data-text="View Case Study">View Case Study</span></span>
+              <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="item_proj_new_g">
+        <div class="image_proj_pr"><div class="inn_img_pro"><img class="img-responsive" src="/img/proj_new_6.webp" alt="Evocalize"></div></div>
+        <div>
+          <div class="title_proj_new">Evocalize</div>
+          <div class="badges_proj_g">
+            <div class="item_badg_g flex items-center">Website</div>
+            <div class="item_badg_g flex items-center">Animations</div>
+            <div class="item_badg_g flex items-center">Iconography</div>
+            <div class="item_badg_g flex items-center">Illustrations</div>
+          </div>
+          <div class="descr_proj_new">Evocalize is a dynamic platform revolutionizing digital marketing for franchises. It simplifies complex local digital marketing across various channels.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECUREFRAME QUOTE ===================== -->
+<div class="quote_blk dark_bg">
+  <div class="container">
+    <div class="container_smaller">
+      <div class="quote_wrap">
+        <div class="quote_decor_top">
+          <div class="line_gksg">
+            <svg width="1724" height="154" viewBox="0 0 1724 154" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.492188 153.498L158.992 0.998047L1724 0.998047" stroke="#464646"/></svg>
+            <div class="quote_cub_bb"><img src="/img/cube_3d.png" alt="" width="98" loading="lazy"></div>
+          </div>
+        </div>
+        <div class="quote_icon" item-class-toggle>
+          <svg width="70" height="54" viewBox="0 0 70 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.718 0.993164C9.77208 2.7664 0 13.0117 0 30.35V53.9932H29.9145V27.1976H18.547C18.547 19.3166 21.339 15.3761 28.718 13.6028V0.993164ZM68.8034 0.993164C49.8576 2.7664 40.0855 13.0117 40.0855 30.35V53.9932H70V27.1976H58.6325C58.6325 19.3166 61.4245 15.3761 68.8034 13.6028V0.993164Z" fill="white"/></svg>
+        </div>
+        <div class="quote_text">"The guys at Luma Studios helped us on a number of fronts. They designed our marketing site, created effective pitch decks that helped us raise millions from investors, designed our conference signage and billboards. We were super impressed with the quality of their work, turn-around time, and responsiveness throughout the process."</div>
+        <div class="quote_footer flex items-center">
+          <div class="decor_quote_foot">
+            <svg class="line_mobile_decor" width="757" height="202" viewBox="0 0 757 202" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M757 1.49219H201L1 200.992" stroke="#464646"/></svg>
+            <svg class="lines_small_dev" width="451" height="102" viewBox="0 0 451 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M451 1.49414H101L1 101.244" stroke="#464646"/></svg>
+            <div class="image_logo_quot"><img src="/img/secureframe.svg" alt="Secureframe"></div>
+          </div>
+          <div class="quote_image"><img src="/img/image_quote.webp" alt="Shrav Mehta" class="img-responsive"></div>
+          <div class="info_quote_g">
+            <div class="name_quote_g">Shrav Mehta</div>
+            <div class="function_quote_g">Founder and CEO <br>Secureframe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== OUR TEAM ===================== -->
+<section class="our_team overflow-hidden">
+  <div class="container">
+    <div class="wrap_heading_tm">
+      <h2 class="title_section text-center">Our team</h2>
+    </div>
+    <div class="wrap_our_team grid grid-cols-4">
+      <div data-show-down data-show-down-mobile data-delay=".1">
+        <div class="image_team_wrap"><img class="img-responsive" src="/img/ivan.webp" alt="Ivan A."></div>
+        <div class="team_info"><div class="member_name">Ivan A.</div><div class="role_team">Founder &amp; Designer</div></div>
+      </div>
+      <div data-show-down data-show-down-mobile data-delay=".1">
+        <div class="image_team_wrap"><img class="img-responsive" src="/img/david.webp" alt="David G."></div>
+        <div class="team_info"><div class="member_name">David G.</div><div class="role_team">Sr. Developer</div></div>
+      </div>
+      <div data-show-down data-show-down-mobile data-delay=".1">
+        <div class="image_team_wrap"><img class="img-responsive" src="/img/lara.webp" alt="Lara M."></div>
+        <div class="team_info"><div class="member_name">Lara M.</div><div class="role_team">Web Designer</div></div>
+      </div>
+      <div data-show-down data-show-down-mobile data-delay=".1">
+        <div class="image_team_wrap"><img class="img-responsive" src="/img/jimmy.webp" alt="Jimmy D."></div>
+        <div class="team_info"><div class="member_name">Jimmy D.</div><div class="role_team">Brand Designer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BRAND DESIGN SECTION ===================== -->
+<section class="brands_section overflow-hidden dark_bg">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">Brand design projects</h2>
+      <div class="description_section text-center">
+        Strong brands aren't accidental. At Luma, we work with founders and marketing teams to clarify positioning, design thoughtful identities, and build brands that feel credible and enduring.
+      </div>
+    </div>
+    <div class="brands_img_log">
+      <div class="inside_brands relative">
+        <div class="brand_elem brand_item left_banner">
+          <img src="/img/brands/2.webp" alt="Luma Studios brand design project">
+          <div class="cube_simpl_brand2">
+            <div class="bg_cubb_brand"></div>
+            <div class="line_left_brand">
+              <svg width="1306" height="201" viewBox="0 0 1306 201" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 199.859L1105.5 199.854L1305.5 0.353806" stroke="#464646"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="brand_elem main_banner"><img src="/img/brands/1.webp" alt="Luma brand project"></div>
+        <div class="brand_elem brand_item right_banner">
+          <img src="/img/brands/3.webp" alt="Luma Studios brand design project">
+          <div class="cube_simpl_brand"></div>
+        </div>
+      </div>
+      <div class="line_right_brand">
+        <svg width="1724" height="154" viewBox="0 0 1724 154" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.492188 153.498L158.992 0.998047L1724 0.998047" stroke="#464646"/></svg>
+      </div>
+    </div>
+    <div class="mobile_brands"><img class="img-responsive" src="/img/brands/all_brands.webp" alt="Brand design projects"></div>
+    <div class="footeR_brands text-center" data-show-down data-show-down-mobile data-delay=".1">
+      <div class="container">
+        <div class="inline-block wrap_mob_full">
+          <a href="/branding-projects" class="btn_anim">
+            <span class="default_btn_bg"></span>
+            <span class="cb-btn_cta-title"><span data-text="View Branding Projects">View Branding Projects</span></span>
+            <span class="cb-btn_cta-ripple"><span></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT IVAN ===================== -->
+<section class="about_ivan light_bg overflow-hidden">
+  <div class="container">
+    <div class="wrap_about_ivan">
+      <div class="info_ivan_go flex" style="margin-bottom: 0;">
+        <div class="image_about_ivan">
+          <div class="wrap_img_ivan relative z_1" item-class-toggle>
+            <img class="img-responsive" src="/img/ivan.webp" alt="Ivan A.">
+            <img class="triangle_decor_ivan" src="/img/triangle.png" alt="" width="113">
+          </div>
+          <div class="social_ivan flex">
+            <div data-show-down-mobile data-delay=".1">
+              <a href="https://www.linkedin.com/in/iannikov/" class="flex items-center justify-center social_item" target="_blank">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.364 17.8132H14.7216V11.6094C14.7216 9.90847 14.0753 8.95794 12.729 8.95794C11.2644 8.95794 10.4992 9.94711 10.4992 11.6094V17.8132H6.98899V5.99503H10.4992V7.58694C10.4992 7.58694 11.5547 5.63397 14.0626 5.63397C16.5693 5.63397 18.364 7.16473 18.364 10.3307V17.8132ZM2.80127 4.44753C1.6056 4.44753 0.636719 3.47105 0.636719 2.26674C0.636719 1.06242 1.6056 0.0859375 2.80127 0.0859375C3.99694 0.0859375 4.96524 1.06242 4.96524 2.26674C4.96524 3.47105 3.99694 4.44753 2.80127 4.44753ZM0.988725 17.8132H4.64901V5.99503H0.988725V17.8132Z" fill="#FFFC10"/></svg>
+              </a>
+            </div>
+            <div data-show-down-mobile data-delay=".2">
+              <a href="mailto:design@lumastudios.co" class="flex items-center justify-center social_item">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.3622 0.394531H0.453125V1.57635L9.90767 7.48544L19.3622 1.57635V0.394531Z" fill="#FFFC10"/><path d="M9.90767 8.90385L0.453125 2.99476V13.6311H19.3622V2.99476L9.90767 8.90385Z" fill="#FFFC10"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="descr_about_ivan">
+          <h3 class="ivan_title_descr">I'm Ivan, founder and <span class="ivan_unverline" item-class-toggle>principal designer</span> at Luma</h3>
+          <div class="descr__ivan">With over a decade of hands-on design experience at Silicon Valley tech companies, I love working with startup founders and digital marketers to create impactful brand experiences that drive growth. At Luma, I oversee all aspects of design, work closely with our in-house design team, and actively manage client relationships.</div>
+          <div>
+            <div class="inline-block wrap_mob_full">
+              <a href="https://calendly.com/iannikov/luma-design" class="btn_anim" target="_blank">
+                <span class="default_btn_bg"></span>
+                <span class="cb-btn_cta-title"><span data-text="Book a call">Book a call</span></span>
+                <span class="cb-btn_cta-ripple"><span></span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONSTRUCTO QUOTE ===================== -->
+<div class="quote_blk dark_bg">
+  <div class="container">
+    <div class="container_smaller">
+      <div class="quote_wrap">
+        <div class="quote_decor_top">
+          <div class="line_gksg">
+            <svg width="1724" height="154" viewBox="0 0 1724 154" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.492188 153.498L158.992 0.998047L1724 0.998047" stroke="#464646"/></svg>
+            <div class="quote_cub_bb"><img src="/img/cube_3d.png" alt="" width="98" loading="lazy"></div>
+          </div>
+        </div>
+        <div class="quote_icon" item-class-toggle>
+          <svg width="70" height="54" viewBox="0 0 70 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.718 0.993164C9.77208 2.7664 0 13.0117 0 30.35V53.9932H29.9145V27.1976H18.547C18.547 19.3166 21.339 15.3761 28.718 13.6028V0.993164ZM68.8034 0.993164C49.8576 2.7664 40.0855 13.0117 40.0855 30.35V53.9932H70V27.1976H58.6325C58.6325 19.3166 61.4245 15.3761 68.8034 13.6028V0.993164Z" fill="white"/></svg>
+        </div>
+        <div class="quote_text">"Luma Studios was instrumental in helping me lay the marketing foundation at Constructo. In less than 90 days, we designed a 20-page site from scratch, created a bundle of sales collateral, and polished up our pitch deck for raising seed. They're fast, effective, and a pleasure to work with."</div>
+        <div class="quote_footer flex items-center">
+          <div class="decor_quote_foot">
+            <svg width="757" height="202" viewBox="0 0 757 202" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M757 1.49219H201L1 200.992" stroke="#464646"/></svg>
+            <svg class="lines_small_dev" width="451" height="102" viewBox="0 0 451 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M451 1.49414H101L1 101.244" stroke="#464646"/></svg>
+            <div class="image_logo_quot"><img src="/img/constructo.png" alt="Constructo" width="314"></div>
+          </div>
+          <div class="quote_image"><img src="/img/image_KC.webp" alt="KC Karnes" loading="lazy" class="img-responsive"></div>
+          <div class="info_quote_g">
+            <div class="name_quote_g">KC Karnes</div>
+            <div class="function_quote_g">VP of Marketing <br>Constructo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FAQs ===================== -->
+<section class="faqs">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">FAQs</h2>
+    </div>
+    <div class="wrap_faqs mx-auto js-accordion">
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">Why work with Luma instead of hiring an in-house designer?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">Bringing on a full-time designer is a hefty investment. Plus, finding that unicorn designer who can juggle the whole spectrum of design projects like a full-service team is tough. And let's not forget those moments when full-time designers are just twiddling their thumbs, yet you're still footing the bill.<br><br>This is where our flexible pricing model really shines! It's way more budget-friendly, and you get to work with a whole team of designers, each a pro in their own right.</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">What are your typical turnaround times?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">Most of the time, your design requests get done super fast, usually in just two days or less. However, larger projects such as a multi-page ebook or a landing page take a bit longer. We've been known to build a small website in just two weeks!</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">What happens if the results don't match my expectations?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">If our initial design drafts don't make you jump with joy, no sweat – we'll keep tweaking them until they do. Plus, we can loop in other talented designers from our team to spice things up with different styles. Your happiness is our priority!</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">How do I make design requests and provide feedback?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">We run all our design magic through Asana. Just toss in all your design requests along with specs and guidelines. Once we have something to show you, share your thoughts directly in Asana or Figma comments.</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">What type of deliverables should I expect?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">Figma is our main jam, but we're pretty chummy with Sketch and the whole Adobe suite too. Just let us know what you need, and we'll make sure to deliver your goodies in the format that suits you best.</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">Who owns the designs that you produce?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">When it comes to copyright and ownership of the design work we produce for you, it's a straightforward deal – you own it all, 100%. No fine print.</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">What types of companies typically work with you?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">Our bread and butter is working with tech startups and marketing agencies, but we've also had great collabs with industry titans and local service businesses.</div></div>
+      </div>
+      <div class="item_faq js-accordion__group">
+        <div class="faq_heading js-accordion__menu">How do we get started?<span class="arrow_toggle"></span></div>
+        <div class="descr_item_faq js-accordion__content"><div class="in_to_descr_fq">Getting the ball rolling is a breeze! All you gotta do is book an intro call with us! During our chat, we'll break down our process and have you up and running in Asana so you can start sending in design requests often within the same week!</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</PageLayout>

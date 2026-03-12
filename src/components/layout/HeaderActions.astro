@@ -1,0 +1,88 @@
+---
+interface Props {
+  variant?: 'default' | 'projects' | 'case-study' | 'landing' | 'none';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+{variant === 'projects' && (
+  <a href="#" class="btn_anim small_px" data-popup-show>
+    <span class="default_btn_bg"></span>
+    <span class="cb-btn_cta-title">
+      <span data-text="Request a quote">Request a quote</span>
+    </span>
+    <span class="cb-btn_cta-ripple">
+      <span style="background-color: #212121;"></span>
+    </span>
+  </a>
+)}
+
+{variant === 'case-study' && (
+  <div class="header_btn_mor flex items-center">
+    <a href="#" class="btn_anim outline" data-popup-show>
+      <span class="default_btn_bg"></span>
+      <span class="cb-btn_cta-title">
+        <span data-text="Get pricing">Get pricing</span>
+      </span>
+      <span class="cb-btn_cta-ripple">
+        <span style="background-color: #FFFC10;"></span>
+      </span>
+    </a>
+    <a href="https://calendly.com/iannikov/luma-design" class="btn_anim" target="_blank">
+      <span class="default_btn_bg"></span>
+      <span class="cb-btn_cta-title">
+        <span data-text="Book a call">Book a call</span>
+      </span>
+      <span class="cb-btn_cta-ripple">
+        <span style="background-color: #212121;"></span>
+      </span>
+    </a>
+  </div>
+)}
+
+{variant === 'landing' && (
+  <div class="header_btn_mor flex items-center">
+    <a href="#contact" class="btn_anim outline" data-scroll-to>
+      <span class="default_btn_bg"></span>
+      <span class="cb-btn_cta-title">
+        <span data-text="Get in Touch">Get in Touch</span>
+      </span>
+      <span class="cb-btn_cta-ripple">
+        <span style="background-color: #FFFC10;"></span>
+      </span>
+    </a>
+    <a href="#pricing" class="btn_anim" data-scroll-to>
+      <span class="default_btn_bg"></span>
+      <span class="cb-btn_cta-title">
+        <span data-text="View Prices">View Prices</span>
+      </span>
+      <span class="cb-btn_cta-ripple">
+        <span style="background-color: #212121;"></span>
+      </span>
+    </a>
+  </div>
+)}
+
+{(variant === 'default') && (
+  <>
+    <a href="#" class="btn_anim outline" data-popup-show>
+      <span class="default_btn_bg"></span>
+      <span class="cb-btn_cta-title">
+        <span data-text="Get pricing">Get pricing</span>
+      </span>
+      <span class="cb-btn_cta-ripple">
+        <span style="background-color: #FFFC10;"></span>
+      </span>
+    </a>
+    <a href="https://calendly.com/iannikov/luma-design" class="btn_anim small_px" target="_blank">
+      <span class="default_btn_bg"></span>
+      <span class="cb-btn_cta-title">
+        <span data-text="Book a call">Book a call</span>
+      </span>
+      <span class="cb-btn_cta-ripple">
+        <span style="background-color: #212121;"></span>
+      </span>
+    </a>
+  </>
+)}

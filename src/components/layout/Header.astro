@@ -1,0 +1,25 @@
+---
+import HeaderActions from './HeaderActions.astro';
+
+interface Props {
+  variant?: 'default' | 'projects' | 'case-study' | 'landing' | 'none';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+<header class="header_top">
+  <div class="container">
+    <div class="in_to_header_go flex items-center justify-between">
+      <div class="logo_hea_scro">
+        <a href="/">
+          <img class="logo_desktop" src="/img/logo.svg" alt="Luma Studios" width="171">
+          <img class="logo_mobile" src="/img/logo_mobile.svg" alt="Luma Studios" width="40">
+        </a>
+      </div>
+      <div class="wrap_btn_sgg">
+        <HeaderActions variant={variant} />
+      </div>
+    </div>
+  </div>
+</header>

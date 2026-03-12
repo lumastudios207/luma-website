@@ -1,0 +1,104 @@
+---
+import '../styles/fonts.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  jsonLd?: object;
+  bodyClass?: string;
+}
+
+const {
+  title = 'Marketing Design Agency - Luma Studios',
+  description = 'Our design studio helps startups and marketing agencies with a wide range of graphic and web design services.',
+  canonicalUrl = 'https://lumastudios.co/',
+  ogImage = 'https://lumastudios.co/img/og/og_image.jpg',
+  ogUrl = 'https://lumastudios.co/',
+  jsonLd,
+  bodyClass = '',
+} = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Facebook / Open Graph -->
+  <meta property="og:url" content={ogUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:domain" content="lumastudios.co" />
+  <meta property="twitter:url" content={ogUrl} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://lumastudios.co/img/og/luma_twitter.png" />
+
+  <!-- Font preloads (above-fold fonts) -->
+  <link rel="preload" href="/fonts/MaisonNeueRegular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/MaisonNeueDemiBold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/MessinaSerif-SemiBold.woff" as="font" type="font/woff" crossorigin>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Google Tag Manager -->
+  <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TS5L8JQ');</script>
+
+  <!-- Crisp Chat -->
+  <script is:inline>window.$crisp=[];window.CRISP_WEBSITE_ID="a5272084-25f6-41f0-ab66-9cf5533af2e4";(function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+  <!-- Twitter Pixel -->
+  <script is:inline>!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');twq('config','ojgkx');</script>
+
+  <!-- reCAPTCHA v3 -->
+  <script is:inline src="https://www.google.com/recaptcha/api.js?render=6LcOa54kAAAAAFliwhUE_-0FJb60-IwQc7NeSZ80" async defer></script>
+
+  <!-- JSON-LD Structured Data -->
+  {jsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  )}
+</head>
+
+<body class={bodyClass}>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TS5L8JQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Sticky scroll header (hidden by default) -->
+  <div class="header_scroll" style="transform: translateY(-105%)">
+    <div class="container">
+      <div class="in_to_header_go flex items-center justify-between">
+        <div class="logo_hea_scro">
+          <a href="/">
+            <img class="logo_desktop" src="/img/logo.svg" alt="Luma Studios" width="171" loading="lazy">
+            <img class="logo_mobile" src="/img/logo_mobile.svg" alt="Luma Studios" width="40" loading="lazy">
+          </a>
+        </div>
+        <div class="wrap_btn_sgg">
+          <slot name="header-scroll-actions" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <slot />
+</body>
+</html>

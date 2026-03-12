@@ -1,0 +1,68 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import HeaderActions from '../components/layout/HeaderActions.astro';
+import Footer from '../components/layout/Footer.astro';
+import ContactPopup from '../components/contact/ContactPopup.astro';
+import AnimationsIsland from '../components/islands/AnimationsIsland.astro';
+import ContactFormIsland from '../components/islands/ContactFormIsland.astro';
+import SwiperIsland from '../components/islands/SwiperIsland.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  jsonLd?: object;
+  headerVariant?: 'default' | 'projects' | 'case-study' | 'landing';
+  hasTabSlider?: boolean;
+  hasVerticalSlider?: boolean;
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage,
+  ogUrl,
+  jsonLd,
+  headerVariant = 'default',
+  hasTabSlider = false,
+  hasVerticalSlider = false,
+  bodyClass = '',
+} = Astro.props;
+---
+
+<BaseLayout
+  {title}
+  {description}
+  {canonicalUrl}
+  {ogImage}
+  {ogUrl}
+  {jsonLd}
+  {bodyClass}
+>
+  <!-- Sticky header actions slot -->
+  <Fragment slot="header-scroll-actions">
+    <HeaderActions variant={headerVariant} />
+  </Fragment>
+
+  <Header variant={headerVariant === 'landing' ? 'none' : headerVariant} />
+
+  <main class="main_go">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <ContactPopup />
+
+  <!-- Client-side scripts -->
+  <AnimationsIsland />
+  <ContactFormIsland />
+  {(hasTabSlider || hasVerticalSlider) && (
+    <SwiperIsland hasTabSlider={hasTabSlider} hasVerticalSlider={hasVerticalSlider} />
+  )}
+</BaseLayout>
