@@ -1123,6 +1123,7 @@ html:has(.landing_page),
   overflow: hidden;
 }
 .lp-faq .wrap_faqs {
+  width: 100%;
   max-width: 860px;
   margin: 0 auto;
 }
