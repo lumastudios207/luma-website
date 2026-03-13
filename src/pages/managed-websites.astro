@@ -6,7 +6,7 @@ import InstaSiteIsland from '../components/islands/InstaSiteIsland.astro';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'InstaSite — Managed Websites for Local Businesses',
+  name: 'Luma Studios — Managed Websites for Local Businesses',
   description: 'Custom websites with no upfront costs. We build, host, and manage your site — plus marketing automations to capture more leads.',
   provider: {
     '@type': 'ProfessionalService',
@@ -23,7 +23,7 @@ const jsonLd = {
 ---
 
 <PageLayout
-  title="Managed Websites for Local Businesses — InstaSite by Luma Studios"
+  title="Managed Websites for Local Businesses — Luma Studios"
   description="Custom websites with no upfront costs. We build, host, and manage your site — plus marketing automations to capture more leads."
   canonicalUrl="https://lumastudios.co/managed-websites"
   ogUrl="https://lumastudios.co/managed-websites"
@@ -42,7 +42,7 @@ const jsonLd = {
     <div class="lp-hero__overlay"></div>
     <div class="lp-hero__content container">
       <h1 class="lp-hero__h1">Turn Your Website Into an Automated Sales Machine</h1>
-      <p class="lp-hero__sub">We build websites for local businesses with <strong>no upfront costs</strong> — now with marketing automations to ensure you never miss a sales opportunity.</p>
+      <p class="lp-hero__sub">We build websites for local businesses with <strong item-class-toggle>no upfront costs</strong> — now with marketing automations to ensure you never miss a sales opportunity.</p>
       <div class="lp-hero__ctas">
         <a href="#contact" class="btn_anim" data-scroll-to>
           <span class="default_btn_bg"></span>
@@ -62,12 +62,14 @@ const jsonLd = {
        FEATURES 4-UP — dark background
        ============================================================ -->
   <section class="lp-features">
+    <div class="lp-features__deco" aria-hidden="true"></div>
+    <img src="/img/cube_3d.webp" alt="" class="lp-features__cube" width="70" aria-hidden="true" loading="lazy">
     <div class="container">
       <div class="lp-features__grid">
 
         <div class="lp-feature-card">
           <div class="lp-feature-card__badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5007 32.2225V28.2783H5.94531C5.00837 28.2783 4.19073 27.9292 3.4924 27.2308C2.79434 26.5325 2.44531 25.715 2.44531 24.7783V7.77832C2.44531 6.84138 2.79434 6.02374 3.4924 5.3254C4.19073 4.62735 5.00837 4.27832 5.94531 4.27832H34.0561C34.9931 4.27832 35.8107 4.62735 36.5091 5.3254C37.2071 6.02374 37.5561 6.84138 37.5561 7.77832V24.7783C37.5561 25.715 37.2071 26.5325 36.5091 27.2308C35.8107 27.9292 34.9931 28.2783 34.0561 28.2783H23.5007V32.2225H25.3203C25.7975 32.2225 26.2061 32.3948 26.5461 32.7396C26.8861 33.0843 27.0561 33.4986 27.0561 33.9825C27.0561 34.4667 26.8861 34.8778 26.5461 35.2158C26.2061 35.5536 25.7975 35.7225 25.3203 35.7225H14.7091C14.2138 35.7225 13.796 35.5503 13.4557 35.2058C13.1155 34.8611 12.9453 34.4467 12.9453 33.9625C12.9453 33.4786 13.1155 33.0676 13.4557 32.7296C13.796 32.3915 14.2138 32.2225 14.7091 32.2225H16.5007ZM5.94531 24.7783H34.0561V7.77832H5.94531V24.7783Z" fill="#7056E3"/><path d="M16 12C17.6569 12 19 13.3431 19 15V18C19 19.6051 17.7394 20.9158 16.1543 20.9961L16 21H13L12.8457 20.9961C11.3117 20.9184 10.0816 19.6883 10.0039 18.1543L10 18V15C10 13.3431 11.3431 12 13 12H16ZM28.5 18C29.3284 18 30 18.6716 30 19.5C30 20.3284 29.3284 21 28.5 21H23.5C22.6716 21 22 20.3284 22 19.5C22 18.6716 22.6716 18 23.5 18H28.5ZM13 18H16V15H13V18ZM28.5 13C29.3284 13 30 13.6716 30 14.5C30 15.3284 29.3284 16 28.5 16H23.5C22.6716 16 22 15.3284 22 14.5C22 13.6716 22.6716 13 23.5 13H28.5Z" fill="#CAB2FF"/></svg>
           </div>
           <div class="lp-feature-card__content">
             <h2 class="lp-feature-card__title">Custom Web Design</h2>
@@ -77,7 +79,7 @@ const jsonLd = {
 
         <div class="lp-feature-card">
           <div class="lp-feature-card__badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3018 6.11914C20.7864 6.39865 21.4646 6.77987 22.2422 7.18457C23.7624 7.9758 25.7885 8.9275 27.4961 9.33887C29.1624 9.74024 31.2421 9.78019 32.7998 9.74023C33.4356 9.72394 33.8964 10.2219 33.8965 10.7227V15.0957C33.8964 23.834 28.4553 31.6261 20.2979 34.6562C12.1405 31.6261 6.69927 23.834 6.69922 15.0957V10.7227L6.7041 10.6289C6.75709 10.1617 7.19991 9.72501 7.7959 9.74023C9.35354 9.78019 11.4334 9.74022 13.0996 9.33887C14.8072 8.9275 16.8333 7.97579 18.3535 7.18457C19.1311 6.77987 19.8093 6.39865 20.2939 6.11914C20.2953 6.11838 20.2965 6.11697 20.2979 6.11621C20.2992 6.11699 20.3004 6.11836 20.3018 6.11914Z" stroke="#CAB2FF" stroke-width="3"/><path d="M20.2949 13.5293C20.5321 13.6801 20.8072 13.8515 21.1074 14.0273C22.0144 14.5585 23.3157 15.2444 24.4707 15.4961C25.5614 15.7337 26.8498 15.6392 27.7852 15.5176V16.6855C27.7851 21.4707 24.7703 25.7162 20.2949 27.3125C15.8197 25.7161 12.8048 21.4706 12.8047 16.6855V15.5176C13.74 15.6393 15.0283 15.7337 16.1191 15.4961C17.2741 15.2445 18.5754 14.5585 19.4824 14.0273C19.7826 13.8516 20.0578 13.6801 20.2949 13.5293Z" stroke="#773CF7" stroke-width="3"/></svg>
           </div>
           <div class="lp-feature-card__content">
             <h2 class="lp-feature-card__title">Zero-Stress Management</h2>
@@ -87,21 +89,21 @@ const jsonLd = {
 
         <div class="lp-feature-card">
           <div class="lp-feature-card__badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4174 21.2363L19.7786 23.5972C20.0298 23.8472 20.3495 23.9722 20.7378 23.9722C21.1261 23.9722 21.4545 23.8472 21.7228 23.5972L26.9453 18.3751V20.0417C26.9453 20.4215 27.0784 20.7409 27.3445 21.0001C27.6106 21.2592 27.9405 21.3888 28.3341 21.3888C28.7138 21.3888 29.0402 21.2558 29.3132 20.9897C29.5863 20.7236 29.7228 20.3937 29.7228 20.0001V15.0001C29.7228 14.6204 29.5863 14.294 29.3132 14.0209C29.0402 13.7479 28.7138 13.6113 28.3341 13.6113H23.2924C22.9127 13.6113 22.5932 13.7479 22.3341 14.0209C22.0749 14.294 21.9453 14.6249 21.9453 15.0138C21.9453 15.4027 22.0784 15.7291 22.3445 15.993C22.6106 16.2569 22.9405 16.3888 23.3341 16.3888H24.9591L20.7507 20.6388L18.3895 18.278C18.1211 18.0002 17.7928 17.8613 17.4045 17.8613C17.0161 17.8613 16.6964 18.0002 16.4453 18.278L11.362 23.3613C11.0842 23.6297 10.9453 23.9586 10.9453 24.348C10.9453 24.7374 11.0878 25.0581 11.3728 25.3101C11.6339 25.5848 11.9586 25.7222 12.347 25.7222C12.7353 25.7222 13.055 25.5833 13.3061 25.3055L17.4174 21.2363Z" fill="#CAB2FF"/><path d="M7.77734 35.7225C6.8404 35.7225 6.02276 35.3735 5.32443 34.6754C4.62637 33.9771 4.27734 33.1594 4.27734 32.2225V7.77832C4.27734 6.84138 4.62637 6.02374 5.32443 5.3254C6.02276 4.62735 6.8404 4.27832 7.77734 4.27832H32.2215C33.1585 4.27832 33.9761 4.62735 34.6744 5.3254C35.3725 6.02374 35.7215 6.84138 35.7215 7.77832V32.2225C35.7215 33.1594 35.3725 33.9771 34.6744 34.6754C33.9761 35.3735 33.1585 35.7225 32.2215 35.7225H7.77734ZM7.77734 32.2225H32.2215V7.77832H7.77734V32.2225Z" fill="#7056E3"/></svg>
           </div>
           <div class="lp-feature-card__content">
-            <h2 class="lp-feature-card__title">Automated Lead Capture</h2>
-            <p class="lp-feature-card__body">Our websites come with marketing automation. We integrate smart capture forms that don't just sit there — they instantly notify you and organize your prospects for easy follow-ups.</p>
+            <h2 class="lp-feature-card__title">Growth-Ready Strategy</h2>
+            <p class="lp-feature-card__body">We build marketing automations and offer training to help you scale. We don't just hand you a login; we sit down with you to ensure your digital presence is actually moving your bottom line.</p>
           </div>
         </div>
 
         <div class="lp-feature-card">
           <div class="lp-feature-card__badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M33.7208 19.9171C33.2805 19.9171 32.8949 19.7619 32.5641 19.4516C32.2336 19.1416 32.0312 18.7412 31.957 18.2504C31.5681 15.5559 30.4015 13.2365 28.457 11.2921C26.5126 9.34761 24.1931 8.18094 21.4987 7.79205C21.0079 7.71789 20.6074 7.50469 20.2974 7.15247C19.9872 6.80025 19.832 6.39775 19.832 5.94497C19.832 5.42414 20.007 5.00914 20.357 4.69997C20.707 4.39108 21.1154 4.25511 21.582 4.29205C25.2295 4.73233 28.3422 6.24427 30.9199 8.82789C33.4977 11.4115 35.0101 14.5246 35.457 18.1671C35.494 18.6337 35.3429 19.0421 35.0037 19.3921C34.6643 19.7421 34.2366 19.9171 33.7208 19.9171ZM26.5062 19.9171C26.1309 19.9171 25.7913 19.7887 25.4874 19.5321C25.1838 19.2754 24.9608 18.9176 24.8183 18.4587C24.5588 17.6346 24.119 16.9077 23.4987 16.2783C22.8784 15.6486 22.1423 15.2041 21.2904 14.945C20.8468 14.8061 20.4929 14.5829 20.2287 14.2754C19.9643 13.9682 19.832 13.6294 19.832 13.2591C19.832 12.6766 20.0311 12.2077 20.4291 11.8525C20.8274 11.4975 21.2812 11.3708 21.7904 11.4725C23.4001 11.8605 24.7933 12.6404 25.9699 13.8121C27.1466 14.984 27.9294 16.3662 28.3183 17.9587C28.4386 18.4679 28.3109 18.9216 27.9354 19.32C27.5598 19.718 27.0834 19.9171 26.5062 19.9171Z" fill="#CAB2FF"/><path d="M34.0481 35.8888C30.4592 35.8888 26.8731 35.0833 23.2898 33.4722C19.7065 31.8611 16.4194 29.5672 13.4285 26.5905C10.438 23.6136 8.13715 20.3265 6.52604 16.7292C4.91493 13.132 4.10938 9.53897 4.10938 5.95008C4.10938 5.38563 4.27465 4.938 4.60521 4.60716C4.93604 4.27661 5.38188 4.11133 5.94271 4.11133H13.1369C13.5366 4.11133 13.8842 4.24786 14.1798 4.52091C14.4753 4.79397 14.6741 5.12966 14.776 5.52799L15.996 11.7955C16.0344 12.1727 16.0166 12.522 15.9427 12.8434C15.8685 13.1651 15.746 13.4138 15.5752 13.5897L11.2202 18.028C11.8408 19.1205 12.5399 20.1644 13.3177 21.1597C14.0955 22.1552 14.9612 23.1205 15.9148 24.0555C16.8592 25.0277 17.8408 25.9074 18.8594 26.6947C19.8777 27.4816 20.924 28.1761 21.9981 28.778L26.3869 24.4167C26.6277 24.1576 26.898 23.9816 27.1977 23.8888C27.4974 23.7963 27.792 23.7779 28.0815 23.8334L34.4148 25.2222C34.814 25.3333 35.1591 25.549 35.4502 25.8692C35.7413 26.1895 35.8869 26.548 35.8869 26.9447V34.0555C35.8869 34.6163 35.7216 35.0622 35.391 35.393C35.0602 35.7236 34.6126 35.8888 34.0481 35.8888ZM9.52604 14.778L12.4702 11.8055L11.6102 7.61133H7.72021C7.80354 8.80577 7.98188 9.96313 8.25521 11.0834C8.52826 12.2037 8.95188 13.4352 9.52604 14.778ZM25.3035 30.5001C26.3685 30.9815 27.5052 31.3773 28.7135 31.6876C29.9219 31.9979 31.1463 32.2038 32.3869 32.3055V32.3334V28.3334L28.2202 27.4447L25.3035 30.5001Z" fill="#7056E3"/></svg>
           </div>
           <div class="lp-feature-card__content">
-            <h2 class="lp-feature-card__title">Growth-Ready Strategy</h2>
-            <p class="lp-feature-card__body">We build marketing automations and offer training to help you scale. We don't just hand you a login; we sit down with you to ensure your digital presence is actually moving your bottom line.</p>
+            <h2 class="lp-feature-card__title">Automated Lead Capture</h2>
+            <p class="lp-feature-card__body">Our websites come with marketing automation. We integrate smart capture forms that don't just sit there — they instantly notify you and organize your prospects for easy follow-ups.</p>
           </div>
         </div>
 
@@ -120,13 +122,13 @@ const jsonLd = {
         <!-- LEFT: photo + video CTA -->
         <div class="lp-social__left">
           <div class="lp-social__media">
-            <img src="/img/alex-video-thumb.avif" alt="Alex Nelson, Owner of Midnight Coffee" loading="lazy">
+            <img src="/img/midnight-alex.webp" alt="Alex Nelson, Owner of Midnight Coffee" loading="lazy">
           </div>
           <button class="lp-social__video-link" data-video-open>
             <span class="lp-social__video-play" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l16 8-16 8V4z"/></svg>
             </span>
-            Watch Alex's Story
+            Watch Alex's Video Review
           </button>
         </div>
 
@@ -136,11 +138,11 @@ const jsonLd = {
             <path d="M0 28V17.111C0 7.481 5.926 1.963 17.778 0l2.37 3.852C14.42 5.037 11.26 8.074 10.667 13.333H18V28H0ZM22 28V17.111C22 7.481 27.926 1.963 39.778 0l2.37 3.852C36.42 5.037 33.26 8.074 32.667 13.333H40V28H22Z" fill="#333"/>
           </svg>
           <blockquote class="lp-testimonial__quote">
-            The team at InstaSite was organized, creative, and easy to work with. They nailed our brand vision with a clean, modern site that truly feels like Midnight Coffee. Communication was fast, timelines were clear, and every edit was handled with care. We're proud to send customers to our site now — highly recommend.
+            The team at Luma Studios was organized, creative, and easy to work with. They nailed our brand vision with a clean, modern site that truly feels like Midnight Coffee. Communication was fast, timelines were clear, and every edit was handled with care. We're proud to send customers to our site now — highly recommend.
           </blockquote>
           <hr class="lp-social__divider">
           <div class="lp-testimonial__author">
-            <img src="/img/alex-small.png" alt="Alex Nelson" class="lp-testimonial__avatar" width="48" height="48" loading="lazy">
+            <img src="/img/alex-small.webp" alt="Alex Nelson" class="lp-testimonial__avatar" width="48" height="48" loading="lazy">
             <div>
               <p class="lp-testimonial__name">Alex Nelson</p>
               <p class="lp-testimonial__role">Owner — Midnight Coffee</p>
@@ -193,7 +195,7 @@ const jsonLd = {
           </ul>
         </div>
         <div class="lp-autopilot__img">
-          <img src="/img/instasite/marketing.png" alt="Marketing automation dashboard for local businesses" loading="lazy">
+          <img src="/img/instasite/marketing.webp" alt="Marketing automation dashboard for local businesses" loading="lazy">
         </div>
       </div>
     </div>
@@ -252,70 +254,67 @@ const jsonLd = {
           <span class="line_centr_lef"></span>
           <h2 class="lp-title">Recent Projects</h2>
           <span class="line_centr_right">
-            <img src="/img/cube_3d.png" alt="" class="lp-projects__cube" width="64" aria-hidden="true" loading="lazy">
+            <img src="/img/cube_3d.webp" alt="" class="lp-projects__cube" width="64" aria-hidden="true" loading="lazy">
           </span>
         </div>
         <p class="lp-desc">We don't just design for looks — we design for results. Here's a peek at some of our recent projects and the custom sites we built to help these businesses level up their marketing.</p>
       </div>
       <div class="lp-projects__grid">
 
-        <!-- ROW 1: image left, card right -->
         <div class="lp-project-item">
           <div class="lp-project-item__img">
-            <img src="/img/instasite/jvincent.png" alt="J Vincent Concrete website" loading="lazy">
+            <img src="/img/instasite/jvincent.webp" alt="J Vincent Concrete website" loading="lazy">
+            <a href="https://jvincentconcrete.com" class="lp-project-item__overlay" target="_blank" rel="noopener">
+              <span class="lp-project-item__visit">Visit Site <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
           </div>
           <div class="lp-project-item__card">
-            <svg class="lp-project-item__quote-mark" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.0769 0C3.76923 0.669145 0 4.53532 0 11.0781V20H11.5385V9.88848H7.15385C7.15385 6.9145 8.23077 5.42751 11.0769 4.75837V0ZM26.5385 0C19.2308 0.669145 15.4615 4.53532 15.4615 11.0781V20H27V9.88848H22.6154C22.6154 6.9145 23.6923 5.42751 26.5385 4.75837V0Z" fill="#666666"/></svg>
             <h3 class="lp-project-item__name">J Vincent Concrete</h3>
-            <p class="lp-project-item__quote">JVincent Concrete Contractors Inc. is greater Philadelphia's premier stamped concrete contractor specializing in commercial and residential stamped concrete patios, sidewalks, pool decks, steps and driveways. Serving Montgomery County and beyond for 20+ years including Pottstown, Collegeville, Royersford, etc</p>
-            <div class="lp-project-item__attribution">
-              <p class="lp-project-item__author">Michelle Salamone</p>
-              <p class="lp-project-item__role">Co-Owner</p>
+            <p class="lp-project-item__quote">The guys at Luma helped us design an amazing website without any upfront costs. We are happy with the design plus they built and launched it for us in just two weeks. Now we don't have to worry about maintenance, hosting, or updates - it's all included in our plan. Love it!</p>
+            <div class="lp-project-item__footer">
+              <div class="lp-project-item__attribution">
+                <p class="lp-project-item__author">Michelle Salamone</p>
+                <p class="lp-project-item__role">Co-Owner</p>
+              </div>
             </div>
-            <a href="https://jvincentconcrete.com" class="lp-project-item__url" target="_blank" rel="noopener">
-              jvincentconcrete.com
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
           </div>
         </div>
 
-        <!-- ROW 2: card left, image right -->
-        <div class="lp-project-item lp-project-item--reverse">
-          <div class="lp-project-item__card">
-            <svg class="lp-project-item__quote-mark" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.0769 0C3.76923 0.669145 0 4.53532 0 11.0781V20H11.5385V9.88848H7.15385C7.15385 6.9145 8.23077 5.42751 11.0769 4.75837V0ZM26.5385 0C19.2308 0.669145 15.4615 4.53532 15.4615 11.0781V20H27V9.88848H22.6154C22.6154 6.9145 23.6923 5.42751 26.5385 4.75837V0Z" fill="#666666"/></svg>
-            <h3 class="lp-project-item__name">Boxes Creek Farm</h3>
-            <p class="lp-project-item__quote">InstaSite built us a beautiful website that perfectly captures the charm of our venue. No upfront costs, fast turnaround, and they handled everything from design to launch. Hosting, updates, and maintenance are all taken care of, so we don't have to worry about a thing.</p>
-            <div class="lp-project-item__attribution">
-              <p class="lp-project-item__author">M</p>
-              <p class="lp-project-item__role">Owner</p>
-            </div>
-            <a href="https://boxescreekfarm.com" class="lp-project-item__url" target="_blank" rel="noopener">
-              boxescreekfarm.com
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="lp-project-item__img">
-            <img src="/img/instasite/boxescreek.png" alt="Boxes Creek Farm website" loading="lazy">
-          </div>
-        </div>
-
-        <!-- ROW 3: image left, card right -->
         <div class="lp-project-item">
           <div class="lp-project-item__img">
-            <img src="/img/instasite/midnightcoffee.png" alt="Midnight Coffee website" loading="lazy">
+            <img src="/img/instasite/boxescreek.webp" alt="Boxes Creek Farm website" loading="lazy">
+            <a href="https://boxescreekfarm.com" class="lp-project-item__overlay" target="_blank" rel="noopener">
+              <span class="lp-project-item__visit">Visit Site <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
           </div>
           <div class="lp-project-item__card">
-            <svg class="lp-project-item__quote-mark" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M11.0769 0C3.76923 0.669145 0 4.53532 0 11.0781V20H11.5385V9.88848H7.15385C7.15385 6.9145 8.23077 5.42751 11.0769 4.75837V0ZM26.5385 0C19.2308 0.669145 15.4615 4.53532 15.4615 11.0781V20H27V9.88848H22.6154C22.6154 6.9145 23.6923 5.42751 26.5385 4.75837V0Z" fill="#666666"/></svg>
-            <h3 class="lp-project-item__name">Midnight Coffee</h3>
-            <p class="lp-project-item__quote">The team at InstaSite was organized, creative, and easy to work with. They nailed our brand vision with a clean, modern site that truly feels like Midnight Coffee. Communication was fast, timelines were clear, and every edit was handled with care. We're proud to send customers to our site now — highly recommend.</p>
-            <div class="lp-project-item__attribution">
-              <p class="lp-project-item__author">Alex Nelson</p>
-              <p class="lp-project-item__role">Owner</p>
+            <h3 class="lp-project-item__name">Boxes Creek Farm</h3>
+            <p class="lp-project-item__quote">Luma Studios built us a beautiful website that perfectly captures the charm of our venue. No upfront costs, fast turnaround, and they handled everything from design to launch. Hosting, updates, and maintenance are all taken care of, so we don't have to worry about a thing.</p>
+            <div class="lp-project-item__footer">
+              <div class="lp-project-item__attribution">
+                <p class="lp-project-item__author">Mary Lansborough</p>
+                <p class="lp-project-item__role">Marketing Manager</p>
+              </div>
             </div>
-            <a href="https://midnight-coffee.com" class="lp-project-item__url" target="_blank" rel="noopener">
-              midnight-coffee.com
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="lp-project-item">
+          <div class="lp-project-item__img">
+            <img src="/img/instasite/midnightcoffee.webp" alt="Midnight Coffee website" loading="lazy">
+            <a href="https://midnight-coffee.com" class="lp-project-item__overlay" target="_blank" rel="noopener">
+              <span class="lp-project-item__visit">Visit Site <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </a>
+          </div>
+          <div class="lp-project-item__card">
+            <h3 class="lp-project-item__name">Midnight Coffee</h3>
+            <p class="lp-project-item__quote">The team at Luma was organized, creative, and easy to work with. They nailed our brand vision with a clean, modern site that truly feels like Midnight Coffee. Communication was fast, timelines were clear, and every edit was handled with care. We're proud to send customers to our site now — highly recommend.</p>
+            <div class="lp-project-item__footer">
+              <div class="lp-project-item__attribution">
+                <p class="lp-project-item__author">Alex Nelson</p>
+                <p class="lp-project-item__role">Owner</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -349,60 +348,62 @@ const jsonLd = {
           <hr class="lp-plan-card__divider">
           <ul class="lp-plan-card__features">
             <li class="lp-plan-card__feature">
-              <button class="lp-plan-card__feature-toggle" aria-expanded="false">
+              <button class="lp-plan-card__feature-toggle" aria-expanded="true">
                 Custom-Designed Website
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Up to five pages and one lead capture form connected to a CRM of your choice.</div>
+              <div class="lp-plan-card__feature-body is-open">Your business is unique, and your website should be, too. We move beyond generic templates to craft custom-built digital experiences tailored specifically to your brand identity and goals. Sites on our Standard plan include up to five pages and one lead capture form connected to a CRM of your choice.
+
+</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Dedicated Project Manager
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Your primary point of contact throughout the development process.</div>
+              <div class="lp-plan-card__feature-body">Benefit from the personalized attention of a dedicated project manager who will be your primary point of contact throughout the development process. Your project manager ensures your project stays on track, coordinates between our team and yours, and keeps you informed of progress every step of the way.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Unlimited Revisions &amp; Updates
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Post-launch content updates turned around within two days.</div>
+              <div class="lp-plan-card__feature-body">We offer unlimited revisions and updates post-launch to ensure your site remains aligned with your evolving business needs, ensuring your digital presence continues to engage and impress your audience. Just ping your dedicated PM with any update requests.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 SEO Audit &amp; Optimization
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Technical SEO strategies implemented prior to launch.</div>
+              <div class="lp-plan-card__feature-body">Prior to launching your site, we implement comprehensive technical SEO strategies to lay the foundation for your website's visibility in search engines. This includes optimizing site structure, improving load times, and ensuring your site is properly indexed, setting the stage for future SEO efforts.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Mobile Optimization
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Fully responsive with touch-friendly navigation.</div>
+              <div class="lp-plan-card__feature-body">With a significant portion of internet traffic coming from mobile devices, we ensure your website is fully optimized for mobile users. This includes responsive design and touch-friendly navigation, offering a seamless experience across all devices.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Pre-launch QA Testing
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Tested across Chrome, Firefox, and Safari.</div>
+              <div class="lp-plan-card__feature-body">Our quality assurance process includes extensive testing across a variety of browsers to ensure your site delivers a consistent and flawless user experience, regardless of how your audience accesses it. From Chrome to Firefox, and Safari, we've got it covered.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Secure Hosting
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Fast loading, robust security, reliable uptime.</div>
+              <div class="lp-plan-card__feature-body">Enjoy the peace of mind that comes with premium secure hosting. Our hosting solutions offer fast loading times, robust security measures to protect your site and data, and reliable uptime to ensure your website is always available to your customers.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Advanced SEO Link Building Add-On
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Adds $100–$150/month.</div>
+              <div class="lp-plan-card__feature-body">Take advantage of our exclusive link-building program designed to enhance your site's authority and improve search engine rankings. By strategically acquiring high-quality backlinks from reputable sources, we can significantly boost your SEO efforts and drive more organic traffic to your site. This is an add-on, priced individually for each customer (adds between $100-150 per month).</div>
             </li>
           </ul>
         </div>
@@ -424,49 +425,49 @@ const jsonLd = {
                 Everything in Standard
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">All Standard plan features included.</div>
+              <div class="lp-plan-card__feature-body">Our Growth plan includes all the features of the Standard plan, laying a solid foundation for additional features to help you grow your business and reach a larger audience.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Marketing Automation
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Lead-capture forms, automated email &amp; SMS sequences via Nutshell. Nutshell from $25/month (not included).</div>
+              <div class="lp-plan-card__feature-body">Stop letting manual tasks slow you down. We leverage Nutshell to build custom lead-capture forms, automated follow-up emails, and SMS sequences that trigger the moment a prospect engages. From multi-stage drip campaigns to instant notifications, we ensure your brand stays top-of-mind without you having to lift a finger.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Sales Pipeline Setup
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Customizable sales pipeline synced with Nutshell CRM to track every prospect in real-time.</div>
+              <div class="lp-plan-card__feature-body">Organization is the key to conversion. We design and deploy a highly customizable sales pipeline tailored to your specific workflow. By syncing your website directly with your Nutshell CRM, we help you track every prospect’s journey in real-time. We eliminate the guesswork and ensure no lead ever slips through the cracks.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 1-on-1 Systems Training
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Comprehensive training for you and your team.</div>
+              <div class="lp-plan-card__feature-body">Technology is only as powerful as the people using it. We provide comprehensive, one-on-one training for you and your team to ensure you’re confident managing your new ecosystem. We’ll show you exactly how your website and sales pipeline work in tandem to nurture leads, manage campaigns, and drive revenue—leaving you fully empowered to own your growth.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Built-in Appointment Scheduler
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Integrated booking system directly through your website.</div>
+              <div class="lp-plan-card__feature-body">Simplify the process of scheduling appointments with an integrated booking system. This feature is essential for businesses that require appointments, allowing customers to book their own slots according to availability directly through your website, streamlining operations and improving customer satisfaction.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Chat Integration
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">Live chat for instant visitor engagement and improved conversions.</div>
+              <div class="lp-plan-card__feature-body">Enhance your customer service and engagement by integrating chat functionality into your website. This feature allows visitors to get instant answers to their questions, improving user experience and increasing the likelihood of conversion.</div>
             </li>
             <li class="lp-plan-card__feature">
               <button class="lp-plan-card__feature-toggle" aria-expanded="false">
                 Integrated Content Management
                 <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="lp-plan-card__feature-body">CMS setup for blogs, image galleries, or other regularly updated content.</div>
+              <div class="lp-plan-card__feature-body">If your site requires a dynamic content management system (CMS) for blogs or other regularly updated content, we'll set up and customize a CMS to fit your needs. This enables you to easily manage and update your site's content, keeping it fresh and engaging for your visitors.</div>
             </li>
           </ul>
         </div>
@@ -513,13 +514,11 @@ const jsonLd = {
         <!-- RIGHT: form card -->
         <div class="lp-lead__form-wrap">
           <!-- Floating cube decoration (same as homepage hero) -->
-          <img src="/img/cube_3d.png" alt="" class="lp-lead__cube" width="80" loading="lazy" aria-hidden="true">
+          <img src="/img/cube_3d.webp" alt="" class="lp-lead__cube" width="80" loading="lazy" aria-hidden="true">
           <!-- Background border box decoration -->
           <div class="lp-lead__card-deco" aria-hidden="true"></div>
 
           <div class="lp-lead__form-inner" id="is-form-step">
-            <h3 class="lp-lead__form-title">Let's Get Started</h3>
-            <p class="lp-lead__form-disc">We'll never share your info. All fields are required.</p>
             <form id="is-lead-form" novalidate class="form_contact_go">
               <div class="row_form_inp grid grid-cols-2">
                 <div class="form_group">
@@ -584,16 +583,16 @@ const jsonLd = {
   <section class="lp-faq dark_bg">
     <div class="container">
       <div class="headint_sec">
-        <h2 class="title_section text-center">FAQs</h2>
+        <h2 class="title_section text-center">Managed Websites FAQs</h2>
       </div>
       <div class="wrap_faqs mx-auto js-accordion lp-faq__wrap">
         <div class="item_faq js-accordion__group">
           <div class="faq_heading js-accordion__menu">
-            How's InstaSite different from other web studios?
+            How's Luma Studios different from other web studios?
             <span class="arrow_toggle"></span>
           </div>
           <div class="descr_item_faq js-accordion__content">
-            <div class="in_to_descr_fq">InstaSite stands out by offering a unique subscription model. Unlike traditional agencies that charge a large upfront sum, we provide services for a low monthly fee — covering design, development, secure hosting, and unlimited updates.</div>
+            <div class="in_to_descr_fq">Luma Studios stands out by offering a unique subscription model. Unlike traditional agencies that charge a large upfront sum, we provide services for a low monthly fee — covering design, development, secure hosting, and unlimited updates.</div>
           </div>
         </div>
         <div class="item_faq js-accordion__group">
@@ -684,7 +683,7 @@ const jsonLd = {
         src=""
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
-        title="InstaSite client testimonial"
+        title="Luma Studios client testimonial"
       ></iframe>
     </div>
   </div>

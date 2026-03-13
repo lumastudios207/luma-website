@@ -61,7 +61,7 @@ a:not(.no_df_transition),button,.link_proj:before,.sel_rad_check,
 .button_clos_rem path,
 .close_button,
 .transition {
-	transition: all .25s;
+	transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 }
 .flex {
 	display: -webkit-box;
@@ -322,7 +322,7 @@ form {
 	right: 0;
 	bottom: 0;
 	width: 0;
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 }
 .btn_primary.smaller {
 	padding: 19px 23px;
@@ -934,7 +934,7 @@ form {
 	transform: translateY(10px);
 	opacity: 0;
 	visibility: hidden;
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 }
 .fadeInUp.is-inview {
 	transform: translateY(0);
@@ -944,7 +944,7 @@ form {
 }
 .decor_team_squar {
 	transform: translate(-40px,40px);
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 }
 .in_to_team_wrp.is-inview .decor_team_squar {
 	transform: translate(0,0);
@@ -1050,7 +1050,7 @@ form {
 }
 .item_skill_frm label:active {
 	transform: scale(.96);
-	transition: all .2s;
+	transition: color .2s, background-color .2s, border-color .2s, opacity .2s, transform .2s, box-shadow .2s;
 }
 .item_skill_frm label:hover .border_radio_sel,
 .item_skill_frm label input:checked ~ span {
@@ -1071,10 +1071,10 @@ form {
 	border-radius: 100px;
 	transform: translateX(-100%);
 	overflow: hidden;
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 }
 .text_sel_g {
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 }
 .border_radio_sel {
 	content: '';
@@ -1128,7 +1128,7 @@ form {
 	height: 1px;
 	bottom: -1px;
 	background: #FFFC10;
-	transition: all .3s;
+	transition: color .3s, background-color .3s, border-color .3s, opacity .3s, transform .3s, box-shadow .3s;
 	width: 0;
 }
 .item_tab_g.current:before {
@@ -1207,7 +1207,7 @@ textarea.form_control {
 	width: 0;
 	background: #FFFC10;
 	height: 1px;
-	transition: all .3s;
+	transition: color .3s, background-color .3s, border-color .3s, opacity .3s, transform .3s, box-shadow .3s;
 }
 .form_control:focus + .underline_inp {
 	width: 100%;
@@ -1842,7 +1842,7 @@ textarea.form_control {
 	background: rgba(33,33,33,.95);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-	transition: all .34s;
+	transition: color .34s, background-color .34s, border-color .34s, opacity .34s, transform .34s, box-shadow .34s;
 }
 .header_scroll.is_visible {
 	transform: translateY(0) !important;
@@ -2213,7 +2213,7 @@ textarea.form_control {
 	transform: rotate(0);
 	opacity: 1;
 	visibility: visible;
-	transition: all 1s;
+	transition: color 1s, background-color 1s, border-color 1s, opacity 1s, transform 1s, box-shadow 1s;
 }
 .item_quote_go:nth-child(2) .icon_quote.is-visible svg {
 	transition-delay: .2s;
@@ -2313,7 +2313,7 @@ font-style: normal;
 }
 .wrap_img_ivan.is-visible:after {
 	transform: translate(0,0);
-	transition: all 1s;
+	transition: color 1s, background-color 1s, border-color 1s, opacity 1s, transform 1s, box-shadow 1s;
 }
 .descr_about_ivan {
 	width: calc(100% - 336px);
@@ -2600,7 +2600,7 @@ html.lenis body {
 	inset: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 }
 .text_proj_inf {
 	background: #000;
@@ -2608,7 +2608,7 @@ html.lenis body {
 	margin-left: 242px;
 	padding: 38px 40px;
 	padding-right: 35px;
-	transition: all .5s;
+	transition: color .5s, background-color .5s, border-color .5s, opacity .5s, transform .5s, box-shadow .5s;
 	transform: translateX(100%);
 }
 .descr_proj_it {
@@ -2949,7 +2949,7 @@ button.btn_anim {
 	width: 0;
 	background: #FFFC10;
 	height: 1px;
-	transition: all .4s;
+	transition: color .4s, background-color .4s, border-color .4s, opacity .4s, transform .4s, box-shadow .4s;
 }
 .container.bigger {
 	width: calc(1584px + 32px);
@@ -3166,13 +3166,13 @@ button.btn_anim {
 	.video_playing .video_play_inf {
 		opacity: 0;
 		visibility: hidden;
-		transition: all .25s;
+		transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 	}
 	.video_playing .video-js,
 	.video_playing .wrap_video_inside {
 		opacity: 1;
 		visibility: visible;
-		transition: all .25s;
+		transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 	}
 }
 .rect_line {
@@ -3180,13 +3180,13 @@ button.btn_anim {
 }
 .play_icon.is-visible .rect_line {
 	opacity: 1;
-	transition: all 1s;
+	transition: color 1s, background-color 1s, border-color 1s, opacity 1s, transform 1s, box-shadow 1s;
 	transition-delay: .2s;
 }
 .arrow_ungl_li,
 .circle_play_g {
 	transform-origin: center center;
-	transition: all 1s;
+	transition: color 1s, background-color 1s, border-color 1s, opacity 1s, transform 1s, box-shadow 1s;
 }
 .wrap_blk_video:hover .circle_play_g {
 	transform: scale(1.1);
@@ -3221,7 +3221,7 @@ button.btn_anim {
 	padding-bottom: 40px;
 	opacity: 0;
 	visibility: hidden;
-	transition: all .34s;
+	transition: color .34s, background-color .34s, border-color .34s, opacity .34s, transform .34s, box-shadow .34s;
 }
 .header_top.sticky {
 	position: fixed;
@@ -3232,7 +3232,7 @@ button.btn_anim {
 	background: rgba(33,33,33,.95);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-	transition: all .34s;
+	transition: color .34s, background-color .34s, border-color .34s, opacity .34s, transform .34s, box-shadow .34s;
 }
 .form_contact {
 	margin: auto;
@@ -3370,7 +3370,7 @@ button.btn_anim {
 	position: absolute;
 	background: #000000;
 	inset: 0;
-	transition: all .25s;
+	transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -3383,7 +3383,7 @@ button.btn_anim {
 	width: 28px;
 	height: 28px;
 	z-index: 1;
-	transition: all .25s;
+	transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 	opacity: 0;
 	visibility: hidden;
 	transform: scale(.5);
@@ -3434,7 +3434,7 @@ button.btn_anim {
 	height: 26px;
 	background: rgba(255,255,255,.09);
 	color: rgba(255,255,255,.7);
-	transition: all .25s;
+	transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 }
 .item_badg_g:hover {
 /*	color: rgba(255,255,255,1);*/
@@ -3507,7 +3507,7 @@ button.btn_anim {
 	left: 16px;
 	background: #212121;
 	z-index: -1;
-	transition: all .25s;
+	transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s, box-shadow .25s;
 }
 .image_team_wrap:hover:after {
 	transform: translate(4px,-4px);
@@ -3974,7 +3974,7 @@ button.btn_anim {
 		top: 3px;
 	}
 	.contribut_titl {
-		font-size: 10px;
+		font-size: 12px;
 		line-height: 22px;
 		letter-spacing: 0.5px;
 		margin-bottom: 8px;
@@ -5883,7 +5883,7 @@ button.btn_anim {
 	}
 	.info_quot_G.foorm_quote {
 		margin-top: 43px;
-		font-size: 11px;
+		font-size: 12px;
 		padding-top: 8px;
 	}
 	.row_form_inp {
@@ -6369,7 +6369,7 @@ button.btn_anim {
 		padding: 50px 0;
 	}
 	.error_message {
-		font-size: 11px;
+		font-size: 12px;
 		line-height: 22px;
 	}
 	.decor_about {
@@ -6805,8 +6805,8 @@ button.btn_anim {
 		margin-top: 31px;
 	}
 	.info_tb_g {
-		font-size: 8px;
-		line-height: 10px;
+		font-size: 12px;
+		line-height: 14px;
 		top: -15px;
 		right: 0;
 		padding: 3.5px 4.5px;

@@ -73,6 +73,7 @@ document.querySelectorAll('[data-video-open]').forEach((btn) => {
       iframe.src = VIMEO_URL;
       modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
+      (window as any).__lenis?.stop();
     }
   });
 });
@@ -82,6 +83,7 @@ function closeModal() {
     modal.classList.remove('is-open');
     iframe.src = '';
     document.body.style.overflow = '';
+    (window as any).__lenis?.start();
   }
 }
 

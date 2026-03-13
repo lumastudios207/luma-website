@@ -53,9 +53,6 @@ const {
   <link rel="preload" href="/fonts/MaisonNeueDemiBold.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="/fonts/MessinaSerif-SemiBold.woff" as="font" type="font/woff" crossorigin>
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
   <!-- Google Tag Manager -->
   <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -63,14 +60,37 @@ const {
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TS5L8JQ');</script>
 
-  <!-- Crisp Chat -->
-  <script is:inline>window.$crisp=[];window.CRISP_WEBSITE_ID="a5272084-25f6-41f0-ab66-9cf5533af2e4";(function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-
   <!-- Twitter Pixel -->
   <script is:inline>!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');twq('config','ojgkx');</script>
 
-  <!-- reCAPTCHA v3 -->
-  <script is:inline src="https://www.google.com/recaptcha/api.js?render=6Led6ogsAAAAAFaFaM50DpZNy4glFZvN8fH-5yEX" async defer></script>
+  <!-- Crisp Chat (deferred until user interaction or 3s) -->
+  <script is:inline>
+  (function(){
+    var loaded=false;
+    function loadCrisp(){
+      if(loaded)return;loaded=true;
+      window.$crisp=[];window.CRISP_WEBSITE_ID="a5272084-25f6-41f0-ab66-9cf5533af2e4";
+      var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);
+    }
+    var events=["scroll","click","touchstart","mousemove","keydown"];
+    events.forEach(function(e){document.addEventListener(e,loadCrisp,{once:true,passive:true});});
+    setTimeout(loadCrisp,3000);
+  })();
+  </script>
+
+  <!-- reCAPTCHA v3 (deferred until user interaction or 3s) -->
+  <script is:inline>
+  (function(){
+    var loaded=false;
+    function loadRecaptcha(){
+      if(loaded)return;loaded=true;
+      var s=document.createElement("script");s.src="https://www.google.com/recaptcha/api.js?render=6Led6ogsAAAAAFaFaM50DpZNy4glFZvN8fH-5yEX";s.async=true;s.defer=true;document.head.appendChild(s);
+    }
+    var events=["scroll","click","touchstart","mousemove","keydown"];
+    events.forEach(function(e){document.addEventListener(e,loadRecaptcha,{once:true,passive:true});});
+    setTimeout(loadRecaptcha,3000);
+  })();
+  </script>
 
   <!-- JSON-LD Structured Data -->
   {jsonLd && (

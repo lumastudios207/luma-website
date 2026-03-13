@@ -33,9 +33,10 @@ window.addEventListener('scroll', () => {
 // --- Scroll-to links ---
 document.querySelectorAll('[data-scroll-to]').forEach((item) => {
   item.addEventListener('click', (e) => {
+    e.preventDefault();
     const href = (item as HTMLAnchorElement).getAttribute('href')?.replace(/\//g, '');
     if (href) {
-      lenis.scrollTo(href, { duration: 1.2, offset: -30 });
+      lenis.scrollTo(href, { duration: 2, offset: -30, easing: (t: number) => 1 - Math.pow(1 - t, 4) });
     }
   });
 });

@@ -21,7 +21,7 @@ const { quote, name, title, company, personImg, logoSrc, logoClass = '' } = Astr
               <path d="M0.492188 153.498L158.992 0.998047L1724 0.998047" stroke="#464646"/>
             </svg>
             <div class="quote_cub_bb">
-              <img src="/img/cube_3d.png" alt="" width="98" loading="lazy">
+              <img src="/img/cube_3d.webp" alt="" width="98" loading="lazy">
             </div>
           </div>
         </div>
@@ -40,11 +40,11 @@ const { quote, name, title, company, personImg, logoSrc, logoClass = '' } = Astr
               <path d="M451 1.49414H101L1 101.244" stroke="#464646"/>
             </svg>
             <div class={`image_logo_quot ${logoClass}`}>
-              <img src={logoSrc} alt={company}>
+              <img src={logoSrc} alt={company} loading="lazy">
             </div>
           </div>
           <div class="quote_image">
-            <img src={personImg} alt={name} class="img-responsive">
+            <img src={personImg} alt={name} class="img-responsive" loading="lazy">
           </div>
           <div class="info_quote_g">
             <div class="name_quote_g">{name}</div>
