@@ -517,7 +517,7 @@ const jsonLd = {
           <!-- Background border box decoration -->
           <div class="lp-lead__card-deco" aria-hidden="true"></div>
 
-          <div class="lp-lead__form-inner">
+          <div class="lp-lead__form-inner" id="is-form-step">
             <h3 class="lp-lead__form-title">Let's Get Started</h3>
             <p class="lp-lead__form-disc">We'll never share your info. All fields are required.</p>
             <form id="is-lead-form" novalidate class="form_contact_go">
@@ -557,9 +557,20 @@ const jsonLd = {
               <div class="lp-form__go">
                 <button type="submit" class="lp-form__submit">BOOK DISCOVERY SESSION</button>
               </div>
-              <div id="is-form-success" class="hidden">Thank you! Your submission has been received!</div>
               <div id="is-form-error" class="hidden">Oops! Something went wrong while submitting the form.</div>
             </form>
+          </div>
+          <div class="lp-lead__form-inner lp-lead__thanks hidden" id="is-form-thanks">
+            <div class="lp-lead__thanks-check" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#FFFC10"/>
+                <path d="M14 24l7 7 13-13" stroke="#161616" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="lp-lead__form-title">Thank You!</h3>
+            <p class="lp-lead__thanks-body">Your request has been received. We'll reach out within one business day to schedule your free discovery session.</p>
+            <p class="lp-lead__thanks-body">Keep an eye on your inbox — if you don't see our email, be sure to check your spam folder.</p>
+            <button type="button" class="lp-form__submit" id="is-form-reset">SUBMIT ANOTHER REQUEST</button>
           </div>
         </div>
 

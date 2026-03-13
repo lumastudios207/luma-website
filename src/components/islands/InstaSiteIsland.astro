@@ -97,16 +97,16 @@ document.addEventListener('keydown', (e) => {
 // LEAD CAPTURE FORM
 // =============================================
 const form = document.getElementById('is-lead-form') as HTMLFormElement | null;
-const successMsg = document.getElementById('is-form-success');
+const formStep = document.getElementById('is-form-step');
+const thanksStep = document.getElementById('is-form-thanks');
 const errorMsg = document.getElementById('is-form-error');
 
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const submitBtn = form.querySelector<HTMLButtonElement>('.is-form__submit');
+  const submitBtn = form.querySelector<HTMLButtonElement>('.lp-form__submit');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
 
-  if (successMsg) successMsg.classList.remove('is-visible');
-  if (errorMsg) errorMsg.classList.remove('is-visible');
+  if (errorMsg) errorMsg.classList.add('hidden');
 
   try {
     const token = await new Promise<string>((resolve) => {
@@ -133,11 +133,18 @@ form?.addEventListener('submit', async (e) => {
     if (!res.ok) throw new Error('Server error');
 
     form.reset();
-    if (successMsg) successMsg.classList.add('is-visible');
+    if (formStep) formStep.classList.add('hidden');
+    if (thanksStep) thanksStep.classList.remove('hidden');
   } catch {
-    if (errorMsg) errorMsg.classList.add('is-visible');
-  } finally {
-    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Book My Free Session'; }
+    if (errorMsg) errorMsg.classList.remove('hidden');
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'BOOK DISCOVERY SESSION'; }
   }
+});
+
+// Reset: go back to form
+document.getElementById('is-form-reset')?.addEventListener('click', () => {
+  if (thanksStep) thanksStep.classList.add('hidden');
+  if (formStep) formStep.classList.remove('hidden');
+  form?.reset();
 });
 </script>

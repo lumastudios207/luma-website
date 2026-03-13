@@ -120,10 +120,10 @@
   pointer-events: none;
   z-index: 0;
 }
-.lp-feature-card:nth-child(1) { --glow: #6CCBE8; }
-.lp-feature-card:nth-child(2) { --glow: #3A26A9; }
-.lp-feature-card:nth-child(3) { --glow: #6FC48E; }
-.lp-feature-card:nth-child(4) { --glow: #A26FC4; }
+.lp-feature-card:nth-child(1) { --glow: #6CCBE8; border-color: rgba(108, 203, 232, 0.15); }
+.lp-feature-card:nth-child(2) { --glow: #3A26A9; border-color: rgba(58, 38, 169, 0.22); }
+.lp-feature-card:nth-child(3) { --glow: #6FC48E; border-color: rgba(111, 196, 142, 0.15); }
+.lp-feature-card:nth-child(4) { --glow: #A26FC4; border-color: rgba(162, 111, 196, 0.15); }
 .lp-feature-card:hover {
   box-shadow: 0 0 60px rgba(0,0,0,0.5), 0 0 120px color-mix(in srgb, var(--glow) 25%, transparent);
 }
@@ -1008,17 +1008,44 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
-#is-form-success,
 #is-form-error {
   margin-top: 14px;
   font-size: 14px;
   text-align: center;
-}
-#is-form-success {
-  color: #4ade80;
-}
-#is-form-error {
   color: #f87171;
+}
+
+/* ---- THANK YOU STATE ---- */
+.lp-lead__thanks {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+}
+.lp-lead__thanks.hidden {
+  display: none !important;
+}
+.lp-lead__thanks-check {
+  margin-bottom: 24px;
+}
+.lp-lead__thanks .lp-lead__form-title {
+  margin-bottom: 20px;
+}
+.lp-lead__thanks-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #aaa;
+  margin: 0 0 16px;
+  max-width: 380px;
+}
+.lp-lead__thanks-body:last-of-type {
+  margin-bottom: 32px;
+}
+.lp-lead__thanks .lp-form__submit {
+  width: auto;
+  padding: 14px 32px;
 }
 
 /* ---- FAQ SECTION WRAPPER ---- */
