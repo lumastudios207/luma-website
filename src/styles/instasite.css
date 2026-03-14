@@ -55,6 +55,44 @@ html:has(.landing_page),
   background: rgba(0, 0, 0, 0.72);
   z-index: 1;
 }
+/* Phone number bar — aligns with header, opposite the logo */
+.lp-hero__topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 51;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: calc(1104px + 32px);
+  margin: 0 auto;
+  padding: 0 16px;
+  pointer-events: none;
+}
+.lp-hero__phone {
+  pointer-events: auto;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.lp-hero__phone:hover,
+.lp-hero__phone:focus-visible {
+  color: #FFFC10;
+}
+.lp-hero__phone:active {
+  opacity: 0.8;
+}
+.lp-hero__phone svg {
+  flex-shrink: 0;
+}
+
 .lp-hero__content {
   position: relative;
   z-index: 2;
@@ -1201,6 +1239,9 @@ html:has(.landing_page),
   .landing_page .header_top .logo_desktop { display: block !important; }
   .landing_page .header_top .logo_mobile { display: none !important; }
 
+  .lp-hero__topbar { height: 60px; }
+  .lp-hero__phone { font-size: 13px; gap: 6px; }
+  .lp-hero__phone svg { width: 15px; height: 15px; }
   .lp-hero { min-height: 85svh; }
   .lp-hero__content { padding-top: 80px; padding-bottom: 50px; }
   .lp-hero__h1 { font-size: 32px; margin-bottom: 16px; }
