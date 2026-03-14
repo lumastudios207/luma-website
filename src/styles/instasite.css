@@ -74,12 +74,9 @@ html:has(.landing_page),
 .lp-hero__phone {
   pointer-events: auto;
   color: #fff;
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 500;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   transition: color 0.2s;
 }
 .lp-hero__phone:hover,
@@ -88,9 +85,6 @@ html:has(.landing_page),
 }
 .lp-hero__phone:active {
   opacity: 0.8;
-}
-.lp-hero__phone svg {
-  flex-shrink: 0;
 }
 
 .lp-hero__content {
@@ -1240,8 +1234,7 @@ html:has(.landing_page),
   .landing_page .header_top .logo_mobile { display: none !important; }
 
   .lp-hero__topbar { height: 60px; }
-  .lp-hero__phone { font-size: 13px; gap: 6px; }
-  .lp-hero__phone svg { width: 15px; height: 15px; }
+  .lp-hero__phone { font-size: 16px; }
   .lp-hero { min-height: 85svh; }
   .lp-hero__content { padding-top: 80px; padding-bottom: 50px; }
   .lp-hero__h1 { font-size: 32px; margin-bottom: 16px; }
