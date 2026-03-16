@@ -98,6 +98,15 @@ document.addEventListener('keydown', (e) => {
 // =============================================
 // LEAD CAPTURE FORM
 // =============================================
+// Pre-select plan radio when clicking a pricing card CTA
+document.querySelectorAll<HTMLAnchorElement>('.lp-plan-card__cta[data-plan]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const plan = link.dataset.plan;
+    const radio = document.querySelector<HTMLInputElement>(`input[name="plan"][value="${plan}"]`);
+    if (radio) radio.checked = true;
+  });
+});
+
 const form = document.getElementById('is-lead-form') as HTMLFormElement | null;
 const formStep = document.getElementById('is-form-step');
 const thanksStep = document.getElementById('is-form-thanks');
@@ -123,6 +132,7 @@ form?.addEventListener('submit', async (e) => {
       company: (form.querySelector<HTMLInputElement>('[name="company"]')?.value || '').trim(),
       email: (form.querySelector<HTMLInputElement>('[name="email"]')?.value || '').trim(),
       phone: (form.querySelector<HTMLInputElement>('[name="phone"]')?.value || '').trim(),
+      plan: (form.querySelector<HTMLInputElement>('[name="plan"]:checked')?.value || 'standard'),
       recaptchaToken: token,
     };
 

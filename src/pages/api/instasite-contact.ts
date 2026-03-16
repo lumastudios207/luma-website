@@ -9,7 +9,7 @@ const RECAPTCHA_SECRET = import.meta.env.RECAPTCHA_SECRET_KEY;
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
-    const { firstName, lastName, company, email, phone, recaptchaToken } = body;
+    const { firstName, lastName, company, email, phone, plan, recaptchaToken } = body;
 
     // Validation
     if (!firstName?.trim() || !lastName?.trim()) {
@@ -51,6 +51,7 @@ export const POST: APIRoute = async ({ request }) => {
         <p><strong>Company:</strong> ${company.trim()}</p>
         <p><strong>Email:</strong> ${email.trim()}</p>
         <p><strong>Phone:</strong> ${phone.trim()}</p>
+        <p><strong>Plan:</strong> ${plan === 'growth' ? 'Growth' : 'Standard'}</p>
         <hr>
         <p><em>Source: /managed-websites landing page</em></p>
         <p><em>reCAPTCHA score: ${recaptchaData.score}</em></p>

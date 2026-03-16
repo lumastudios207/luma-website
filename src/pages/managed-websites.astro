@@ -37,7 +37,7 @@ const jsonLd = {
        ============================================================ -->
   <section class="lp-hero">
     <video class="lp-hero__video" autoplay muted loop playsinline>
-      <source src="/img/House_Painting_Video.mp4" type="video/mp4">
+      <source src="/img/Downtown_Portland.mp4" type="video/mp4">
     </video>
     <div class="lp-hero__overlay"></div>
 
@@ -346,11 +346,11 @@ const jsonLd = {
         <div class="lp-plan-card">
           <p class="lp-plan-card__name">Standard</p>
           <div class="lp-plan-card__price">
-            <span class="lp-plan-card__amount" data-monthly="$295" data-annual="$265">$265</span>
+            <span class="lp-plan-card__amount" data-monthly="$199" data-annual="$179">$179</span>
             <span class="lp-plan-card__period">/ month</span>
           </div>
-          <span class="lp-plan-card__savings" data-savings="Save $360/year">Save $360/year</span>
-          <a href="#contact" class="lp-plan-card__cta" data-scroll-to>GET STARTED</a>
+          <span class="lp-plan-card__savings" data-savings="Save $240/year">Save $240/year</span>
+          <a href="#contact" class="lp-plan-card__cta" data-scroll-to data-plan="standard">GET STARTED</a>
           <hr class="lp-plan-card__divider">
           <ul class="lp-plan-card__features">
             <li class="lp-plan-card__feature">
@@ -419,11 +419,11 @@ const jsonLd = {
           <span class="lp-plan-card__badge">Most Popular</span>
           <p class="lp-plan-card__name">Growth</p>
           <div class="lp-plan-card__price">
-            <span class="lp-plan-card__amount" data-monthly="$395" data-annual="$355">$355</span>
+            <span class="lp-plan-card__amount" data-monthly="$299" data-annual="$269">$269</span>
             <span class="lp-plan-card__period">/ month</span>
           </div>
-          <span class="lp-plan-card__savings" data-savings="Save $480/year">Save $480/year</span>
-          <a href="#contact" class="lp-plan-card__cta" data-scroll-to>GET STARTED</a>
+          <span class="lp-plan-card__savings" data-savings="Save $360/year">Save $360/year</span>
+          <a href="#contact" class="lp-plan-card__cta" data-scroll-to data-plan="growth">GET STARTED</a>
           <hr class="lp-plan-card__divider">
           <ul class="lp-plan-card__features">
             <li class="lp-plan-card__feature">
@@ -559,8 +559,21 @@ const jsonLd = {
                   <span class="underline_inp"></span>
                 </div>
               </div>
+              <div class="lp-form__plan-select">
+                <p class="lp-form__plan-heading">I'm interested in</p>
+                <label class="lp-form__plan-label">
+                  <input type="radio" name="plan" value="standard" checked>
+                  <span class="lp-form__plan-radio"></span>
+                  Standard Plan
+                </label>
+                <label class="lp-form__plan-label">
+                  <input type="radio" name="plan" value="growth">
+                  <span class="lp-form__plan-radio"></span>
+                  Growth Plan
+                </label>
+              </div>
               <div class="lp-form__go">
-                <button type="submit" class="lp-form__submit">BOOK DISCOVERY SESSION</button>
+                <button type="submit" class="lp-form__submit">BOOK YOUR FREE SESSION</button>
               </div>
               <div id="is-form-error" class="hidden">Oops! Something went wrong while submitting the form.</div>
             </form>
