@@ -1219,6 +1219,9 @@ html:has(.landing_page),
   padding: 90px 0;
   overflow: hidden;
 }
+.lp-faq .faq_heading {
+  font-weight: 400;
+}
 .lp-faq .wrap_faqs {
   width: 100%;
   max-width: 860px;
@@ -1280,11 +1283,13 @@ html:has(.landing_page),
   .lp-lead__cube { top: -36px; right: -12px; width: 60px; }
 }
 @media (max-width: 767px) {
-  /* Show full logo (not just symbol) in hero header on mobile */
-  .landing_page .header_top .logo_desktop { display: block !important; }
-  .landing_page .header_top .logo_mobile { display: none !important; }
+  /* Show square icon (not full wordmark) in landing header on mobile */
+  .landing_page .header_top .logo_desktop { display: none !important; }
+  .landing_page .header_top .logo_mobile { display: block !important; }
+  /* Extra breathing room above logo */
+  .landing_page .header_top .in_to_header_go { padding-top: 4px; }
 
-  .lp-hero__topbar { height: 60px; }
+  .lp-hero__topbar { height: 60px; padding-top: 4px; }
   .lp-hero__phone { font-size: 16px; }
   .lp-hero { min-height: 85svh; }
   .lp-hero__content { padding-top: 80px; padding-bottom: 50px; }
@@ -1319,6 +1324,9 @@ html:has(.landing_page),
   .lp-lead__section-deco { display: none; }
   .lp-lead__h2 { font-size: 22px; }
   .lp-lead__form-title { font-size: 24px; }
+  /* "I'm interested in" on its own line, radio buttons inline below */
+  .lp-form__plan-heading { width: 100%; }
+  .lp-form__plan-select { gap: 16px; }
 
   /* Reduce section titles for mobile */
   .lp-title { font-size: 28px; }
