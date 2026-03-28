@@ -5,19 +5,32 @@ import GetStartCTA from '../components/ui/GetStartCTA.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Splitero Case Study — Luma Studios",
-  "description": "How Luma Studios helped Splitero with website design, illustrations, social media graphics, and infographics.",
-  "url": "https://lumastudios.co/splitero",
-  "author": { "@type": "Organization", "name": "Luma Studios" },
-  "about": { "@type": "Organization", "name": "Splitero" }
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "name": "Splitero Case Study — Luma Studios",
+      "description": "How Luma Studios helped Splitero with website redesign, blog illustrations, social media graphics, custom iconography, postcards, and infographics.",
+      "url": "https://lumastudios.co/splitero",
+      "author": { "@type": "Organization", "name": "Luma Studios" },
+      "about": { "@type": "Organization", "name": "Splitero" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lumastudios.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://lumastudios.co/projects" },
+        { "@type": "ListItem", "position": 3, "name": "Splitero", "item": "https://lumastudios.co/splitero" }
+      ]
+    }
+  ]
 };
 ---
 
 <PageLayout
-  title="Splitero Case Study | Luma Studios"
-  description="How Luma Studios helped Splitero with website redesign, blog illustrations, social media graphics, custom iconography, postcards, and infographics."
+  title="Splitero Web Design & Illustration Case Study | Luma Studios"
+  description="How Luma Studios helped Splitero with a full website redesign, blog illustrations, social media graphics, custom iconography, and infographics."
   canonicalUrl="https://lumastudios.co/splitero"
+  ogUrl="https://lumastudios.co/splitero"
   ogImage="https://lumastudios.co/img/og/og_image.jpg"
   jsonLd={jsonLd}
   headerVariant="case-study"

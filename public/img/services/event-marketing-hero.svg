@@ -1,0 +1,124 @@
+<svg width="580" height="400" viewBox="0 0 580 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1117"/>
+      <stop offset="100%" style="stop-color:#161920"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="580" height="400" fill="url(#bg)" rx="6"/>
+
+  <!-- Yellow glow -->
+  <circle cx="290" cy="180" r="180" fill="rgba(255,252,16,0.04)"/>
+
+  <!-- Event poster / flyer mock left -->
+  <rect x="40" y="28" width="220" height="310" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <!-- Poster header band -->
+  <rect x="40" y="28" width="220" height="80" rx="6" fill="rgba(255,252,16,0.08)"/>
+  <rect x="40" y="96" width="220" height="12" fill="rgba(255,252,16,0.08)"/>
+  <!-- Event title on poster -->
+  <rect x="56" y="44" width="140" height="16" rx="3" fill="rgba(255,252,16,0.4)"/>
+  <rect x="56" y="66" width="100" height="10" rx="2" fill="rgba(255,252,16,0.2)"/>
+  <!-- Poster body -->
+  <rect x="56" y="122" width="188" height="8" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="56" y="136" width="160" height="8" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="56" y="150" width="170" height="8" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <!-- Date block -->
+  <rect x="56" y="174" width="80" height="48" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="56" y="174" width="80" height="18" rx="4" fill="rgba(255,252,16,0.15)"/>
+  <text x="96" y="187" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,252,16,0.6)" text-anchor="middle">APRIL</text>
+  <text x="96" y="212" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.8)" text-anchor="middle">12</text>
+  <!-- Location -->
+  <rect x="148" y="174" width="96" height="48" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="156" y="182" width="56" height="7" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="156" y="194" width="72" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="156" y="206" width="60" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <!-- Divider -->
+  <line x1="56" y1="236" x2="240" y2="236" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <!-- Speakers / lineup -->
+  <rect x="56" y="248" width="188" height="7" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="56" y="261" width="150" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="56" y="274" width="170" height="7" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <!-- Register CTA -->
+  <rect x="56" y="296" width="188" height="28" rx="4" fill="rgba(255,252,16,0.15)" stroke="rgba(255,252,16,0.25)" stroke-width="1"/>
+  <rect x="100" y="306" width="100" height="8" rx="2" fill="rgba(255,252,16,0.4)"/>
+
+  <!-- Calendar view right -->
+  <rect x="280" y="28" width="260" height="200" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <!-- Calendar header -->
+  <rect x="280" y="28" width="260" height="36" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <rect x="280" y="52" width="260" height="12" fill="rgba(255,255,255,0.05)"/>
+  <text x="410" y="52" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="rgba(255,255,255,0.7)" text-anchor="middle">April 2026</text>
+  <text x="296" y="52" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.3)">‹</text>
+  <text x="524" y="52" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.3)">›</text>
+  <!-- Day headers -->
+  <text x="300" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" text-anchor="middle">M</text>
+  <text x="337" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" text-anchor="middle">T</text>
+  <text x="374" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" text-anchor="middle">W</text>
+  <text x="411" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" text-anchor="middle">T</text>
+  <text x="448" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" text-anchor="middle">F</text>
+  <text x="485" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" text-anchor="middle">S</text>
+  <text x="522" y="76" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)" text-anchor="middle">S</text>
+
+  <!-- Calendar days row 1 -->
+  <text x="448" y="98" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">1</text>
+  <text x="485" y="98" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">2</text>
+  <text x="522" y="98" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.25)" text-anchor="middle">3</text>
+  <!-- Row 2 -->
+  <text x="300" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">4</text>
+  <text x="337" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">5</text>
+  <text x="374" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">6</text>
+  <text x="411" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">7</text>
+  <text x="448" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">8</text>
+  <text x="485" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">9</text>
+  <text x="522" y="120" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.25)" text-anchor="middle">10</text>
+  <!-- Row 3 -->
+  <text x="300" y="142" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">11</text>
+  <!-- Day 12 highlighted -->
+  <circle cx="337" cy="135" r="13" fill="rgba(255,252,16,0.2)" stroke="rgba(255,252,16,0.4)" stroke-width="1.5"/>
+  <text x="337" y="142" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="rgba(255,252,16,0.9)" text-anchor="middle">12</text>
+  <text x="374" y="142" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">13</text>
+  <text x="411" y="142" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">14</text>
+  <text x="448" y="142" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">15</text>
+  <text x="485" y="142" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">16</text>
+  <text x="522" y="142" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.25)" text-anchor="middle">17</text>
+  <!-- Row 4 -->
+  <text x="300" y="164" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">18</text>
+  <text x="337" y="164" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">19</text>
+  <text x="374" y="164" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">20</text>
+  <text x="411" y="164" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">21</text>
+  <!-- Event bar -->
+  <rect x="429" y="155" width="110" height="16" rx="3" fill="rgba(79,195,247,0.15)" stroke="rgba(79,195,247,0.25)" stroke-width="1"/>
+  <rect x="434" y="160" width="72" height="6" rx="2" fill="rgba(79,195,247,0.4)"/>
+  <text x="522" y="164" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.25)" text-anchor="middle">24</text>
+  <!-- Row 5 -->
+  <text x="300" y="186" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">25</text>
+  <text x="337" y="186" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">26</text>
+  <text x="374" y="186" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">27</text>
+  <text x="411" y="186" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">28</text>
+  <text x="448" y="186" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">29</text>
+  <text x="485" y="186" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">30</text>
+
+  <!-- Email campaign stats -->
+  <rect x="280" y="244" width="120" height="94" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="296" y="264" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" letter-spacing="1">CAMPAIGN</text>
+  <text x="296" y="286" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="rgba(255,252,16,0.8)">68%</text>
+  <text x="296" y="302" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Open rate</text>
+  <rect x="296" y="312" width="88" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+  <rect x="296" y="312" width="60" height="6" rx="3" fill="rgba(255,252,16,0.3)"/>
+  <text x="296" y="330" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">↑ 12% vs avg</text>
+
+  <rect x="420" y="244" width="120" height="94" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="436" y="264" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" letter-spacing="1">RSVPS</text>
+  <text x="436" y="286" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="rgba(79,195,247,0.8)">247</text>
+  <text x="436" y="302" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Registered</text>
+  <rect x="436" y="312" width="88" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+  <rect x="436" y="312" width="74" height="6" rx="3" fill="rgba(79,195,247,0.3)"/>
+  <text x="436" y="330" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">Goal: 300</text>
+
+  <!-- Bottom social/promo -->
+  <rect x="40" y="356" width="500" height="14" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <rect x="48" y="360" width="80" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="140" y="360" width="60" height="6" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <rect x="460" y="360" width="72" height="6" rx="2" fill="rgba(255,252,16,0.1)"/>
+</svg>

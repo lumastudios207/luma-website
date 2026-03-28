@@ -5,19 +5,32 @@ import GetStartCTA from '../components/ui/GetStartCTA.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Constructo Case Study — Luma Studios",
-  "description": "How Luma Studios helped Constructo with website design, ad creative, illustrations, and sales collateral.",
-  "url": "https://lumastudios.co/constructo",
-  "author": { "@type": "Organization", "name": "Luma Studios" },
-  "about": { "@type": "Organization", "name": "Constructo" }
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "name": "Constructo Case Study — Luma Studios",
+      "description": "How Luma Studios helped Constructo with website design, investor decks, sales collateral, and illustration in under 90 days.",
+      "url": "https://lumastudios.co/constructo",
+      "author": { "@type": "Organization", "name": "Luma Studios" },
+      "about": { "@type": "Organization", "name": "Constructo" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lumastudios.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://lumastudios.co/projects" },
+        { "@type": "ListItem", "position": 3, "name": "Constructo", "item": "https://lumastudios.co/constructo" }
+      ]
+    }
+  ]
 };
 ---
 
 <PageLayout
-  title="Constructo Case Study | Luma Studios"
-  description="How Luma Studios helped Constructo design their website, ad creative, iconography, illustrations, and sales collateral in under 90 days."
+  title="Constructo Website & Sales Design Case Study | Luma Studios"
+  description="How Luma Studios helped Constructo design their website, investor decks, sales one-pagers, and illustration system in under 90 days."
   canonicalUrl="https://lumastudios.co/constructo"
+  ogUrl="https://lumastudios.co/constructo"
   ogImage="https://lumastudios.co/img/og/og_image.jpg"
   jsonLd={jsonLd}
   headerVariant="case-study"

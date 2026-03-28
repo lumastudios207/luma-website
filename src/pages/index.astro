@@ -8,7 +8,10 @@ const jsonLd = {
       '@type': 'ProfessionalService',
       name: 'Luma Studios',
       url: 'https://lumastudios.co',
-      description: 'On-demand design agency helping startups and marketing agencies with graphic design, web design, brand identity, and more.',
+      description: 'Luma Studios is a marketing design and web studio in Portland, Maine. We help startups and local businesses build faster websites, stronger brands, and marketing systems that generate leads.',
+      telephone: '+12073313928',
+      email: 'ivan@lumastudios.co',
+      foundingDate: '2020',
       address: {
         '@type': 'PostalAddress',
         streetAddress: '63 Federal Street',
@@ -17,21 +20,46 @@ const jsonLd = {
         postalCode: '04101',
         addressCountry: 'US',
       },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '18:00',
+        },
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Design and Web Services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed Websites for Local Businesses' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Design' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Development' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Brand Identity Design' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Services' } },
+        ],
+      },
     },
     {
       '@type': 'WebSite',
       name: 'Luma Studios',
       url: 'https://lumastudios.co',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://lumastudios.co/blog?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
     },
   ],
 };
 ---
 
 <PageLayout
-  title="Marketing Design Agency - Luma Studios"
-  description="Our design studio helps startups and marketing agencies with a wide range of graphic and web design services."
+  title="Web Design Agency Portland Maine | Luma Studios"
+  description="Luma Studios is a design and web studio in Portland, Maine. We build fast, custom websites and strong brand systems for startups and local businesses."
   canonicalUrl="https://lumastudios.co/"
   ogUrl="https://lumastudios.co/"
+  ogImage="https://lumastudios.co/img/og/og_image.jpg"
   {jsonLd}
 >
 

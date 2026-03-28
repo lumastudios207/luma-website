@@ -1,0 +1,93 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0e0f14"/>
+      <stop offset="100%" style="stop-color:#141620"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFC10;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#FFFC10;stop-opacity:0.4"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#4FC3F7;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- Grid lines -->
+  <line x1="0" y1="157" x2="1200" y2="157" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="314" x2="1200" y2="314" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="472" x2="1200" y2="472" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Blue accent glow left -->
+  <circle cx="200" cy="550" r="300" fill="rgba(79,195,247,0.06)"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="200" width="3" height="230" fill="#4FC3F7" rx="2"/>
+
+  <!-- Category badge -->
+  <rect x="80" y="160" width="108" height="28" rx="4" fill="rgba(79,195,247,0.12)"/>
+  <text x="134" y="179" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#4FC3F7" text-anchor="middle" letter-spacing="1.5">WEB DESIGN</text>
+
+  <!-- Main title -->
+  <text x="108" y="268" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="700" fill="#ffffff" letter-spacing="-1">How Much Does a</text>
+  <text x="108" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="700" fill="#ffffff" letter-spacing="-1">Website Cost in Maine?</text>
+
+  <!-- Subtitle -->
+  <text x="108" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="19" fill="rgba(255,255,255,0.5)">A transparent pricing breakdown — from DIY to custom builds</text>
+
+  <!-- Divider -->
+  <line x1="108" y1="426" x2="520" y2="426" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Author + date -->
+  <circle cx="120" cy="462" r="16" fill="rgba(255,255,255,0.08)"/>
+  <text x="120" y="467" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="rgba(255,255,255,0.4)" text-anchor="middle">IA</text>
+  <text x="146" y="467" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="rgba(255,255,255,0.45)">Ivan Annikov  ·  March 2026</text>
+
+  <!-- Right side: bar chart -->
+  <rect x="720" y="90" width="400" height="320" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- Chart title -->
+  <text x="920" y="122" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">COST COMPARISON</text>
+
+  <!-- Bars -->
+  <!-- DIY -->
+  <rect x="770" y="270" width="60" height="80" rx="3" fill="url(#bar3)"/>
+  <text x="800" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="rgba(255,255,255,0.6)" text-anchor="middle">$500</text>
+  <text x="800" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" text-anchor="middle">DIY</text>
+
+  <!-- Template -->
+  <rect x="860" y="210" width="60" height="140" rx="3" fill="url(#bar2)"/>
+  <text x="890" y="202" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="rgba(79,195,247,0.9)" text-anchor="middle">$3k</text>
+  <text x="890" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" text-anchor="middle">Template</text>
+
+  <!-- Agency -->
+  <rect x="950" y="170" width="60" height="180" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="980" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="rgba(255,255,255,0.6)" text-anchor="middle">$8k</text>
+  <text x="980" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" text-anchor="middle">Agency</text>
+
+  <!-- Custom -->
+  <rect x="1040" y="140" width="60" height="210" rx="3" fill="url(#bar1)"/>
+  <text x="1070" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#FFFC10" text-anchor="middle">$15k+</text>
+  <text x="1070" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" text-anchor="middle">Custom</text>
+
+  <!-- Chart baseline -->
+  <line x1="750" y1="350" x2="1120" y2="350" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Price tags panel -->
+  <rect x="730" y="420" width="380" height="80" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="750" y="446" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="rgba(255,255,255,0.3)" letter-spacing="1">MANAGED WEBSITES FROM</text>
+  <text x="750" y="477" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#FFFC10">$0 upfront</text>
+  <text x="940" y="477" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.3)">+ monthly retainer</text>
+
+  <!-- Branding -->
+  <text x="108" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="rgba(255,255,255,0.25)" letter-spacing="2">LUMA STUDIOS</text>
+  <text x="1092" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="rgba(255,255,255,0.2)" text-anchor="end">lumastudios.co</text>
+</svg>

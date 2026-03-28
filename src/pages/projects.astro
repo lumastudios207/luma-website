@@ -4,17 +4,29 @@ import QuoteBlock from '../components/ui/QuoteBlock.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Marketing Website Projects — Luma Studios",
-  "description": "Portfolio of marketing website design projects by Luma Studios including Secureframe, Constructo, Evocalize, ScreenSteps, and Splitero.",
-  "url": "https://lumastudios.co/projects"
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Marketing Website Design Projects — Luma Studios",
+      "description": "Portfolio of marketing website design projects by Luma Studios including Secureframe, Constructo, Evocalize, ScreenSteps, and Splitero.",
+      "url": "https://lumastudios.co/projects"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lumastudios.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Marketing Website Projects", "item": "https://lumastudios.co/projects" }
+      ]
+    }
+  ]
 };
 ---
 
 <PageLayout
-  title="Marketing Website Projects | Luma Studios"
-  description="Browse our portfolio of marketing website design projects — Secureframe, Constructo, Evocalize, ScreenSteps, and Splitero."
+  title="Marketing Website Design Projects | Luma Studios Portland ME"
+  description="Browse our portfolio of marketing website design projects — Secureframe, Constructo, Evocalize, ScreenSteps, and Splitero. See how we design for conversion."
   canonicalUrl="https://lumastudios.co/projects"
+  ogUrl="https://lumastudios.co/projects"
   ogImage="https://lumastudios.co/img/og/og_image.jpg"
   jsonLd={jsonLd}
   headerVariant="projects"

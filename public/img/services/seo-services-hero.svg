@@ -1,0 +1,86 @@
+<svg width="580" height="400" viewBox="0 0 580 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1117"/>
+      <stop offset="100%" style="stop-color:#161920"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFC10;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#FFFC10;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#4FC3F7;stop-opacity:0.6"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="580" height="400" fill="url(#bg)" rx="6"/>
+
+  <!-- Yellow glow -->
+  <circle cx="290" cy="280" r="200" fill="rgba(255,252,16,0.04)"/>
+
+  <!-- Search bar at top -->
+  <rect x="50" y="28" width="480" height="40" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="76" cy="48" r="10" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <line x1="83" y1="55" x2="89" y2="61" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+  <rect x="100" y="42" width="200" height="12" rx="3" fill="rgba(255,255,255,0.07)"/>
+  <rect x="440" y="38" width="74" height="20" rx="3" fill="rgba(255,252,16,0.2)"/>
+  <rect x="448" y="43" width="58" height="10" rx="2" fill="rgba(255,252,16,0.4)"/>
+
+  <!-- Chart section label -->
+  <text x="50" y="100" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" letter-spacing="1.5">ORGANIC RANKINGS OVER TIME</text>
+
+  <!-- Chart baseline -->
+  <line x1="50" y1="320" x2="530" y2="320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <line x1="50" y1="275" x2="530" y2="275" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="50" y1="230" x2="530" y2="230" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="50" y1="185" x2="530" y2="185" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="50" y1="140" x2="530" y2="140" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Y axis labels -->
+  <text x="40" y="323" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="end">20</text>
+  <text x="40" y="278" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="end">15</text>
+  <text x="40" y="233" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="end">10</text>
+  <text x="40" y="188" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="end">5</text>
+  <text x="40" y="143" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="end">1</text>
+
+  <!-- Bars -->
+  <!-- Month labels -->
+  <text x="90" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Jan</text>
+  <text x="150" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Feb</text>
+  <text x="210" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Mar</text>
+  <text x="270" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Apr</text>
+  <text x="330" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">May</text>
+  <text x="390" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Jun</text>
+  <text x="450" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Jul</text>
+  <text x="510" y="336" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Aug</text>
+
+  <!-- Bar 1 - Jan (pos 18) -->
+  <rect x="68" y="302" width="44" height="18" rx="2" fill="url(#bar3)"/>
+  <!-- Bar 2 - Feb (pos 16) -->
+  <rect x="128" y="294" width="44" height="26" rx="2" fill="url(#bar3)"/>
+  <!-- Bar 3 - Mar (pos 12) -->
+  <rect x="188" y="274" width="44" height="46" rx="2" fill="url(#bar2)"/>
+  <!-- Bar 4 - Apr (pos 9) -->
+  <rect x="248" y="251" width="44" height="69" rx="2" fill="url(#bar2)"/>
+  <!-- Bar 5 - May (pos 6) -->
+  <rect x="308" y="228" width="44" height="92" rx="2" fill="url(#bar1)"/>
+  <!-- Bar 6 - Jun (pos 3) -->
+  <rect x="368" y="192" width="44" height="128" rx="2" fill="url(#bar1)"/>
+  <!-- Bar 7 - Jul (pos 2) -->
+  <rect x="428" y="162" width="44" height="158" rx="2" fill="url(#bar1)"/>
+  <!-- Bar 8 - Aug (pos 1 - top) - highlighted -->
+  <rect x="488" y="140" width="44" height="180" rx="2" fill="url(#bar1)"/>
+  <rect x="488" y="140" width="44" height="4" rx="2" fill="rgba(255,252,16,1)"/>
+
+  <!-- #1 badge -->
+  <rect x="492" y="118" width="36" height="18" rx="3" fill="rgba(255,252,16,0.2)" stroke="rgba(255,252,16,0.4)" stroke-width="1"/>
+  <text x="510" y="131" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFC10" text-anchor="middle">#1</text>
+
+  <!-- Trend line -->
+  <polyline points="90,311 150,307 210,297 270,286 330,274 390,248 450,215 510,148" fill="none" stroke="rgba(255,252,16,0.3)" stroke-width="1.5" stroke-dasharray="3,2"/>
+</svg>

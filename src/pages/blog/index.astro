@@ -1,0 +1,411 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Blog',
+      name: 'Luma Studios Blog — Web Design & SEO Insights',
+      url: 'https://lumastudios.co/blog',
+      description:
+        'Practical web design, SEO, and digital marketing guides for small businesses and startups in Maine and across the U.S.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Luma Studios',
+        url: 'https://lumastudios.co',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumastudios.co/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://lumastudios.co/blog' },
+      ],
+    },
+  ],
+};
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<PageLayout
+  title="Web Design & SEO Blog for Maine Businesses | Luma Studios"
+  description="Practical web design, SEO, and marketing guides for small businesses in Maine. Transparent advice from Luma Studios in Portland, ME."
+  canonicalUrl="https://lumastudios.co/blog"
+  ogUrl="https://lumastudios.co/blog"
+  {jsonLd}
+>
+
+<!-- ===================== BREADCRUMB ===================== -->
+<div class="breadcrumb_wrap">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Blog</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="blog_hero" first-load-delay>
+  <div class="container">
+    <div class="blog_hero__inner text-center">
+      <h1 class="heading_home blog_h1">Design & SEO Insights <br><span class="blue_color">for Maine Businesses</span></h1>
+      <div class="descr_home_fir">
+        Practical guides on web design, local SEO, and marketing — written for small business owners and founders in Maine and across the U.S.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== POSTS GRID ===================== -->
+<section class="blog_posts dark_bg overflow-hidden">
+  <div class="container">
+    {posts.length === 0 ? (
+      <div class="blog_empty text-center">
+        <p>New articles coming soon. Check back shortly.</p>
+      </div>
+    ) : (
+      <div class="blog_grid">
+        {posts.map((post, i) => (
+          <article class={`blog_card${i === 0 ? ' blog_card--featured' : ''}`}>
+            <a href={`/blog/${post.id}`} class="blog_card__image_link" aria-label={`Read: ${post.data.title}`}>
+              <div class="blog_card__image">
+                {post.data.ogImage ? (
+                  <img
+                    src={post.data.ogImage}
+                    alt={post.data.title}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    class="img-responsive"
+                    width="640"
+                    height="360"
+                  >
+                ) : (
+                  <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;width:100%;height:100%;">
+                    <rect width="640" height="360" fill="#2a2a2a"/>
+                    <rect x="48" y="48" width="220" height="14" rx="7" fill="rgba(255,255,255,0.08)"/>
+                    <rect x="48" y="74" width="160" height="10" rx="5" fill="rgba(255,255,255,0.05)"/>
+                    <rect x="48" y="120" width="544" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+                    <rect x="48" y="140" width="500" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+                    <rect x="48" y="160" width="520" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+                    <rect x="48" y="180" width="380" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+                    <rect x="48" y="224" width="280" height="1" fill="rgba(255,255,255,0.06)"/>
+                    <rect x="48" y="248" width="100" height="8" rx="4" fill="rgba(255,252,16,0.15)"/>
+                    <rect x="164" y="248" width="140" height="8" rx="4" fill="rgba(255,255,255,0.05)"/>
+                    <rect x="48" y="280" width="544" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+                    <rect x="48" y="298" width="480" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+                    <rect x="48" y="316" width="500" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
+                  </svg>
+                )}
+              </div>
+            </a>
+            <div class="blog_card__body">
+              <div class="blog_card__meta">
+                <span class="blog_card__category">{post.data.category}</span>
+                <span class="blog_card__date">{formatDate(post.data.publishDate)}</span>
+              </div>
+              <h2 class="blog_card__title">
+                <a href={`/blog/${post.id}`} class="blog_card__title_link">{post.data.title}</a>
+              </h2>
+              <p class="blog_card__excerpt">{post.data.description}</p>
+              <a href={`/blog/${post.id}`} class="blog_card__readmore">
+                Read article <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<!-- ===================== RELATED SERVICES ===================== -->
+<section class="blog_services overflow-hidden">
+  <div class="container">
+    <div class="headint_sec">
+      <h2 class="title_section text-center">Explore Our Services</h2>
+      <div class="description_section text-center">
+        We build and optimize the websites we write about. Here's how we can help your business.
+      </div>
+    </div>
+    <div class="blog_services_row grid grid-cols-3">
+      <a href="/managed-websites" class="about_service_card">
+        <div class="about_service_card__name">Managed Websites</div>
+        <div class="about_service_card__desc">Custom sites built and fully managed for local businesses — no upfront cost.</div>
+        <span class="about_service_card__arrow">→</span>
+      </a>
+      <a href="/services/seo-services" class="about_service_card">
+        <div class="about_service_card__name">SEO Services</div>
+        <div class="about_service_card__desc">On-page, local, and technical SEO to help Maine businesses get found in search.</div>
+        <span class="about_service_card__arrow">→</span>
+      </a>
+      <a href="/services/website-design" class="about_service_card">
+        <div class="about_service_card__name">Website Design</div>
+        <div class="about_service_card__desc">High-fidelity design built for clarity, conversion, and your specific audience.</div>
+        <span class="about_service_card__arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</PageLayout>
+
+<style>
+  .breadcrumb_wrap {
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .breadcrumb__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .breadcrumb__item::after {
+    content: '/';
+    margin-left: 8px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .breadcrumb__item:last-child::after { display: none; }
+
+  .breadcrumb__link {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb__link:hover { color: #fff; }
+
+  /* Hero */
+  .blog_hero {
+    padding: 80px 0 60px;
+  }
+
+  .blog_h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+  }
+
+  /* Posts grid */
+  .blog_posts {
+    padding: 64px 0 80px;
+  }
+
+  .blog_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .blog_card--featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: stretch;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 16px;
+  }
+
+  .blog_card--featured .blog_card__image {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .blog_card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .blog_card__image {
+    overflow: hidden;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    aspect-ratio: 16/9;
+  }
+
+  .blog_card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .blog_card:hover .blog_card__image img {
+    transform: scale(1.02);
+  }
+
+  .blog_card__body {
+    padding: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .blog_card--featured .blog_card__body {
+    padding: 0;
+    justify-content: center;
+    max-width: 66%;
+  }
+
+  .blog_card__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .blog_card__category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFFC10;
+  }
+
+  .blog_card__date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .blog_card__title {
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .blog_card--featured .blog_card__title {
+    font-size: clamp(20px, 2.5vw, 32px);
+  }
+
+  .blog_card__title_link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .blog_card__title_link:hover {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .blog_card__excerpt {
+    font-size: 15px;
+    line-height: 26px;
+    color: rgba(255,255,255,0.55);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog_card--featured .blog_card__excerpt {
+    -webkit-line-clamp: 4;
+  }
+
+  .blog_card__readmore {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFC10;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 4px;
+    transition: opacity 0.2s;
+  }
+
+  .blog_card__readmore:hover {
+    opacity: 0.8;
+  }
+
+  /* Services */
+  .blog_services {
+    padding: 80px 0;
+  }
+
+  .blog_services_row {
+    gap: 16px;
+  }
+
+  .about_service_card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.25s, background 0.25s;
+  }
+
+  .about_service_card:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .about_service_card__name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .about_service_card__desc {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(255,255,255,0.5);
+    flex: 1;
+  }
+
+  .about_service_card__arrow {
+    font-size: 18px;
+    color: #FFFC10;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .blog_grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .blog_card--featured {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .blog_services_row {
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .blog_grid,
+    .blog_services_row {
+      grid-template-columns: 1fr !important;
+    }
+
+    .blog_hero {
+      padding: 48px 0 40px;
+    }
+  }
+</style>

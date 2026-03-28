@@ -5,28 +5,46 @@ import InstaSiteIsland from '../components/islands/InstaSiteIsland.astro';
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Luma Studios — Managed Websites for Local Businesses',
-  description: 'Custom websites with no upfront costs. We build, host, and manage your site — plus marketing automations to capture more leads.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Luma Studios',
-    url: 'https://lumastudios.co',
-  },
-  serviceType: 'Web Design and Marketing Automation',
-  areaServed: {
-    '@type': 'Country',
-    name: 'United States',
-  },
-  url: 'https://lumastudios.co/managed-websites',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Managed Websites for Local Businesses — Luma Studios',
+      description: 'Custom websites built and fully managed for local service businesses — no upfront design cost, marketing automations for lead capture, and unlimited content updates included.',
+      url: 'https://lumastudios.co/managed-websites',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'Luma Studios',
+        url: 'https://lumastudios.co',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '63 Federal Street',
+          addressLocality: 'Portland',
+          addressRegion: 'ME',
+          postalCode: '04101',
+          addressCountry: 'US',
+        },
+        telephone: '+12073313928',
+      },
+      serviceType: 'Managed Website Design and Marketing Automation',
+      areaServed: { '@type': 'Country', name: 'United States' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumastudios.co/' },
+        { '@type': 'ListItem', position: 2, name: 'Managed Websites', item: 'https://lumastudios.co/managed-websites' },
+      ],
+    },
+  ],
 };
 ---
 
 <PageLayout
-  title="Managed Websites for Local Businesses — Luma Studios"
-  description="Custom websites with no upfront costs. We build, host, and manage your site — plus marketing automations to capture more leads."
+  title="Managed Websites for Local Businesses | Luma Studios Portland ME"
+  description="Custom websites for local businesses with no upfront cost. We build, host, manage, and automate your site so it captures and nurtures leads around the clock."
   canonicalUrl="https://lumastudios.co/managed-websites"
   ogUrl="https://lumastudios.co/managed-websites"
+  ogImage="https://lumastudios.co/img/og/og_image.jpg"
   headerVariant="landing"
   bodyClass="landing_page"
   {jsonLd}
@@ -40,11 +58,6 @@ const jsonLd = {
       <source src="/img/Downtown_Portland.mp4" type="video/mp4">
     </video>
     <div class="lp-hero__overlay"></div>
-
-    <!-- Phone number — aligned with header bar, opposite the logo -->
-    <div class="lp-hero__topbar">
-      <a href="tel:+12073313928" class="lp-hero__phone">Call Us ‪(207) 331-3928‬</a>
-    </div>
 
     <div class="lp-hero__content container">
       <h1 class="lp-hero__h1">Turn Your Website Into an Automated Sales Machine</h1>

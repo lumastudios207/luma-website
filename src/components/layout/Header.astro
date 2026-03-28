@@ -1,11 +1,19 @@
 ---
-import HeaderActions from './HeaderActions.astro';
-
 interface Props {
   variant?: 'default' | 'projects' | 'case-study' | 'landing' | 'none';
 }
 
 const { variant = 'default' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/managed-websites', label: 'Managed Websites' },
+  { href: '/services/seo-services', label: 'SEO Services' },
+  { href: '/blog', label: 'Resources' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="header_top">
@@ -17,9 +25,192 @@ const { variant = 'default' } = Astro.props;
           <img class="logo_mobile" src="/img/logo_mobile.svg" alt="Luma Studios" width="40">
         </a>
       </div>
-      <div class="wrap_btn_sgg">
-        <HeaderActions variant={variant} />
-      </div>
+      <nav class="header_nav" aria-label="Main navigation">
+        <ul class="header_nav__list">
+          {navLinks.map((link) => (
+            <li class="header_nav__item">
+              <a
+                href={link.href}
+                class={`header_nav__link${currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) ? ' header_nav__link--active' : ''}`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button class="header_nav__burger" aria-label="Open navigation" aria-expanded="false" aria-controls="header-nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
     </div>
   </div>
 </header>
+
+<!-- Mobile nav overlay -->
+<div class="header_nav__mobile" id="header-nav-mobile" aria-hidden="true">
+  <ul class="header_nav__mobile-list">
+    {navLinks.map((link) => (
+      <li>
+        <a href={link.href} class="header_nav__mobile-link">{link.label}</a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .header_nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .header_nav__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header_nav__item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header_nav__link {
+    font-family: 'Maison Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+    position: relative;
+    top: 5px;
+  }
+
+  .header_nav__link:hover {
+    color: #FFFC10;
+  }
+
+  .header_nav__link--active {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .header_nav__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header_nav__burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .header_nav__burger.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .header_nav__burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .header_nav__burger.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile nav overlay */
+  .header_nav__mobile {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: #212121;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .header_nav__mobile.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .header_nav__mobile-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .header_nav__mobile-list li {
+    margin-bottom: 32px;
+  }
+
+  .header_nav__mobile-link {
+    font-family: 'Maison Neue', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+
+  .header_nav__mobile-link:hover {
+    color: #FFFC10;
+  }
+
+  @media (max-width: 768px) {
+    .header_nav__list {
+      display: none;
+    }
+    .header_nav__burger {
+      display: flex;
+    }
+    .header_nav__mobile {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const burger = document.querySelector('.header_nav__burger');
+  const mobileNav = document.getElementById('header-nav-mobile');
+
+  if (burger && mobileNav) {
+    burger.addEventListener('click', () => {
+      const isOpen = burger.classList.toggle('is-open');
+      mobileNav.classList.toggle('is-open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-open');
+        mobileNav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>

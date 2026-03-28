@@ -1,0 +1,98 @@
+<svg width="580" height="400" viewBox="0 0 580 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1117"/>
+      <stop offset="100%" style="stop-color:#161920"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="580" height="400" fill="url(#bg)" rx="6"/>
+
+  <!-- Multi-color glow -->
+  <circle cx="160" cy="180" r="140" fill="rgba(255,252,16,0.04)"/>
+  <circle cx="420" cy="220" r="140" fill="rgba(167,139,250,0.04)"/>
+
+  <!-- Canvas / artboard frame -->
+  <rect x="40" y="30" width="500" height="310" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- Toolbar left -->
+  <rect x="40" y="30" width="36" height="310" rx="6" fill="rgba(255,255,255,0.04)"/>
+  <rect x="40" y="36" width="36" height="304" rx="0" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="58" cy="58" r="8" fill="rgba(255,252,16,0.2)" stroke="rgba(255,252,16,0.4)" stroke-width="1.5"/>
+  <rect x="50" y="76" width="16" height="16" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="58" cy="106" r="7" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <line x1="50" y1="124" x2="66" y2="140" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="50" y1="140" x2="66" y2="124" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-linecap="round"/>
+  <rect x="50" y="152" width="16" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="50" y="160" width="16" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="50" y="168" width="16" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Artboard / canvas area -->
+  <rect x="88" y="46" width="304" height="278" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Illustration elements on canvas -->
+  <!-- Abstract shape 1 - yellow circle -->
+  <circle cx="190" cy="150" r="55" fill="rgba(255,252,16,0.1)" stroke="rgba(255,252,16,0.25)" stroke-width="1.5"/>
+  <circle cx="190" cy="150" r="36" fill="rgba(255,252,16,0.07)"/>
+  <!-- Abstract shape 2 - purple rectangle -->
+  <rect x="220" y="120" width="90" height="60" rx="8" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.25)" stroke-width="1.5"/>
+  <!-- Abstract shape 3 - blue organic -->
+  <ellipse cx="260" cy="220" rx="60" ry="40" fill="rgba(79,195,247,0.08)" stroke="rgba(79,195,247,0.2)" stroke-width="1.5"/>
+  <!-- Decorative dots -->
+  <circle cx="140" cy="240" r="6" fill="rgba(255,252,16,0.4)"/>
+  <circle cx="160" cy="258" r="4" fill="rgba(255,252,16,0.25)"/>
+  <circle cx="340" cy="100" r="5" fill="rgba(167,139,250,0.4)"/>
+  <circle cx="320" cy="270" r="7" fill="rgba(79,195,247,0.3)"/>
+  <!-- Line strokes -->
+  <path d="M 130 180 Q 180 130 240 160 Q 300 190 340 150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M 110 260 Q 160 230 220 250 Q 280 270 330 240" fill="none" stroke="rgba(255,252,16,0.15)" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Grid overlay -->
+  <line x1="88" y1="185" x2="392" y2="185" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="240" y1="46" x2="240" y2="324" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Layers panel right -->
+  <rect x="404" y="46" width="124" height="278" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="416" y="66" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.25)" letter-spacing="0.8">LAYERS</text>
+  <line x1="408" y1="72" x2="524" y2="72" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Layer items -->
+  <rect x="408" y="78" width="112" height="22" rx="3" fill="rgba(167,139,250,0.1)"/>
+  <rect x="416" y="84" width="8" height="10" rx="1" fill="rgba(167,139,250,0.5)"/>
+  <rect x="430" y="86" width="70" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+
+  <rect x="408" y="106" width="112" height="22" rx="3" fill="rgba(79,195,247,0.08)"/>
+  <circle cx="420" cy="117" r="5" fill="rgba(79,195,247,0.4)"/>
+  <rect x="430" y="114" width="60" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+  <rect x="408" y="134" width="112" height="22" rx="3" fill="rgba(255,252,16,0.1)" stroke="rgba(255,252,16,0.2)" stroke-width="1"/>
+  <ellipse cx="420" cy="145" rx="6" ry="4" fill="rgba(255,252,16,0.5)"/>
+  <rect x="430" y="142" width="54" height="6" rx="2" fill="rgba(255,252,16,0.3)"/>
+
+  <rect x="408" y="162" width="112" height="22" rx="3" fill="rgba(255,255,255,0.03)"/>
+  <rect x="414" y="168" width="10" height="10" rx="1" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="430" y="170" width="64" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+
+  <rect x="408" y="190" width="112" height="22" rx="3" fill="rgba(255,255,255,0.03)"/>
+  <line x1="414" y1="201" x2="424" y2="201" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+  <rect x="430" y="198" width="54" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+
+  <rect x="408" y="218" width="112" height="22" rx="3" fill="rgba(255,255,255,0.03)"/>
+  <rect x="430" y="226" width="44" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+
+  <!-- Color picker at bottom of layers -->
+  <rect x="408" y="280" width="112" height="36" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="416" y="295" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)">Fill</text>
+  <rect x="416" y="300" width="14" height="10" rx="2" fill="#FFFC10"/>
+  <rect x="434" y="300" width="14" height="10" rx="2" fill="#A78BFA"/>
+  <rect x="452" y="300" width="14" height="10" rx="2" fill="#4FC3F7"/>
+  <rect x="470" y="300" width="14" height="10" rx="2" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="488" y="300" width="14" height="10" rx="2" fill="rgba(0,0,0,0.6)"/>
+  <rect x="506" y="300" width="14" height="10" rx="2" fill="#34D399"/>
+
+  <!-- Bottom bar -->
+  <rect x="40" y="350" width="500" height="28" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="56" y="368" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)">580 × 400 px</text>
+  <text x="290" y="368" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" text-anchor="middle">Custom Illustrations</text>
+  <rect x="470" y="357" width="60" height="12" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <rect x="476" y="360" width="40" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+</svg>

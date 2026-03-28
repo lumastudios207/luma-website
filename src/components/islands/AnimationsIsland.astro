@@ -2,6 +2,20 @@
 // client:load — initializes Lenis, GSAP, ScrollTrigger, scroll header, accordion
 ---
 
+<style is:global>
+  /*
+   * Pre-hide scroll-animated elements via CSS before JS loads.
+   * Without this, elements are briefly visible on first paint,
+   * then hidden by gsap.set() → flash of content before animation.
+   * GSAP's inline autoAlpha overrides this once animations are set up.
+   */
+  @media (min-width: 1200px) {
+    [data-show-down] {
+      opacity: 0;
+    }
+  }
+</style>
+
 <script>
 import Lenis from 'lenis';
 import gsap from 'gsap';

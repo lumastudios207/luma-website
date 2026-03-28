@@ -1,0 +1,84 @@
+<svg width="580" height="400" viewBox="0 0 580 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1117"/>
+      <stop offset="100%" style="stop-color:#161920"/>
+    </linearGradient>
+    <linearGradient id="ad1" x1="135deg" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1c26"/>
+      <stop offset="100%" style="stop-color:#12141e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="580" height="400" fill="url(#bg)" rx="6"/>
+
+  <!-- Yellow glow center -->
+  <circle cx="290" cy="200" r="200" fill="rgba(255,252,16,0.03)"/>
+
+  <!-- Ad frame 1 — leaderboard style (top) -->
+  <rect x="40" y="28" width="500" height="80" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <!-- Ad label -->
+  <rect x="52" y="36" width="26" height="14" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <text x="65" y="47" font-family="system-ui, sans-serif" font-size="8" fill="rgba(255,255,255,0.25)" text-anchor="middle" letter-spacing="0.5">AD</text>
+  <!-- Ad content -->
+  <rect x="88" y="36" width="180" height="30" rx="3" fill="rgba(255,252,16,0.08)"/>
+  <rect x="96" y="44" width="120" height="14" rx="2" fill="rgba(255,252,16,0.3)"/>
+  <rect x="88" y="72" width="200" height="8" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <!-- CTA -->
+  <rect x="440" y="38" width="86" height="30" rx="4" fill="rgba(255,252,16,0.2)" stroke="rgba(255,252,16,0.3)" stroke-width="1"/>
+  <rect x="452" y="47" width="62" height="12" rx="2" fill="rgba(255,252,16,0.5)"/>
+  <!-- Brand logo mock -->
+  <rect x="330" y="38" width="90" height="20" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="340" y="43" width="48" height="10" rx="2" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Ad frame 2 — square (left) -->
+  <rect x="40" y="128" width="180" height="180" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="52" y="138" width="26" height="14" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <text x="65" y="149" font-family="system-ui, sans-serif" font-size="8" fill="rgba(255,255,255,0.25)" text-anchor="middle" letter-spacing="0.5">AD</text>
+  <!-- Square ad image area -->
+  <rect x="52" y="160" width="156" height="80" rx="3" fill="rgba(167,139,250,0.08)"/>
+  <circle cx="130" cy="200" r="30" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.2)" stroke-width="1"/>
+  <rect x="100" y="196" width="60" height="8" rx="2" fill="rgba(167,139,250,0.3)"/>
+  <!-- Square ad copy -->
+  <rect x="52" y="248" width="130" height="10" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="52" y="264" width="100" height="8" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="52" y="280" width="140" height="18" rx="4" fill="rgba(255,252,16,0.15)"/>
+  <rect x="64" y="285" width="80" height="8" rx="2" fill="rgba(255,252,16,0.4)"/>
+
+  <!-- Ad frame 3 — vertical skyscraper (right) -->
+  <rect x="400" y="128" width="140" height="240" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="412" y="138" width="26" height="14" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <text x="425" y="149" font-family="system-ui, sans-serif" font-size="8" fill="rgba(255,255,255,0.25)" text-anchor="middle" letter-spacing="0.5">AD</text>
+  <!-- Skyscraper image -->
+  <rect x="412" y="160" width="116" height="80" rx="3" fill="rgba(79,195,247,0.07)"/>
+  <circle cx="470" cy="200" r="28" fill="rgba(79,195,247,0.1)" stroke="rgba(79,195,247,0.2)" stroke-width="1"/>
+  <rect x="450" y="196" width="40" height="8" rx="2" fill="rgba(79,195,247,0.3)"/>
+  <!-- Copy -->
+  <rect x="412" y="252" width="110" height="9" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="412" y="267" width="90" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="412" y="280" width="100" height="7" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <rect x="412" y="294" width="80" height="7" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <rect x="412" y="318" width="116" height="24" rx="4" fill="rgba(79,195,247,0.15)"/>
+  <rect x="430" y="326" width="80" height="8" rx="2" fill="rgba(79,195,247,0.4)"/>
+  <!-- Footer brand -->
+  <rect x="412" y="350" width="116" height="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="412" y="356" width="80" height="7" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Ad frame 4 — medium rectangle (center) -->
+  <rect x="240" y="128" width="140" height="80" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="252" y="136" width="26" height="14" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <text x="265" y="147" font-family="system-ui, sans-serif" font-size="8" fill="rgba(255,255,255,0.25)" text-anchor="middle" letter-spacing="0.5">AD</text>
+  <rect x="290" y="136" width="80" height="14" rx="2" fill="rgba(255,252,16,0.2)"/>
+  <rect x="252" y="158" width="120" height="7" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="252" y="170" width="100" height="7" rx="2" fill="rgba(255,255,255,0.04)"/>
+  <rect x="252" y="184" width="60" height="16" rx="3" fill="rgba(255,252,16,0.15)"/>
+
+  <!-- CTR / performance panel -->
+  <rect x="240" y="224" width="140" height="84" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="256" y="244" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.25)" letter-spacing="1">PERFORMANCE</text>
+  <text x="256" y="270" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="rgba(255,252,16,0.8)">4.7%</text>
+  <text x="312" y="270" font-family="system-ui, sans-serif" font-size="11" fill="rgba(255,255,255,0.3)"> CTR</text>
+  <rect x="256" y="278" width="110" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+  <rect x="256" y="278" width="80" height="6" rx="3" fill="rgba(255,252,16,0.3)"/>
+  <text x="256" y="300" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.2)">↑ 2.1% from last month</text>
+</svg>

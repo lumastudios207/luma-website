@@ -1,0 +1,227 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { services } from '../data/services';
+
+// Footer order: Managed Websites → Website Design → Web Development →
+// Brand Identity → SEO Services → UX Audits → Ad Creative
+const orderedSlugs = [
+  'managed-websites',
+  'website-design',
+  'web-development',
+  'brand-identity',
+  'seo-services',
+  'ux-audits',
+  'ad-creative',
+];
+
+function serviceHref(slug: string): string {
+  if (slug === 'managed-websites') return '/managed-websites';
+  if (slug === 'brand-identity') return '/branding-projects';
+  return `/services/${slug}`;
+}
+
+const pageServices = orderedSlugs.map((slug) => {
+  const svc = services.find((s) => s.slug === slug)!;
+  return { ...svc, href: serviceHref(slug) };
+});
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'Services | Luma Studios',
+      url: 'https://lumastudios.co/services',
+      description:
+        'Design and web services for startups and local businesses — from managed websites and brand identity to SEO, UX audits, and ad creative.',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'Luma Studios',
+        url: 'https://lumastudios.co',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumastudios.co/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://lumastudios.co/services' },
+      ],
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Luma Studios Services',
+      itemListElement: pageServices.map((svc, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: svc.name,
+        url: `https://lumastudios.co${svc.href}`,
+      })),
+    },
+  ],
+};
+---
+
+<PageLayout
+  title="Services | Luma Studios — Design & Web Studio Portland Maine"
+  description="Design and web services for startups and local businesses — managed websites, brand identity, SEO, UX audits, and ad creative from Luma Studios in Portland, Maine."
+  canonicalUrl="https://lumastudios.co/services"
+  ogUrl="https://lumastudios.co/services"
+  {jsonLd}
+>
+
+<!-- ===================== BREADCRUMB ===================== -->
+<div class="breadcrumb_wrap">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Services</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="svcs_hero" first-load-delay>
+  <div class="container">
+    <div class="svcs_hero__inner text-center">
+      <h1 class="heading_home svcs_h1">Design & Web Services <br>for <span class="blue_color">Growing Businesses</span></h1>
+      <div class="descr_home_fir">
+        From your first website to your next brand refresh — we handle design, development, and the systems that turn visitors into customers.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES GRID ===================== -->
+<section class="svcs_grid_section dark_bg overflow-hidden">
+  <div class="container">
+    <div class="svcs_grid">
+      {pageServices.map((svc) => (
+        <a href={svc.href} class="svc_card">
+          <div class="svc_card__name">{svc.name}</div>
+          <div class="svc_card__desc">{svc.description}</div>
+          <span class="svc_card__arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+</PageLayout>
+
+<style>
+  /* ── Breadcrumb ─────────────────────────────────────── */
+  .breadcrumb_wrap {
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .breadcrumb__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .breadcrumb__item::after {
+    content: '/';
+    margin-left: 8px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .breadcrumb__item:last-child::after { display: none; }
+
+  .breadcrumb__link {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb__link:hover { color: #fff; }
+
+  /* ── Hero ────────────────────────────────────────────── */
+  .svcs_hero {
+    padding: 80px 0 60px;
+  }
+
+  .svcs_h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+  }
+
+  /* ── Grid ────────────────────────────────────────────── */
+  .svcs_grid_section {
+    padding: 64px 0 96px;
+  }
+
+  .svcs_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .svc_card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.25s, background 0.25s;
+  }
+
+  .svc_card:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .svc_card__name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .svc_card__desc {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(255,255,255,0.5);
+    flex: 1;
+  }
+
+  .svc_card__arrow {
+    font-size: 18px;
+    color: #FFFC10;
+    margin-top: 4px;
+  }
+
+  .svcs_grid a:last-child {
+    grid-column: 2;
+  }
+
+  @media (max-width: 900px) {
+    .svcs_grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .svcs_grid a:last-child {
+      grid-column: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .svcs_hero {
+      padding: 48px 0 40px;
+    }
+
+    .svcs_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
