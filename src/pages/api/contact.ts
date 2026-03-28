@@ -42,7 +42,7 @@ export const POST: APIRoute = async ({ request }) => {
       from: 'Luma Studios Website <hello@lumastudios.co>',
       to: ['ivan@lumastudios.co'],
       replyTo: email.trim(),
-      subject: `New inquiry from ${name.trim()} — ${company.trim()}`,
+      subject: `Pricing Request from ${name.trim()} — ${company.trim()}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name.trim()}</p>

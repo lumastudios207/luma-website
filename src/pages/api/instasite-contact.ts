@@ -44,7 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
       from: 'InstaSite Website <hello@lumastudios.co>',
       to: ['ivan@lumastudios.co'],
       replyTo: email.trim(),
-      subject: `New InstaSite inquiry — ${firstName.trim()} ${lastName.trim()} / ${company.trim()}`,
+      subject: `Managed Website Service Inquiry — ${firstName.trim()} ${lastName.trim()} / ${company.trim()}`,
       html: `
         <h2>New InstaSite Lead — Managed Websites</h2>
         <p><strong>Name:</strong> ${firstName.trim()} ${lastName.trim()}</p>
