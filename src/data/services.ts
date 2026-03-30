@@ -834,7 +834,7 @@ export const services: Service[] = [
     metaTitle: 'SEO Services Portland Maine | Luma Studios',
     metaDescription:
       'SEO services aligned with your web design and development work. On-page fundamentals, technical SEO, and content structure to help Maine businesses get found.',
-    heroHeading: 'SEO Services That Help Your Maine Business Get Found',
+    heroHeading: 'SEO Services That Help Your Local Business Get Found',
     heroSubheading:
       'We implement practical, measurable SEO improvements aligned with your website — from on-page fundamentals and technical basics to content structure that targets the searches your customers are actually making.',
     description:
@@ -851,7 +851,7 @@ export const services: Service[] = [
           'Crawlability, sitemaps, canonical URLs, robots.txt, page speed, and structured data — the technical layer that determines whether Google can find and index your site correctly.',
       },
       {
-        title: 'Local SEO for Maine Businesses',
+        title: 'Local SEO for Businesses',
         description:
           'Google Business Profile optimization, local citations, and location-specific page structure that helps you rank when people search for services in Portland, Bangor, or across Maine.',
       },

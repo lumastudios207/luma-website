@@ -130,14 +130,20 @@ const jsonLd = {
 
 <!-- ===================== FEATURES ===================== -->
 <section class="service_features dark_bg overflow-hidden">
+  {svc.slug === 'seo-services' && (
+    <div class="svc_feat_deco" aria-hidden="true"></div>
+  )}
   <div class="container">
     <div class="headint_sec">
       <h2 class="title_section text-center">What's Included</h2>
       <div class="description_section text-center">
-        Everything you get when you work with Luma Studios on {svc.name.toLowerCase()}.
+        Everything you get when you work with Luma Studios on {svc.slug === 'seo-services' ? svc.name : svc.name.toLowerCase()}.
       </div>
     </div>
-    <div class="service_features_grid grid grid-cols-3">
+    <div class={`service_features_grid grid grid-cols-3${svc.slug === 'seo-services' ? ' seo_features_grid' : ''}`}>
+      {svc.slug === 'seo-services' && (
+        <img src="/img/cube_3d.webp" alt="" class="svc_feat_cube" width="70" aria-hidden="true" loading="lazy">
+      )}
       {svc.features.map((feat, i) => (
         <div class="service_feature_card">
           <div class="service_feature_icon">
@@ -328,6 +334,39 @@ const jsonLd = {
   /* ── Features ───────────────────────────────────────── */
   .service_features {
     padding: 80px 0;
+    position: relative;
+  }
+
+  .svc_feat_deco {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #2a2a2a;
+    top: 50%;
+    right: -180px;
+    transform: translateY(-50%) rotate(20deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .seo_features_grid {
+    position: relative;
+  }
+
+  .svc_feat_cube {
+    position: absolute;
+    top: -26px;
+    right: -26px;
+    width: 52px;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    animation: svc-cube-spin 12s linear infinite;
+  }
+
+  @keyframes svc-cube-spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
   .service_features_grid {
@@ -348,6 +387,44 @@ const jsonLd = {
   .service_feature_card:hover {
     border-color: rgba(255,255,255,0.2);
   }
+
+  /* ── SEO page: per-card glow colors ─────────────────── */
+  .seo_features_grid .service_feature_card {
+    --glow: #4DD8E8;
+    position: relative;
+    overflow: hidden;
+    background: #0e0e12;
+    box-shadow: 0 0 40px #0009, 0 0 80px color-mix(in srgb, var(--glow) 15%, transparent);
+    transition: border-color 0.25s, box-shadow 0.3s;
+  }
+
+  .seo_features_grid .service_feature_card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 52%;
+    background: radial-gradient(ellipse 80% 60% at 50% 110%, color-mix(in srgb, var(--glow) 55%, transparent), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .seo_features_grid .service_feature_card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .seo_features_grid .service_feature_card:hover {
+    box-shadow: 0 0 60px #00000080, 0 0 120px color-mix(in srgb, var(--glow) 25%, transparent);
+  }
+
+  .seo_features_grid .service_feature_card:nth-child(1) { --glow: #4DD8E8; border-color: #4dd8e82e; }
+  .seo_features_grid .service_feature_card:nth-child(2) { --glow: #A78BFA; border-color: #a78bfa2e; }
+  .seo_features_grid .service_feature_card:nth-child(3) { --glow: #F07847; border-color: #f078472e; }
+  .seo_features_grid .service_feature_card:nth-child(4) { --glow: #E84DAD; border-color: #e84dad2e; }
+  .seo_features_grid .service_feature_card:nth-child(5) { --glow: #4FC3F7; border-color: #4fc3f72e; }
+  .seo_features_grid .service_feature_card:nth-child(6) { --glow: #7B3FD4; border-color: #7b3fd42e; }
 
   .service_feature_icon {
     width: 36px;

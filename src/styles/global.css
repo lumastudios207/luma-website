@@ -2191,12 +2191,21 @@ textarea.form_control {
 	right: 0;
 	z-index: 2;
 }
+.item_quote_go {
+	display: flex;
+	flex-direction: column;
+}
+.quote_user_wrap {
+	margin-top: auto;
+	align-items: flex-start;
+}
 .quote_photo {
-	width: 100px;
+	width: 56px;
+	flex-shrink: 0;
 }
 .quote_info {
-	width: calc(100% - 100px);
-	padding-left: 32px;
+	width: calc(100% - 56px);
+	padding-left: 20px;
 }
 .quote_text_descr {
 	color: #FFF;
@@ -2226,44 +2235,48 @@ textarea.form_control {
 }
 .quote_info {
 /*	color: #FFF;*/
-	font-size: 24px;
+	font-size: 13px;
 /*	font-weight: 600;*/
-	line-height: 40px;
+	line-height: 20px;
 }
 .quote_user_name {
 /*	color: #FFF;*/
-	font-size: 32px;
-	font-weight: 600;
+	font-size: 13px;
+	font-weight: 400;
 }
 .quote_function {
-font-style: normal;
-	
+	font-style: normal;
 }
 .quote_project {
-/*	font-weight: 600;*/
+	font-weight: 600;
 }
 .wrap_quote {
 	margin-top: 117px;
-	column-gap: 80px;
+	column-gap: 40px;
 	margin-left: -44px;
 	margin-right: -44px;
 	position: relative;
 	padding-bottom: 68px;
 	margin-bottom: 132px;
 }
-.wrap_quote:before {
+.wrap_quote:before,
+.wrap_quote:after {
 	content: '';
 	position: absolute;
 	width: 1px;
-	left: 0;
-	right: 0;
 	top: -17px;
 	bottom: 0;
-	margin: auto;
 	background: #757575;
 }
-.item_quote_go:nth-child(2) {
-	padding-left: 31px;
+.wrap_quote:before {
+	left: calc(33.333% - 7px);
+}
+.wrap_quote:after {
+	left: calc(66.666% + 7px);
+}
+.item_quote_go:nth-child(2),
+.item_quote_go:nth-child(3) {
+	padding-left: 0;
 }
 .wrap_projects {
 	column-gap: 80px;
@@ -4029,7 +4042,7 @@ button.btn_anim {
 		margin-left: 0;
 		margin-right: 0;
 		margin-top: 79px;
-		column-gap: 127px;
+		column-gap: 40px;
 		padding-bottom: 24px;
 /*		margin-bottom: 90px;*/
 		margin-bottom: 40px;
@@ -4037,22 +4050,16 @@ button.btn_anim {
 	.description_section br {
 		display: none;
 	}
-	.item_quote_go:nth-child(2) {
-		padding-left: 0;
-	}
-	.quote_photo {
-		width: 68px;
-	}
 	.quote_info {
-		padding-left: 21px;
-		width: calc(100% - 68px);
+		padding-left: 16px;
+		width: calc(100% - 56px);
 	}
 	.quote_user_name {
-		font-size: 22px;
+		font-size: 13px;
 	}
 	.quote_info {
-		font-size: 16px;
-		line-height: 162.5%;
+		font-size: 13px;
+		line-height: 20px;
 	}
 	.quote_text_descr {
 		font-size: 16px;
@@ -5528,6 +5535,7 @@ button.btn_anim {
 	.decor_video,
 	.overlay_proj,
 	.wrap_quote:before,
+	.wrap_quote:after,
 	.decor_cap_2,
 	.decor_cap_1 {
 		display: none;
@@ -5537,7 +5545,8 @@ button.btn_anim {
 		margin: 0 0 100px;
 		padding: 0;
 	}
-	.item_quote_go:nth-child(2) {
+	.item_quote_go:nth-child(2),
+	.item_quote_go:nth-child(3) {
 		padding-left: 0;
 		border-top: 1px solid #757575;
 		padding-top: 40px;
@@ -6076,16 +6085,16 @@ button.btn_anim {
 		margin-bottom: 20px;
 	}
 	.quote_photo {
-		width: 64px;
+		width: 56px;
 	}
 	.quote_info {
-		width: calc(100% - 64px);
-		padding-left: 24px;
-		font-size: 16px;
-		line-height: 24px;
+		width: calc(100% - 56px);
+		padding-left: 16px;
+		font-size: 13px;
+		line-height: 20px;
 	}
 	.quote_user_name {
-		font-size: 18px;
+		font-size: 13px;
 	}
 	.wrp_items_cap li {
 		font-size: 18px;
