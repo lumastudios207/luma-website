@@ -79,8 +79,8 @@ const jsonLd = {
 <!-- ===================== HERO ===================== -->
 <section class="about_hero" first-load-delay>
   <div class="container">
-    <div class="about_hero__inner">
-      <h1 class="heading_home about_h1">Web Design & Marketing Studio<br><span class="blue_color">in Portland, Maine</span></h1>
+    <div class="about_hero__inner text-center">
+      <h1 class="heading_home about_h1">Web Design and Digital Marketing<br><span class="blue_color">in Portland, Maine</span></h1>
       <p class="descr_home_fir about_hero__sub">
         Luma Studios builds and manages the complete digital presence for local businesses — websites, SEO, marketing automation, and brand identity. We bring the same level of craft and strategic thinking we developed working with tech companies to businesses that have never had access to it.
       </p>
@@ -93,25 +93,16 @@ const jsonLd = {
   <div class="container">
     <div class="about_founder__inner grid grid-cols-2">
       <div class="about_founder__photo">
-        <div class="about_founder__img_wrap">
-          <img
-            src="/img/ivan.webp"
-            alt="Ivan Annikov — Founder & Lead Designer, Luma Studios"
-            class="about_founder__img"
-            width="520"
-            height="560"
-            loading="eager"
-          >
+        <div class="wrap_img_ivan relative z_1" item-class-toggle>
+          <img class="img-responsive" src="/img/ivan.webp" alt="Ivan Annikov — Founder, Luma Studios" loading="eager">
+          <img class="triangle_decor_ivan" src="/img/triangle.webp" alt="" width="113" loading="lazy">
         </div>
       </div>
       <div class="about_founder__bio" data-show-down>
-        <div class="about_founder__label">Founder</div>
-        <h2 class="about_founder__name">Ivan Annikov</h2>
-        <div class="about_founder__title_line">Founder & Lead Designer, Luma Studios</div>
+        <div class="about_section_badge">Founder</div>
         <div class="about_founder__text">
-          <p>Ivan Annikov founded Luma Studios in 2020 after nearly a decade in digital marketing design for technology companies. His background spans marketing websites, landing pages, pitch decks, sales materials, and advertising campaigns — work done for startups at every stage, from pre-launch to post-Series B.</p>
-          <p>Before building Luma Studios into a full-service local agency, Ivan worked as a fractional UX/UI designer embedded in tech startup product teams. That experience — designing the actual software products that drove revenue — gives him a level of product thinking that most design shops don't bring to client work.</p>
-          <p>Today, Ivan runs Luma Studios out of Portland, Maine, working directly with local business owners across the US. Every project runs through him.</p>
+          <p>Ivan Annikov founded Luma Studios after nearly a decade in digital marketing design for technology companies. His background spans creating marketing websites, landing pages, pitch decks, sales materials, and advertising campaigns — work done for startups at every stage, from pre-launch to post-Series B.</p>
+          <p>Before building Luma Studios into a full-service local agency, Ivan worked as a UX/UI designer embedded in tech startup product teams. That experience — designing the actual software products that drove revenue — gives him a level of product thinking that most design shops don't bring to client work.</p>
         </div>
       </div>
     </div>
@@ -122,25 +113,25 @@ const jsonLd = {
 <section class="about_result overflow-hidden">
   <div class="container">
     <div class="about_result__inner">
-      <div class="about_result__label" data-show-down>Case Study Highlight</div>
+      <div class="about_section_badge" data-show-down>Professional Accomplishment Highlight</div>
       <h2 class="title_section about_result__title" data-show-down>Helping build a compliance startup into an industry leader</h2>
       <div class="about_result__body" data-show-down>
         <p>One of Ivan's longest design partnerships was with Secureframe, a San Francisco-based compliance automation company. He joined the team when they had four employees and worked directly with the CEO for two and a half years — leading UX/UI design for their compliance web application, building the brand identity from the ground up, and designing two complete versions of their marketing website.</p>
         <p>During that collaboration, Secureframe grew to roughly 200 people and raised approximately $100 million in funding. The marketing site generated hundreds of new enterprise customer sign-ups. The work covered everything from the product interface to billboard campaigns along Highway 101 in San Francisco.</p>
         <p>That depth of experience — designing for a fast-growing product used by thousands of enterprise customers — shapes how Luma Studios approaches every engagement, regardless of scale.</p>
       </div>
-      <div class="about_result__stats" data-show-down>
-        <div class="about_result__stat">
-          <div class="about_result__stat_value">2.5 <span>yrs</span></div>
-          <div class="about_result__stat_label">Direct collaboration with Secureframe's founding team</div>
+      <div class="about_result__cards" data-show-down>
+        <div class="about_stat_card about_stat_card--cyan">
+          <div class="about_stat_card__value">2.5 <span>yrs</span></div>
+          <div class="about_stat_card__label">Direct collaboration with Secureframe's founding team</div>
         </div>
-        <div class="about_result__stat">
-          <div class="about_result__stat_value">~200</div>
-          <div class="about_result__stat_label">Employees when the collaboration concluded</div>
+        <div class="about_stat_card about_stat_card--purple">
+          <div class="about_stat_card__value">~200</div>
+          <div class="about_stat_card__label">Employees when the collaboration concluded</div>
         </div>
-        <div class="about_result__stat">
-          <div class="about_result__stat_value">~$100M</div>
-          <div class="about_result__stat_label">In funding raised during the engagement</div>
+        <div class="about_stat_card about_stat_card--orange">
+          <div class="about_stat_card__value">~$100M</div>
+          <div class="about_stat_card__label">In funding raised during the engagement</div>
         </div>
       </div>
     </div>
@@ -157,32 +148,32 @@ const jsonLd = {
       </div>
     </div>
     <div class="about_services_grid grid grid-cols-3" data-show-down>
-      <a href="/managed-websites" class="about_service_card">
+      <a href="/managed-websites/" class="about_service_card">
         <div class="about_service_card__name">Managed Websites</div>
         <div class="about_service_card__desc">Custom websites built, hosted, and fully managed — no upfront cost, no technical headaches on your end.</div>
         <span class="about_service_card__arrow"><Fragment set:html={icons.arrowNarrowRight} /></span>
       </a>
-      <a href="/services/seo-services" class="about_service_card">
+      <a href="/services/seo-services/" class="about_service_card">
         <div class="about_service_card__name">Local SEO</div>
         <div class="about_service_card__desc">Technical, on-page, and AI-era search optimization so local customers find you before they find your competition.</div>
         <span class="about_service_card__arrow"><Fragment set:html={icons.arrowNarrowRight} /></span>
       </a>
-      <a href="/branding-projects" class="about_service_card">
+      <a href="/branding-projects/" class="about_service_card">
         <div class="about_service_card__name">Brand Identity</div>
         <div class="about_service_card__desc">Logo, color system, typography, and brand guidelines that give your business a clear, consistent visual language.</div>
         <span class="about_service_card__arrow"><Fragment set:html={icons.arrowNarrowRight} /></span>
       </a>
-      <a href="/services/website-design" class="about_service_card">
+      <a href="/services/website-design/" class="about_service_card">
         <div class="about_service_card__name">Website Design</div>
         <div class="about_service_card__desc">High-fidelity design built for clarity and conversion — for businesses that need more than a page builder can deliver.</div>
         <span class="about_service_card__arrow"><Fragment set:html={icons.arrowNarrowRight} /></span>
       </a>
-      <a href="/services/web-development" class="about_service_card">
+      <a href="/services/web-development/" class="about_service_card">
         <div class="about_service_card__name">Web Development</div>
         <div class="about_service_card__desc">Performance-focused development on Astro and Tailwind. Fast load times, clean code, and integrations that work reliably.</div>
         <span class="about_service_card__arrow"><Fragment set:html={icons.arrowNarrowRight} /></span>
       </a>
-      <a href="/contact" class="about_service_card">
+      <a href="/contact/" class="about_service_card">
         <div class="about_service_card__name">Marketing Automation</div>
         <div class="about_service_card__desc">CRM setup, sales pipeline configuration, lead capture, and nurturing — so new contacts don't fall through the cracks.</div>
         <span class="about_service_card__arrow"><Fragment set:html={icons.arrowNarrowRight} /></span>
@@ -205,7 +196,7 @@ const jsonLd = {
           <span class="cb-btn_cta-title"><span data-text="Book a Free Call">Book a Free Call</span></span>
           <span class="cb-btn_cta-ripple"><span style="background-color: #212121;"></span></span>
         </a>
-        <a href="/contact" class="btn_anim outline">
+        <a href="/contact/" class="btn_anim outline">
           <span class="default_btn_bg"></span>
           <span class="cb-btn_cta-title"><span data-text="Send a Message">Send a Message</span></span>
           <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
@@ -228,40 +219,92 @@ const jsonLd = {
 
   /* ── Hero ─────────────────────────────────────────────── */
   .about_hero { padding: 80px 0 64px; }
-  .about_hero__inner { max-width: 760px; }
+  .about_hero__inner { max-width: 760px; margin: 0 auto; }
   .about_h1 { font-size: clamp(32px, 5vw, 56px); margin-bottom: 24px; }
-  .about_hero__sub { font-size: 18px; line-height: 32px; max-width: 680px; }
+  .about_hero__sub { font-size: 18px; line-height: 32px; max-width: 640px; margin: 0 auto; }
 
   /* ── Founder ──────────────────────────────────────────── */
   .about_founder { padding: 80px 0; }
-  .about_founder__inner { gap: 72px; align-items: flex-start; }
-  .about_founder__img_wrap { border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.04); }
-  .about_founder__img { display: block; width: 100%; height: auto; object-fit: cover; }
-  .about_founder__label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFC10; margin-bottom: 12px; }
-  .about_founder__name { font-size: clamp(28px, 3.5vw, 40px); font-weight: 600; color: #fff; margin-bottom: 6px; line-height: 1.15; font-family: 'Maison Neue', sans-serif; }
-  .about_founder__title_line { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.02em; margin-bottom: 32px; }
+  .about_founder__inner { grid-template-columns: minmax(200px, 300px) 1fr; gap: 56px; align-items: flex-start; }
+  /* override home page ::after color so it shows on dark background */
+  .about_founder .wrap_img_ivan:after { background: #2C2C2C; }
+
+  .about_section_badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255, 252, 16, 0.15);
+    padding: 5px 12px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
   .about_founder__text p { font-size: 16px; line-height: 28px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
   .about_founder__text p:last-child { margin-bottom: 0; }
 
   /* ── Key Result ───────────────────────────────────────── */
   .about_result { padding: 80px 0; }
   .about_result__inner { max-width: 800px; margin: 0 auto; }
-  .about_result__label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
   .about_result__title { text-align: left; margin-bottom: 28px; }
   .about_result__body p { font-size: 16px; line-height: 28px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
   .about_result__body p:last-child { margin-bottom: 0; }
 
-  .about_result__stats {
+  .about_result__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
     margin-top: 48px;
-    padding-top: 48px;
-    border-top: 1px solid rgba(255,255,255,0.08);
   }
-  .about_result__stat_value { font-size: 40px; font-weight: 600; color: #FFFC10; line-height: 1; margin-bottom: 10px; font-family: 'Maison Neue', sans-serif; }
-  .about_result__stat_value span { font-size: 22px; }
-  .about_result__stat_label { font-size: 13px; line-height: 20px; color: rgba(255,255,255,0.5); }
+
+  .about_stat_card {
+    --glow: #4DD8E8;
+    position: relative;
+    background: #0e0e12;
+    border-radius: 8px;
+    border: 1px solid rgba(77, 216, 232, 0.18);
+    padding: 28px 28px 36px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 80px color-mix(in srgb, var(--glow) 15%, transparent);
+    transition: box-shadow 0.3s;
+  }
+  .about_stat_card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 52%;
+    background: radial-gradient(ellipse 80% 60% at 50% 110%, color-mix(in srgb, var(--glow) 55%, transparent), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .about_stat_card:hover {
+    box-shadow: 0 0 60px rgba(0,0,0,0.5), 0 0 120px color-mix(in srgb, var(--glow) 25%, transparent);
+  }
+  .about_stat_card--cyan { --glow: #4DD8E8; border-color: rgba(77, 216, 232, 0.18); }
+  .about_stat_card--purple { --glow: #7B3FD4; border-color: rgba(123, 63, 212, 0.22); }
+  .about_stat_card--orange { --glow: #F07847; border-color: rgba(240, 120, 71, 0.18); }
+
+  .about_stat_card__value {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 12px;
+    font-family: 'Maison Neue', sans-serif;
+  }
+  .about_stat_card__value span { font-size: clamp(16px, 2.5vw, 22px); }
+  .about_stat_card__label {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(255,255,255,0.55);
+  }
 
   /* ── Services ─────────────────────────────────────────── */
   .about_expertise { padding: 80px 0; }
@@ -281,15 +324,15 @@ const jsonLd = {
 
   /* ── Responsive ───────────────────────────────────────── */
   @media (max-width: 900px) {
-    .about_founder__inner { grid-template-columns: 1fr !important; gap: 40px; }
-    .about_result__stats { grid-template-columns: 1fr 1fr; }
+    .about_founder__inner { grid-template-columns: 1fr !important; gap: 32px; }
+    .about_result__cards { grid-template-columns: 1fr 1fr; }
     .about_services_grid { grid-template-columns: 1fr 1fr !important; }
   }
 
   @media (max-width: 600px) {
     .about_hero { padding: 48px 0 40px; }
     .about_founder, .about_result, .about_expertise, .about_cta { padding: 64px 0; }
-    .about_result__stats { grid-template-columns: 1fr; }
+    .about_result__cards { grid-template-columns: 1fr; }
     .about_services_grid { grid-template-columns: 1fr !important; }
   }
 </style>

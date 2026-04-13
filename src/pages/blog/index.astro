@@ -80,7 +80,7 @@ function formatDate(date: Date): string {
       <div class="blog_grid">
         {posts.map((post, i) => (
           <article class={`blog_card${i === 0 ? ' blog_card--featured' : ''}`}>
-            <a href={`/blog/${post.id}`} class="blog_card__image_link" aria-label={`Read: ${post.data.title}`}>
+            <a href={`/blog/${post.id}/`} class="blog_card__image_link" aria-label={`Read: ${post.data.title}`}>
               <div class="blog_card__image">
                 {post.data.ogImage ? (
                   <img
@@ -116,10 +116,10 @@ function formatDate(date: Date): string {
                 <span class="blog_card__date">{formatDate(post.data.publishDate)}</span>
               </div>
               <h2 class="blog_card__title">
-                <a href={`/blog/${post.id}`} class="blog_card__title_link">{post.data.title}</a>
+                <a href={`/blog/${post.id}/`} class="blog_card__title_link">{post.data.title}</a>
               </h2>
               <p class="blog_card__excerpt">{post.data.description}</p>
-              <a href={`/blog/${post.id}`} class="blog_card__readmore">
+              <a href={`/blog/${post.id}/`} class="blog_card__readmore">
                 Read article <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -140,17 +140,17 @@ function formatDate(date: Date): string {
       </div>
     </div>
     <div class="blog_services_row grid grid-cols-3">
-      <a href="/managed-websites" class="about_service_card">
+      <a href="/managed-websites/" class="about_service_card">
         <div class="about_service_card__name">Managed Websites</div>
         <div class="about_service_card__desc">Custom sites built and fully managed for local businesses — no upfront cost.</div>
         <span class="about_service_card__arrow">→</span>
       </a>
-      <a href="/services/seo-services" class="about_service_card">
+      <a href="/services/seo-services/" class="about_service_card">
         <div class="about_service_card__name">SEO Services</div>
         <div class="about_service_card__desc">On-page, local, and technical SEO to help Maine businesses get found in search.</div>
         <span class="about_service_card__arrow">→</span>
       </a>
-      <a href="/services/website-design" class="about_service_card">
+      <a href="/services/website-design/" class="about_service_card">
         <div class="about_service_card__name">Website Design</div>
         <div class="about_service_card__desc">High-fidelity design built for clarity, conversion, and your specific audience.</div>
         <span class="about_service_card__arrow">→</span>
