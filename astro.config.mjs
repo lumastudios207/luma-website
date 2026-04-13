@@ -6,11 +6,12 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lumastudios.co',
+  trailingSlash: 'always',
   output: 'static',
   adapter: vercel(),
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/api/'),
+      filter: (page) => !page.includes('/api/') && !page.includes('/privacy-policy/'),
     }),
   ],
   image: {

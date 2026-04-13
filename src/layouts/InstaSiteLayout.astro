@@ -12,14 +12,14 @@ interface Props {
 const {
   title = 'Managed Websites for Local Businesses | InstaSite by Luma Studios',
   description = 'Custom websites with no upfront costs, managed hosting, and marketing automation for local businesses.',
-  canonicalUrl = 'https://lumastudios.co/managed-websites',
+  canonicalUrl = 'https://lumastudios.co/managed-websites/',
 } = Astro.props;
 ---
 
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="/img/favicon.png" />
   <link rel="canonical" href={canonicalUrl} />
   <title>{title}</title>

@@ -14,7 +14,7 @@ if (!svc) {
   return Astro.redirect('/404');
 }
 
-const canonicalUrl = `https://lumastudios.co/services/${svc.slug}`;
+const canonicalUrl = `https://lumastudios.co/services/${svc.slug}/`;
 
 // Related service objects (up to 3, excluding current)
 const relatedSvcs = services
@@ -63,7 +63,7 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumastudios.co/' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://lumastudios.co/services' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://lumastudios.co/services/' },
         { '@type': 'ListItem', position: 3, name: svc.name, item: canonicalUrl },
       ],
     },

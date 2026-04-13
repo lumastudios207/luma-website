@@ -6,7 +6,7 @@ const jsonLd = {
   '@type': 'WebPage',
   name: 'Privacy Policy — Luma Studios',
   description: 'Privacy policy for Luma Studios — how we collect, use, and protect your personal information.',
-  url: 'https://lumastudios.co/privacy-policy',
+  url: 'https://lumastudios.co/privacy-policy/',
   publisher: {
     '@type': 'Organization',
     name: 'Luma Studios',
@@ -18,10 +18,11 @@ const jsonLd = {
 <PageLayout
   title="Privacy Policy | Luma Studios"
   description="Privacy policy for Luma Studios — how we collect, use, and protect your personal information."
-  canonicalUrl="https://lumastudios.co/privacy-policy"
+  canonicalUrl="https://lumastudios.co/privacy-policy/"
   headerVariant="default"
   {jsonLd}
 >
+  <meta slot="head" name="robots" content="noindex, follow">
   <section class="default_first_pt privacy_section articl_contn" first-load-delay>
     <div class="wrap_cont_pdd_g">
       <div class="container">

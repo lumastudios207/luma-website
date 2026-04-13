@@ -1,0 +1,26 @@
+# Luma Studios
+> Design-focused agency building and managing the complete digital growth infrastructure for local businesses across the US.
+
+## Services
+- Managed website design, development, hosting, and maintenance
+- Local SEO — technical, on-page, and AI-era search optimization
+- Marketing automation setup (HubSpot, GoHighLevel, and similar)
+- CRM configuration and sales pipeline buildout
+- Lead capture integration and nurturing strategy
+- Brand identity design
+
+## Key pages
+- Homepage: https://lumastudios.co/
+- Managed Websites: https://lumastudios.co/managed-websites/
+- SEO Services: https://lumastudios.co/services/seo-services/
+- Website Design: https://lumastudios.co/services/website-design/
+- Brand Identity: https://lumastudios.co/branding-projects/
+- Blog: https://lumastudios.co/blog/
+- Contact: https://lumastudios.co/contact/
+
+## About
+Luma Studios is based in Portland, Maine. Founded by Ivan Annikov. We work with local businesses of any size across the US that depend on local trust and local visibility.
+
+## Contact
+- Website: https://lumastudios.co
+- Location: 63 Federal Street, Portland, ME 04101

@@ -13,7 +13,7 @@ const jsonLd = {
     {
       '@type': 'Blog',
       name: 'Luma Studios Blog — Web Design & SEO Insights',
-      url: 'https://lumastudios.co/blog',
+      url: 'https://lumastudios.co/blog/',
       description:
         'Practical web design, SEO, and digital marketing guides for small businesses and startups in Maine and across the U.S.',
       publisher: {
@@ -26,7 +26,7 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumastudios.co/' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://lumastudios.co/blog' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://lumastudios.co/blog/' },
       ],
     },
   ],
@@ -40,8 +40,8 @@ function formatDate(date: Date): string {
 <PageLayout
   title="Web Design & SEO Blog for Maine Businesses | Luma Studios"
   description="Practical web design, SEO, and marketing guides for small businesses in Maine. Transparent advice from Luma Studios in Portland, ME."
-  canonicalUrl="https://lumastudios.co/blog"
-  ogUrl="https://lumastudios.co/blog"
+  canonicalUrl="https://lumastudios.co/blog/"
+  ogUrl="https://lumastudios.co/blog/"
   {jsonLd}
 >
 
