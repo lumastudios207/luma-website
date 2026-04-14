@@ -15,9 +15,9 @@ const orderedSlugs = [
 ];
 
 function serviceHref(slug: string): string {
-  if (slug === 'managed-websites') return '/managed-websites';
-  if (slug === 'brand-identity') return '/branding-projects';
-  return `/services/${slug}`;
+  if (slug === 'managed-websites') return '/managed-websites/';
+  if (slug === 'brand-identity') return '/branding-projects/';
+  return `/services/${slug}/`;
 }
 
 const pageServices = orderedSlugs.map((slug) => {

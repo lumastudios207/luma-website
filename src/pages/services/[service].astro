@@ -23,9 +23,9 @@ const relatedSvcs = services
 
 // Determine href for related services (managed-websites and branding-projects have custom URLs)
 function serviceHref(s: Service): string {
-  if (s.slug === 'managed-websites') return '/managed-websites';
-  if (s.slug === 'brand-identity') return '/branding-projects';
-  return `/services/${s.slug}`;
+  if (s.slug === 'managed-websites') return '/managed-websites/';
+  if (s.slug === 'brand-identity') return '/branding-projects/';
+  return `/services/${s.slug}/`;
 }
 
 const jsonLd = {
@@ -85,7 +85,7 @@ const jsonLd = {
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <ol class="breadcrumb__list">
         <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
-        <li class="breadcrumb__item"><a href="/services" class="breadcrumb__link">Services</a></li>
+        <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
         <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">{svc.name}</li>
       </ol>
     </nav>
@@ -196,7 +196,7 @@ const jsonLd = {
           <span class="cb-btn_cta-title"><span data-text="Book a Free Call">Book a Free Call</span></span>
           <span class="cb-btn_cta-ripple"><span style="background-color: #212121;"></span></span>
         </a>
-        <a href="/contact" class="btn_anim outline">
+        <a href="/contact/" class="btn_anim outline">
           <span class="default_btn_bg"></span>
           <span class="cb-btn_cta-title"><span data-text="Send Us a Message">Send Us a Message</span></span>
           <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
