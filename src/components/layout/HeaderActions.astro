@@ -1,35 +1,23 @@
 ---
 interface Props {
-  variant?: 'default' | 'projects' | 'case-study' | 'landing' | 'none';
+  variant?: 'default' | 'home' | 'projects' | 'case-study' | 'landing' | 'pricing' | 'none';
 }
 
 const { variant = 'default' } = Astro.props;
 ---
 
-{variant === 'projects' && (
-  <a href="#" class="btn_anim small_px" data-popup-show>
-    <span class="default_btn_bg"></span>
-    <span class="cb-btn_cta-title">
-      <span data-text="Request a quote">Request a quote</span>
-    </span>
-    <span class="cb-btn_cta-ripple">
-      <span style="background-color: #212121;"></span>
-    </span>
-  </a>
-)}
-
-{variant === 'case-study' && (
+{variant === 'pricing' && (
   <div class="header_btn_mor flex items-center">
-    <a href="#" class="btn_anim outline" data-popup-show>
+    <a href="#contact" class="btn_anim outline" data-scroll-to>
       <span class="default_btn_bg"></span>
       <span class="cb-btn_cta-title">
-        <span data-text="Get pricing">Get pricing</span>
+        <span data-text="Get in Touch">Get in Touch</span>
       </span>
       <span class="cb-btn_cta-ripple">
         <span style="background-color: #FFFC10;"></span>
       </span>
     </a>
-    <a href="https://calendly.com/iannikov/luma-design" class="btn_anim" target="_blank">
+    <a href="https://calendly.com/iannikov/luma-design" class="btn_anim" target="_blank" rel="noopener noreferrer">
       <span class="default_btn_bg"></span>
       <span class="cb-btn_cta-title">
         <span data-text="Book a call">Book a call</span>
@@ -55,7 +43,7 @@ const { variant = 'default' } = Astro.props;
     <a href="#pricing" class="btn_anim" data-scroll-to>
       <span class="default_btn_bg"></span>
       <span class="cb-btn_cta-title">
-        <span data-text="View Prices">View Prices</span>
+        <span data-text="View Plans">View Plans</span>
       </span>
       <span class="cb-btn_cta-ripple">
         <span style="background-color: #212121;"></span>
@@ -64,9 +52,9 @@ const { variant = 'default' } = Astro.props;
   </div>
 )}
 
-{(variant === 'default') && (
+{variant === 'home' && (
   <>
-    <a href="#" class="btn_anim outline" data-popup-show>
+    <a href="/pricing/" class="btn_anim outline">
       <span class="default_btn_bg"></span>
       <span class="cb-btn_cta-title">
         <span data-text="Get pricing">Get pricing</span>
@@ -85,4 +73,16 @@ const { variant = 'default' } = Astro.props;
       </span>
     </a>
   </>
+)}
+
+{(variant === 'default' || variant === 'projects' || variant === 'case-study') && (
+  <a href="https://calendly.com/iannikov/luma-design" class="btn_anim small_px" target="_blank">
+    <span class="default_btn_bg"></span>
+    <span class="cb-btn_cta-title">
+      <span data-text="Book a call">Book a call</span>
+    </span>
+    <span class="cb-btn_cta-ripple">
+      <span style="background-color: #212121;"></span>
+    </span>
+  </a>
 )}

@@ -3,9 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Header from '../components/layout/Header.astro';
 import HeaderActions from '../components/layout/HeaderActions.astro';
 import Footer from '../components/layout/Footer.astro';
-import ContactPopup from '../components/contact/ContactPopup.astro';
 import AnimationsIsland from '../components/islands/AnimationsIsland.astro';
-import ContactFormIsland from '../components/islands/ContactFormIsland.astro';
 import SwiperIsland from '../components/islands/SwiperIsland.astro';
 
 interface Props {
@@ -15,7 +13,7 @@ interface Props {
   ogImage?: string;
   ogUrl?: string;
   jsonLd?: object;
-  headerVariant?: 'default' | 'projects' | 'case-study' | 'landing';
+  headerVariant?: 'default' | 'home' | 'projects' | 'case-study' | 'landing' | 'pricing';
   hasTabSlider?: boolean;
   hasVerticalSlider?: boolean;
   bodyClass?: string;
@@ -50,7 +48,7 @@ const {
     <HeaderActions variant={headerVariant} />
   </Fragment>
 
-  <Header variant={headerVariant === 'landing' ? 'none' : headerVariant} />
+  <Header variant={headerVariant === 'landing' ? 'none' : (headerVariant === 'pricing' || headerVariant === 'home' ? 'default' : headerVariant)} />
 
   <main class="main_go">
     <slot />
@@ -58,11 +56,8 @@ const {
 
   <Footer />
 
-  <ContactPopup />
-
   <!-- Client-side scripts -->
   <AnimationsIsland />
-  <ContactFormIsland />
   {(hasTabSlider || hasVerticalSlider) && (
     <SwiperIsland hasTabSlider={hasTabSlider} hasVerticalSlider={hasVerticalSlider} />
   )}
