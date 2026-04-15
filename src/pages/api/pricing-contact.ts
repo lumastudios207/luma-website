@@ -16,10 +16,13 @@ const PLAN_DETAILS: Record<string, { name: string; hours: number; price: number 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
-    const { name, company, phone, website, plan, recaptchaToken } = body;
+    const { name, email, company, phone, website, plan, recaptchaToken } = body;
 
     if (!name || typeof name !== 'string' || name.trim().length < 2 || name.trim().length > 80) {
       return new Response(JSON.stringify({ error: 'Invalid name' }), { status: 400 });
+    }
+    if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      return new Response(JSON.stringify({ error: 'Invalid email' }), { status: 400 });
     }
     if (!company || typeof company !== 'string' || company.trim().length === 0) {
       return new Response(JSON.stringify({ error: 'Company required' }), { status: 400 });
@@ -53,6 +56,7 @@ export const POST: APIRoute = async ({ request }) => {
     await resend.emails.send({
       from: 'Luma Studios Website <hello@lumastudios.co>',
       to: ['ivan@lumastudios.co'],
+      replyTo: email.trim(),
       subject: `Pricing inquiry — ${planInfo.name} (${planInfo.hours} hrs/wk) from ${name.trim()}`,
       html: `
         <h2>New Pricing Page Inquiry</h2>
@@ -60,6 +64,7 @@ export const POST: APIRoute = async ({ request }) => {
           Interested in: ${planInfo.name} — ${planInfo.hours} hrs/week — ${formattedPrice}
         </p>
         <p><strong>Name:</strong> ${name.trim()}</p>
+        <p><strong>Email:</strong> ${email.trim()}</p>
         <p><strong>Company:</strong> ${company.trim()}</p>
         <p><strong>Phone:</strong> ${phone.trim()}</p>
         <p><strong>Website:</strong> ${website.trim()}</p>

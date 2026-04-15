@@ -230,10 +230,17 @@ const jsonLd = {
             </div>
             <div class="row_form_inp grid grid-cols-2">
               <div class="form_group">
+                <input type="email" placeholder="Email Address" name="email" class="email form_control" autocomplete="email">
+                <small class="error_message"></small>
+                <span class="underline_inp"></span>
+              </div>
+              <div class="form_group">
                 <input type="tel" placeholder="Phone" name="phone" class="phone form_control" autocomplete="tel">
                 <small class="error_message"></small>
                 <span class="underline_inp"></span>
               </div>
+            </div>
+            <div class="row_form_inp">
               <div class="form_group">
                 <input type="text" placeholder="Website URL" name="website" class="website form_control" autocomplete="url">
                 <small class="error_message"></small>
@@ -360,6 +367,7 @@ const jsonLd = {
 
   if (form) {
     const nameEl = form.querySelector('.name');
+    const emailEl = form.querySelector('.email');
     const companyEl = form.querySelector('.company');
     const phoneEl = form.querySelector('.phone');
     const websiteEl = form.querySelector('.website');
@@ -385,6 +393,13 @@ const jsonLd = {
       const v = nameEl.value.trim();
       if (!v || v.length < 2) { showError(nameEl, 'Name cannot be blank.'); return false; }
       showSuccess(nameEl); return true;
+    };
+
+    const checkEmail = () => {
+      const v = emailEl.value.trim();
+      if (!v) { showError(emailEl, 'Email cannot be blank.'); return false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { showError(emailEl, 'Please enter a valid email address.'); return false; }
+      showSuccess(emailEl); return true;
     };
 
     const checkCompany = () => {
@@ -413,6 +428,7 @@ const jsonLd = {
     form.addEventListener('input', debounce((e) => {
       const t = e.target;
       if (t.classList.contains('name')) checkName();
+      else if (t.classList.contains('email')) checkEmail();
       else if (t.classList.contains('company')) checkCompany();
       else if (t.classList.contains('phone')) checkPhone();
       else if (t.classList.contains('website')) checkWebsite();
@@ -420,7 +436,7 @@ const jsonLd = {
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!checkName() || !checkCompany() || !checkPhone() || !checkWebsite()) return;
+      if (!checkName() || !checkEmail() || !checkCompany() || !checkPhone() || !checkWebsite()) return;
 
       const submitBtn = form.querySelector('.submit_form_page');
       submitBtn?.classList.add('loading');
@@ -437,6 +453,7 @@ const jsonLd = {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: nameEl.value.trim(),
+            email: emailEl.value.trim(),
             company: companyEl.value.trim(),
             phone: phoneEl.value.trim(),
             website: websiteEl.value.trim(),
