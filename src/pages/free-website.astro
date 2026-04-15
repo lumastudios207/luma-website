@@ -1,0 +1,827 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/layout/Footer.astro';
+import AnimationsIsland from '../components/islands/AnimationsIsland.astro';
+
+const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY ?? '6Led6ogsAAAAAFaFaM50DpZNy4glFZvN8fH-5yEX';
+
+type Option = { label: string; exclusive?: boolean };
+
+const plain = (items: string[]): Option[] => items.map((label) => ({ label }));
+
+const industries = plain([
+  'Home services (plumbing, HVAC, electrical, roofing, landscaping, cleaning, etc.)',
+  'Legal / law firm',
+  'Healthcare, medical, or dental',
+  'Restaurant, café, or food service',
+  'Retail or physical storefront',
+  'Professional services (accounting, consulting, insurance, financial)',
+  'Real estate',
+  'Fitness, beauty, or wellness',
+  'Other local service business',
+]);
+
+const q6Options = plain([
+  'Customers come to our physical location',
+  'We travel to customers (service-area business)',
+  'Both',
+  'Online only / no specific location',
+]);
+
+const q7Options = plain(['1', '2–5', '6–20', '20+']);
+
+const q8Options = plain([
+  'Brand-new business, launching soon, no website yet',
+  'Established business, but no website yet',
+  'I have a website and want to replace it',
+  'I have a website and want a second one (microsite, landing page, second brand)',
+]);
+
+const q9Options: Option[] = [
+  { label: 'It looks outdated' },
+  { label: "It doesn't bring in leads or customers" },
+  { label: "I can't easily edit it myself" },
+  { label: "It's slow or breaks on mobile" },
+  { label: 'I want to move to a more modern platform' },
+  { label: 'I want to add new functionality (booking, e-commerce, etc.)' },
+  { label: "N/A — I don't have a website yet", exclusive: true },
+];
+
+const q10Options = plain([
+  'Generate phone calls or leads',
+  'Take online bookings or appointments',
+  'Sell products online (e-commerce)',
+  'Build credibility / make us look professional',
+  'Showcase work, portfolio, or menu',
+  'Capture email signups or quote requests',
+  'Provide info (hours, location, services)',
+  'Support content marketing / blogging',
+]);
+
+const q11Options: Option[] = [
+  { label: 'Professional logo' },
+  { label: 'Brand colors and fonts I want to use' },
+  { label: 'Professional photos of our work, products, team, or space' },
+  { label: 'Written content (about us, service descriptions)' },
+  { label: 'Customer testimonials or case studies' },
+  { label: 'Active social media presence' },
+  { label: "I'm starting from scratch on most of this", exclusive: true },
+];
+
+const q12Options: Option[] = [
+  { label: 'Online booking / scheduling' },
+  { label: 'E-commerce (product checkout)' },
+  { label: 'Customer portal or login area' },
+  { label: 'Multilingual support' },
+  { label: 'Quote / intake / application forms' },
+  { label: 'Integration with existing CRM or software' },
+  { label: 'None — keep it simple', exclusive: true },
+];
+
+const q13Options: Option[] = [
+  { label: 'I have an active Google Business Profile' },
+  { label: "I have a Google Business Profile but it's inactive" },
+  { label: 'I have customer reviews on Google or other platforms' },
+  { label: "I'm listed in directories (Yelp, industry sites, etc.)" },
+  { label: 'I have analytics or tracking set up on my current site' },
+  { label: "I'm starting completely fresh — none of the above", exclusive: true },
+];
+
+const q14Options = plain([
+  'Strong — lots of recent positive reviews',
+  'Mixed — some reviews, but not actively managed',
+  'Weak — few reviews, or mostly old',
+  'None yet — brand new or no review presence',
+]);
+
+const q15Options: Option[] = [
+  { label: 'Get found on Google in my local area' },
+  { label: 'Get more Google reviews and manage reputation' },
+  { label: 'Be visible in AI search (ChatGPT, Perplexity, Gemini)' },
+  { label: 'Show up for searches in specific neighborhoods or cities' },
+  { label: 'Regular blog or content publishing' },
+  { label: 'Turn my Instagram posts into Google profile content automatically' },
+  { label: 'Monthly performance reporting' },
+  { label: 'Manage my listings across directories (Yelp, industry sites)' },
+  { label: 'Just the website for now — no add-ons', exclusive: true },
+];
+
+const q16Options = plain([
+  'Not interested in add-ons right now',
+  'Under $99/mo',
+  '$99–$149/mo',
+  '$150–$249/mo',
+  '$250–$499/mo',
+  '$500+/mo',
+]);
+
+const q17Options = plain([
+  'ASAP (within 30 days)',
+  '1–2 months',
+  '2–3 months',
+  '3+ months / just exploring',
+]);
+
+// Client-side config for multi-select groups
+const MULTI_CONFIG = {
+  q9: { max: 2, helper: 'Pick up to 2' },
+  q10: { max: 3, helper: 'Pick up to 3' },
+  q11: { max: 0, helper: '' },
+  q12: { max: 0, helper: '' },
+  q13: { max: 0, helper: '' },
+  q15: { max: 4, helper: 'Pick up to 4' },
+};
+---
+
+<BaseLayout
+  title="Free Website for Your Business — Luma Studios"
+  description="Get a professional, SEO-ready website built for your business at no cost. Tell us about your business and we'll be in touch within 2 business days."
+  canonicalUrl="https://lumastudios.co/free-website/"
+  ogUrl="https://lumastudios.co/free-website/"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
+
+  <header class="audit_header">
+    <div class="container">
+      <a href="/" class="audit_header__logo" aria-label="Luma Studios home">
+        <img class="logo_desktop" src="/img/logo.svg" alt="Luma Studios" width="171">
+        <img class="logo_mobile" src="/img/logo_mobile.svg" alt="Luma Studios" width="40">
+      </a>
+    </div>
+  </header>
+
+  <main class="main_go">
+    <section class="home_first audit_hero" first-load-delay>
+      <div class="container">
+        <div class="wrap_hom_infr relative z_1 text-center">
+          <div class="cube_border"></div>
+          <div class="cube_border_2"></div>
+          <div class="decor_top_cube">
+            <img src="/img/cube_3d.webp" alt="" width="82" loading="lazy">
+          </div>
+          <div class="info_blk_home">
+            <h1 class="heading_home audit_hero_h1">Get a <span class="blue_color">Free Website</span> for Your Business</h1>
+            <div class="descr_home_fir audit_hero_sub">
+              We'll design and build you a professional, SEO-ready website at no cost. Tell us about your business and we'll be in touch within 2 business days. Form takes about 4 minutes to fill out.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audit_form_section">
+      <div class="container audit_container">
+        <form id="fw_form" class="audit_form" novalidate>
+          <!-- Section 1 -->
+          <div class="audit_section">
+            <h2 class="audit_section__title">About Your Business</h2>
+            <p class="audit_section__intro">The basics so we can tailor the build to your industry and how you operate.</p>
+
+            <div class="audit_field">
+              <label for="q1" class="audit_label">Full name</label>
+              <input type="text" id="q1" name="q1" class="audit_input" autocomplete="name" required aria-required="true">
+              <small class="audit_error" data-error-for="q1"></small>
+            </div>
+
+            <div class="audit_field">
+              <label for="q2" class="audit_label">Business email</label>
+              <input type="email" id="q2" name="q2" class="audit_input" autocomplete="email" required aria-required="true">
+              <small class="audit_error" data-error-for="q2"></small>
+            </div>
+
+            <div class="audit_field">
+              <label for="q3" class="audit_label">Company name</label>
+              <input type="text" id="q3" name="q3" class="audit_input" autocomplete="organization" required aria-required="true">
+              <small class="audit_error" data-error-for="q3"></small>
+            </div>
+
+            <div class="audit_field">
+              <label for="q4" class="audit_label">Current website URL, if any <span class="audit_label__hint">(optional)</span></label>
+              <input type="text" id="q4" name="q4" class="audit_input" autocomplete="url" placeholder="Leave blank if you don't have one">
+              <small class="audit_error" data-error-for="q4"></small>
+            </div>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q5">
+              <legend class="audit_label">What industry are you in?</legend>
+              <div class="audit_options">
+                {industries.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q5" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q5"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q6">
+              <legend class="audit_label">How does your business serve customers?</legend>
+              <div class="audit_options">
+                {q6Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q6" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q6"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q7">
+              <legend class="audit_label">How many locations do you operate (or plan to)?</legend>
+              <div class="audit_options">
+                {q7Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q7" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q7"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q8">
+              <legend class="audit_label">Which best describes your situation?</legend>
+              <div class="audit_options">
+                {q8Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q8" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q8"></small>
+            </fieldset>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="audit_section">
+            <h2 class="audit_section__title">Your Website Project</h2>
+            <p class="audit_section__intro">What we're building, and what you've already got to work with.</p>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q9">
+              <legend class="audit_label">If you have a current website, what's driving the change?</legend>
+              <p class="audit_sublabel">Pick up to 2</p>
+              <div class="audit_options">
+                {q9Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q9" value={opt.label} data-exclusive={opt.exclusive ? 'true' : null}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q9"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q10">
+              <legend class="audit_label">What does the new website primarily need to do?</legend>
+              <p class="audit_sublabel">Pick up to 3</p>
+              <div class="audit_options">
+                {q10Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q10" value={opt.label}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q10"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q11">
+              <legend class="audit_label">What brand and content assets do you already have?</legend>
+              <div class="audit_options">
+                {q11Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q11" value={opt.label} data-exclusive={opt.exclusive ? 'true' : null}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q11"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q12">
+              <legend class="audit_label">Do you need any specific features?</legend>
+              <div class="audit_options">
+                {q12Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q12" value={opt.label} data-exclusive={opt.exclusive ? 'true' : null}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q12"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q13">
+              <legend class="audit_label">What's the current state of your online presence?</legend>
+              <div class="audit_options">
+                {q13Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q13" value={opt.label} data-exclusive={opt.exclusive ? 'true' : null}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q13"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q14">
+              <legend class="audit_label">How would you describe your reviews and reputation?</legend>
+              <div class="audit_options">
+                {q14Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q14" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q14"></small>
+            </fieldset>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="audit_section">
+            <h2 class="audit_section__title">Growth &amp; Investment</h2>
+            <p class="audit_section__intro">After launch, which growth services interest you, and what are you ready to invest?</p>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q15">
+              <legend class="audit_label">After the website launches, which growth services interest you most?</legend>
+              <p class="audit_sublabel">Pick up to 4</p>
+              <div class="audit_options">
+                {q15Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q15" value={opt.label} data-exclusive={opt.exclusive ? 'true' : null}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q15"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q16">
+              <legend class="audit_label">Budget for monthly add-on SEO services (after launch)?</legend>
+              <div class="audit_options">
+                {q16Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q16" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q16"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q17">
+              <legend class="audit_label">When do you want the new website live?</legend>
+              <div class="audit_options">
+                {q17Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q17" value={opt.label} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q17"></small>
+            </fieldset>
+          </div>
+
+          <div class="audit_submit_wrap">
+            <p class="audit_form_error" id="fw_form_error" role="alert" aria-live="polite"></p>
+            <button type="submit" class="audit_submit">Get My Free Website</button>
+          </div>
+        </form>
+
+        <div class="audit_success hidden" id="fw_success" role="status" aria-live="polite">
+          <h2 class="audit_success__title">You're all set.</h2>
+          <p class="audit_success__body">
+            We've received your information and will be in touch within 2 business days to schedule a kickoff call.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <AnimationsIsland />
+</BaseLayout>
+
+<script define:vars={{ MULTI_CONFIG, RECAPTCHA_SITE_KEY }}>
+  const form = document.getElementById('fw_form');
+  const successEl = document.getElementById('fw_success');
+  const formError = document.getElementById('fw_form_error');
+
+  if (form) {
+    const setError = (selector, msg) => {
+      const el = form.querySelector(`[data-error-for="${selector}"]`);
+      if (el) el.textContent = msg;
+    };
+    const clearError = (selector) => setError(selector, '');
+
+    // Multi-select: enforce max and mutually-exclusive "clear-all" options.
+    Object.keys(MULTI_CONFIG).forEach((name) => {
+      const cfg = MULTI_CONFIG[name];
+      const boxes = form.querySelectorAll(`input[name="${name}"]`);
+      boxes.forEach((box) => {
+        box.addEventListener('change', () => {
+          if (!box.checked) { clearError(name); return; }
+
+          if (box.dataset.exclusive === 'true') {
+            // selecting the exclusive option clears everything else
+            boxes.forEach((b) => { if (b !== box) b.checked = false; });
+            clearError(name);
+            return;
+          }
+
+          // selecting a non-exclusive clears any exclusive option
+          boxes.forEach((b) => {
+            if (b.dataset.exclusive === 'true') b.checked = false;
+          });
+
+          if (cfg.max > 0) {
+            const checked = form.querySelectorAll(`input[name="${name}"]:checked`);
+            if (checked.length > cfg.max) {
+              box.checked = false;
+              setError(name, cfg.helper);
+              return;
+            }
+          }
+          clearError(name);
+        });
+      });
+    });
+
+    const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (formError) formError.textContent = '';
+
+      const data = {};
+      let firstInvalid = null;
+      const flagInvalid = (el, key, msg) => {
+        setError(key, msg);
+        if (!firstInvalid) firstInvalid = el;
+      };
+
+      const textFields = [
+        { id: 'q1', required: true, label: 'Full name is required.' },
+        { id: 'q2', required: true, label: 'Business email is required.', validator: isEmail, invalidMsg: 'Enter a valid email address.' },
+        { id: 'q3', required: true, label: 'Company name is required.' },
+        { id: 'q4', required: false },
+      ];
+
+      for (const f of textFields) {
+        const input = form.querySelector(`#${f.id}`);
+        const v = input && input.value ? input.value.trim() : '';
+        if (!v) {
+          if (f.required) {
+            flagInvalid(input, f.id, f.label);
+            input && input.setAttribute('aria-invalid', 'true');
+          } else {
+            clearError(f.id);
+            input && input.removeAttribute('aria-invalid');
+            data[f.id] = '';
+          }
+        } else if (f.validator && !f.validator(v)) {
+          flagInvalid(input, f.id, f.invalidMsg || 'Invalid value.');
+          input && input.setAttribute('aria-invalid', 'true');
+        } else {
+          clearError(f.id);
+          input && input.removeAttribute('aria-invalid');
+          data[f.id] = v;
+        }
+      }
+
+      const radioKeys = ['q5', 'q6', 'q7', 'q8', 'q14', 'q16', 'q17'];
+      for (const key of radioKeys) {
+        const checked = form.querySelector(`input[name="${key}"]:checked`);
+        const group = form.querySelector(`[data-question="${key}"]`);
+        if (!checked) {
+          if (group) flagInvalid(group, key, 'Please pick one.');
+        } else {
+          clearError(key);
+          data[key] = checked.value;
+        }
+      }
+
+      const multiKeys = Object.keys(MULTI_CONFIG);
+      for (const key of multiKeys) {
+        const cfg = MULTI_CONFIG[key];
+        const selected = Array.from(form.querySelectorAll(`input[name="${key}"]:checked`)).map((i) => i.value);
+        const group = form.querySelector(`[data-question="${key}"]`);
+        if (selected.length === 0) {
+          if (group) flagInvalid(group, key, 'Pick at least one.');
+        } else if (cfg.max > 0 && selected.length > cfg.max) {
+          if (group) flagInvalid(group, key, cfg.helper);
+        } else {
+          clearError(key);
+          data[key] = selected;
+        }
+      }
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (formError) formError.textContent = 'Please fix the highlighted fields.';
+        return;
+      }
+
+      const submitBtn = form.querySelector('.audit_submit');
+      submitBtn && submitBtn.setAttribute('disabled', 'true');
+      submitBtn && submitBtn.classList.add('is-loading');
+
+      try {
+        const token = await new Promise((resolve, reject) => {
+          if (!window.grecaptcha) { reject(new Error('reCAPTCHA not loaded')); return; }
+          window.grecaptcha.ready(() => {
+            window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'free_website' }).then(resolve, reject);
+          });
+        });
+
+        const res = await fetch('/api/free-website-submission/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, recaptchaToken: token }),
+        });
+        if (!res.ok) throw new Error('Request failed');
+
+        form.classList.add('hidden');
+        successEl && successEl.classList.remove('hidden');
+        successEl && successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch {
+        if (formError) formError.textContent = 'Something went wrong. Please try again.';
+        submitBtn && submitBtn.removeAttribute('disabled');
+        submitBtn && submitBtn.classList.remove('is-loading');
+      }
+    });
+
+    form.addEventListener('input', (e) => {
+      const t = e.target;
+      const name = t && t.name;
+      if (name) clearError(name);
+    });
+  }
+</script>
+
+<style>
+  /* Duplicated from free-seo-audit.astro — intentionally not extracted
+     to keep that page isolated from edits here. */
+
+  .audit_header {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .audit_header__logo { display: inline-flex; align-items: center; }
+  .audit_header__logo .logo_mobile { display: none; }
+
+  @media (max-width: 600px) {
+    .audit_header__logo .logo_desktop { display: none; }
+    .audit_header__logo .logo_mobile { display: block; }
+  }
+
+  .audit_container { max-width: 760px; margin: 0 auto; }
+
+  .audit_hero_h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+  }
+
+  .audit_hero_sub {
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .audit_form_section { padding: 40px 0 96px; }
+
+  .audit_form { display: flex; flex-direction: column; gap: 56px; }
+
+  .audit_section {
+    background: #2C2C2C;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 40px;
+  }
+
+  .audit_section__title {
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0 0 10px;
+  }
+
+  .audit_section__intro {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 36px;
+  }
+
+  .audit_field,
+  .audit_fieldset { margin: 0 0 32px; padding: 0; border: 0; }
+  .audit_field:last-child,
+  .audit_fieldset:last-child { margin-bottom: 0; }
+
+  .audit_label {
+    display: block;
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #fff;
+    margin: 0 0 14px;
+    padding: 0;
+  }
+
+  .audit_label__hint {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .audit_sublabel {
+    margin: -6px 0 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .audit_input {
+    width: 100%;
+    background: #212121;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Maison Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 14px 16px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .audit_input::placeholder { color: rgba(255, 255, 255, 0.35); }
+  .audit_input:focus {
+    outline: 0;
+    border-color: #773CF7;
+    background: #1b1b1b;
+  }
+  .audit_input[aria-invalid="true"] { border-color: #ff6b6b; }
+
+  .audit_options { display: flex; flex-direction: column; gap: 10px; }
+
+  .audit_option {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #212121;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .audit_option:hover { border-color: rgba(255, 255, 255, 0.25); }
+
+  .audit_option input { position: absolute; opacity: 0; pointer-events: none; }
+
+  .audit_option__mark {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .audit_option__mark--radio { border-radius: 50%; }
+  .audit_option__mark--check { border-radius: 4px; }
+
+  .audit_option__label { font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); }
+
+  .audit_option input:checked ~ .audit_option__mark {
+    border-color: #773CF7;
+    background: #773CF7;
+  }
+  .audit_option input:checked ~ .audit_option__mark--radio::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .audit_option input:checked ~ .audit_option__mark--check::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 5px;
+    width: 5px; height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+  .audit_option input:focus-visible ~ .audit_option__mark {
+    box-shadow: 0 0 0 3px rgba(119, 60, 247, 0.4);
+  }
+  .audit_option:has(input:checked) {
+    border-color: #773CF7;
+    background: rgba(119, 60, 247, 0.08);
+  }
+
+  .audit_error {
+    display: block;
+    min-height: 18px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #ff6b6b;
+  }
+
+  .audit_submit_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .audit_form_error {
+    margin: 0;
+    font-size: 14px;
+    color: #ff6b6b;
+    min-height: 20px;
+  }
+
+  .audit_submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 28px;
+    background: #FFFC10;
+    color: #000;
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .audit_submit:hover { transform: translateY(-1px); }
+  .audit_submit:disabled,
+  .audit_submit.is-loading { opacity: 0.6; cursor: default; transform: none; }
+
+  .audit_success {
+    background: #2C2C2C;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 56px 40px;
+    text-align: center;
+  }
+  .audit_success__title {
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    color: #fff;
+    margin: 0 0 16px;
+  }
+  .audit_success__body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto;
+    max-width: 520px;
+  }
+
+  .hidden { display: none !important; }
+
+  @media (max-width: 600px) {
+    .audit_form_section { padding: 24px 0 64px; }
+    .audit_section { padding: 28px 20px; }
+    .audit_form { gap: 32px; }
+    .audit_submit { width: 100%; }
+  }
+</style>

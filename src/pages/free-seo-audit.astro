@@ -1,0 +1,805 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/layout/Footer.astro';
+import AnimationsIsland from '../components/islands/AnimationsIsland.astro';
+
+const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY ?? '6Led6ogsAAAAAFaFaM50DpZNy4glFZvN8fH-5yEX';
+
+const industries = [
+  'Home services (plumbing, HVAC, electrical, roofing, landscaping, cleaning, etc.)',
+  'Legal / law firm',
+  'Healthcare, medical, or dental',
+  'Restaurant, café, or food service',
+  'Retail or physical storefront',
+  'Professional services (accounting, consulting, insurance, financial)',
+  'Real estate',
+  'Fitness, beauty, or wellness',
+  'Other local service business',
+];
+
+const q6Options = [
+  'Customers come to our physical location',
+  'We travel to customers (service-area business)',
+  'Both',
+  'Online only / no specific location',
+];
+
+const q7Options = ['1', '2–5', '6–20', '20+'];
+
+const q8Options = [
+  'Actively managed — we post and update it regularly',
+  'We have one but rarely touch it',
+  "We have one but I'm not sure what shape it's in",
+  "We don't have one",
+  "I'm not sure what that is",
+];
+
+const q9Options = ['4.5+', '4.0–4.4', '3.5–3.9', 'Below 3.5', 'No reviews yet / not sure'];
+
+const q10Options = ['0', '1–5', '6–20', '20+', 'Not sure'];
+
+const q11Options = [
+  'We have an automated system to request reviews AND we respond to most of them',
+  'We ask manually when we remember, and respond sometimes',
+  "We don't actively request reviews, but we respond when we see them",
+  'No process — reviews just happen (or don\'t) and we rarely respond',
+];
+
+const q12Options = [
+  'We publish new content (blog, articles, pages) at least monthly',
+  'We update the site occasionally (a few times a year)',
+  "The site hasn't been meaningfully updated in over a year",
+  "I'm not sure",
+];
+
+const q13Options = [
+  'Yes, many',
+  'A few',
+  'No',
+  "There are areas I want to rank for but don't have pages for",
+  'Not sure what this means',
+];
+
+const q14Options = [
+  'Very active (weekly posts) and highly visual (products, spaces, before/afters, food, etc.)',
+  'Somewhat active, and the business is visual',
+  "We're active but the business isn't especially visual",
+  'Not really active on social',
+  'No social presence',
+];
+
+const q15Options = [
+  "Yes, we've verified it",
+  "I think so, but haven't checked recently",
+  'No, I know there are inconsistencies',
+  "I don't know",
+];
+
+const q16Options = [
+  'Get more phone calls and leads',
+  'Drive more website traffic',
+  'Rank higher on Google',
+  'Improve reviews and online reputation',
+  'Show up in AI answers (ChatGPT, Perplexity, Gemini)',
+  'Beat specific competitors',
+  'Expand into new neighborhoods / service areas',
+  "Understand what's working (reporting and clarity)",
+];
+
+const q17Options = ['Under $99', '$99–$149', '$150–$249', '$250–$499', '$500+'];
+---
+
+<BaseLayout
+  title="Free SEO Audit — Luma Studios"
+  description="Get a free, custom SEO audit for your business. Answer a few quick questions and we'll send your audit within 3 business days."
+  canonicalUrl="https://lumastudios.co/free-seo-audit/"
+  ogUrl="https://lumastudios.co/free-seo-audit/"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
+
+  <header class="audit_header">
+    <div class="container">
+      <a href="/" class="audit_header__logo" aria-label="Luma Studios home">
+        <img class="logo_desktop" src="/img/logo.svg" alt="Luma Studios" width="171">
+        <img class="logo_mobile" src="/img/logo_mobile.svg" alt="Luma Studios" width="40">
+      </a>
+    </div>
+  </header>
+
+  <main class="main_go">
+    <section class="home_first audit_hero" first-load-delay>
+      <div class="container">
+        <div class="wrap_hom_infr relative z_1 text-center">
+          <div class="cube_border"></div>
+          <div class="cube_border_2"></div>
+          <div class="decor_top_cube">
+            <img src="/img/cube_3d.webp" alt="" width="82" loading="lazy">
+          </div>
+          <div class="info_blk_home">
+            <h1 class="heading_home audit_hero_h1">Get Your <span class="blue_color">Free SEO Audit</span></h1>
+            <div class="descr_home_fir audit_hero_sub">
+              Answer a few questions about your business, and we'll send you a custom SEO audit within 3 business days. The form below takes about 3 minutes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audit_form_section">
+      <div class="container audit_container">
+        <form id="audit_form" class="audit_form" novalidate>
+          <!-- Section 1 -->
+          <div class="audit_section">
+            <h2 class="audit_section__title">About Your Business</h2>
+            <p class="audit_section__intro">A few quick basics so we can tailor your audit to your industry and how you operate.</p>
+
+            <div class="audit_field">
+              <label for="q1" class="audit_label">Full name</label>
+              <input type="text" id="q1" name="q1" class="audit_input" autocomplete="name" required aria-required="true">
+              <small class="audit_error" data-error-for="q1"></small>
+            </div>
+
+            <div class="audit_field">
+              <label for="q2" class="audit_label">Business email</label>
+              <input type="email" id="q2" name="q2" class="audit_input" autocomplete="email" required aria-required="true">
+              <small class="audit_error" data-error-for="q2"></small>
+            </div>
+
+            <div class="audit_field">
+              <label for="q3" class="audit_label">Company name</label>
+              <input type="text" id="q3" name="q3" class="audit_input" autocomplete="organization" required aria-required="true">
+              <small class="audit_error" data-error-for="q3"></small>
+            </div>
+
+            <div class="audit_field">
+              <label for="q4" class="audit_label">Website URL</label>
+              <input type="url" id="q4" name="q4" class="audit_input" autocomplete="url" placeholder="https://example.com" required aria-required="true">
+              <small class="audit_error" data-error-for="q4"></small>
+            </div>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q5">
+              <legend class="audit_label">What industry are you in?</legend>
+              <div class="audit_options">
+                {industries.map((opt, i) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q5" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q5"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q6">
+              <legend class="audit_label">How does your business serve customers?</legend>
+              <div class="audit_options">
+                {q6Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q6" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q6"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q7">
+              <legend class="audit_label">How many locations do you operate?</legend>
+              <div class="audit_options">
+                {q7Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q7" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q7"></small>
+            </fieldset>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="audit_section">
+            <h2 class="audit_section__title">Your Online Presence Today</h2>
+            <p class="audit_section__intro">A snapshot of how you show up online right now — your Google profile, reviews, website, and listings. This is what we'll dig into.</p>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q8">
+              <legend class="audit_label">Which best describes your Google Business Profile?</legend>
+              <div class="audit_options">
+                {q8Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q8" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q8"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q9">
+              <legend class="audit_label">What's your average Google star rating?</legend>
+              <div class="audit_options">
+                {q9Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q9" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q9"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q10">
+              <legend class="audit_label">How many new Google reviews have you received in the past 3 months?</legend>
+              <div class="audit_options">
+                {q10Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q10" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q10"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q11">
+              <legend class="audit_label">Which best describes your review process?</legend>
+              <div class="audit_options">
+                {q11Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q11" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q11"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q12">
+              <legend class="audit_label">How would you describe your website content activity?</legend>
+              <div class="audit_options">
+                {q12Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q12" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q12"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q13">
+              <legend class="audit_label">Do you have dedicated landing pages for each service + neighborhood or city you serve (e.g., "Emergency Plumber in Downtown Seattle")?</legend>
+              <div class="audit_options">
+                {q13Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q13" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q13"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q14">
+              <legend class="audit_label">How active and visual is your business on Instagram or similar platforms?</legend>
+              <div class="audit_options">
+                {q14Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q14" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q14"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q15">
+              <legend class="audit_label">Is your business name, address, and phone listed consistently across directories (Yelp, Apple Maps, Bing, industry sites)?</legend>
+              <div class="audit_options">
+                {q15Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q15" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q15"></small>
+            </fieldset>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="audit_section">
+            <h2 class="audit_section__title">Goals &amp; Investment</h2>
+            <p class="audit_section__intro">Tell us what success looks like and what you're ready to invest. We'll match you with the right next steps on our follow-up call.</p>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q16">
+              <legend class="audit_label">What are your top priorities for SEO?</legend>
+              <p class="audit_sublabel">Choose up to three</p>
+              <div class="audit_options">
+                {q16Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="checkbox" name="q16" value={opt}>
+                    <span class="audit_option__mark audit_option__mark--check"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q16"></small>
+            </fieldset>
+
+            <fieldset class="audit_field audit_fieldset" data-question="q17">
+              <legend class="audit_label">What's your approximate monthly budget for ongoing SEO efforts?</legend>
+              <div class="audit_options">
+                {q17Options.map((opt) => (
+                  <label class="audit_option">
+                    <input type="radio" name="q17" value={opt} required aria-required="true">
+                    <span class="audit_option__mark audit_option__mark--radio"></span>
+                    <span class="audit_option__label">{opt}</span>
+                  </label>
+                ))}
+              </div>
+              <small class="audit_error" data-error-for="q17"></small>
+            </fieldset>
+
+          </div>
+
+          <div class="audit_submit_wrap">
+            <p class="audit_form_error" id="audit_form_error" role="alert" aria-live="polite"></p>
+            <button type="submit" class="audit_submit">Get My Free Audit</button>
+          </div>
+        </form>
+
+        <div class="audit_success hidden" id="audit_success" role="status" aria-live="polite">
+          <h2 class="audit_success__title">You're all set.</h2>
+          <p class="audit_success__body">
+            We've received your information and will email your custom audit within 3 business days. Keep an eye on your inbox.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <AnimationsIsland />
+</BaseLayout>
+
+<script define:vars={{ RECAPTCHA_SITE_KEY }}>
+  const form = document.getElementById('audit_form');
+  const successEl = document.getElementById('audit_success');
+  const formError = document.getElementById('audit_form_error');
+
+  if (form) {
+    const MAX_Q16 = 3;
+    const q16Boxes = form.querySelectorAll('input[name="q16"]');
+
+    const setError = (selector, msg) => {
+      const el = form.querySelector(`[data-error-for="${selector}"]`);
+      if (el) el.textContent = msg;
+    };
+
+    const clearError = (selector) => setError(selector, '');
+
+    q16Boxes.forEach((box) => {
+      box.addEventListener('change', () => {
+        const checked = form.querySelectorAll('input[name="q16"]:checked');
+        if (checked.length > MAX_Q16) {
+          box.checked = false;
+          setError('q16', 'Pick up to 3');
+        } else {
+          clearError('q16');
+        }
+      });
+    });
+
+    const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    const isUrl = (v) => {
+      try {
+        const withProto = /^https?:\/\//i.test(v) ? v : `https://${v}`;
+        const u = new URL(withProto);
+        return !!u.hostname && u.hostname.includes('.');
+      } catch {
+        return false;
+      }
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (formError) formError.textContent = '';
+
+      const data = {};
+      let firstInvalid = null;
+      const flagInvalid = (el, key, msg) => {
+        setError(key, msg);
+        if (!firstInvalid) firstInvalid = el;
+      };
+
+      const textFields = [
+        { id: 'q1', label: 'Full name is required.' },
+        { id: 'q2', label: 'Business email is required.', validator: isEmail, invalidMsg: 'Enter a valid email address.' },
+        { id: 'q3', label: 'Company name is required.' },
+        { id: 'q4', label: 'Website URL is required.', validator: isUrl, invalidMsg: 'Enter a valid URL.' },
+      ];
+
+      for (const f of textFields) {
+        const input = form.querySelector(`#${f.id}`);
+        const v = input && input.value ? input.value.trim() : '';
+        if (!v) {
+          flagInvalid(input, f.id, f.label);
+          input && input.setAttribute('aria-invalid', 'true');
+        } else if (f.validator && !f.validator(v)) {
+          flagInvalid(input, f.id, f.invalidMsg || 'Invalid value.');
+          input && input.setAttribute('aria-invalid', 'true');
+        } else {
+          clearError(f.id);
+          input && input.removeAttribute('aria-invalid');
+          data[f.id] = v;
+        }
+      }
+
+      const radioKeys = ['q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15', 'q17'];
+      for (const key of radioKeys) {
+        const checked = form.querySelector(`input[name="${key}"]:checked`);
+        const group = form.querySelector(`[data-question="${key}"]`);
+        if (!checked) {
+          if (group) flagInvalid(group, key, 'Please pick one.');
+        } else {
+          clearError(key);
+          data[key] = checked.value;
+        }
+      }
+
+      const q16Selected = Array.from(form.querySelectorAll('input[name="q16"]:checked')).map((i) => i.value);
+      const q16Group = form.querySelector('[data-question="q16"]');
+      if (q16Selected.length === 0) {
+        if (q16Group) flagInvalid(q16Group, 'q16', 'Pick at least one.');
+      } else if (q16Selected.length > MAX_Q16) {
+        if (q16Group) flagInvalid(q16Group, 'q16', 'Pick up to 3');
+      } else {
+        clearError('q16');
+        data.q16 = q16Selected;
+      }
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (formError) formError.textContent = 'Please fix the highlighted fields.';
+        return;
+      }
+
+      const submitBtn = form.querySelector('.audit_submit');
+      submitBtn && submitBtn.setAttribute('disabled', 'true');
+      submitBtn && submitBtn.classList.add('is-loading');
+
+      try {
+        const token = await new Promise((resolve, reject) => {
+          if (!window.grecaptcha) { reject(new Error('reCAPTCHA not loaded')); return; }
+          window.grecaptcha.ready(() => {
+            window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'seo_audit' }).then(resolve, reject);
+          });
+        });
+
+        const res = await fetch('/api/seo-audit-submission/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, recaptchaToken: token }),
+        });
+        if (!res.ok) throw new Error('Request failed');
+
+        form.classList.add('hidden');
+        successEl && successEl.classList.remove('hidden');
+        successEl && successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch {
+        if (formError) formError.textContent = 'Something went wrong. Please try again.';
+        submitBtn && submitBtn.removeAttribute('disabled');
+        submitBtn && submitBtn.classList.remove('is-loading');
+      }
+    });
+
+    form.addEventListener('input', (e) => {
+      const t = e.target;
+      const name = t && t.name;
+      if (name) clearError(name);
+    });
+  }
+</script>
+
+<style>
+  .audit_header {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .audit_header__logo {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .audit_header__logo .logo_mobile { display: none; }
+
+  @media (max-width: 600px) {
+    .audit_header__logo .logo_desktop { display: none; }
+    .audit_header__logo .logo_mobile { display: block; }
+  }
+
+  .audit_container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .audit_hero_h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+  }
+
+  .audit_hero_sub {
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .audit_form_section {
+    padding: 40px 0 96px;
+  }
+
+  .audit_form {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .audit_section {
+    background: #2C2C2C;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 40px;
+  }
+
+  .audit_section__title {
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0 0 10px;
+  }
+
+  .audit_section__intro {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 36px;
+  }
+
+  .audit_field,
+  .audit_fieldset {
+    margin: 0 0 32px;
+    padding: 0;
+    border: 0;
+  }
+
+  .audit_field:last-child,
+  .audit_fieldset:last-child { margin-bottom: 0; }
+
+  .audit_label {
+    display: block;
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #fff;
+    margin: 0 0 14px;
+    padding: 0;
+  }
+
+  .audit_sublabel {
+    margin: -6px 0 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .audit_label__hint {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .audit_input {
+    width: 100%;
+    background: #212121;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Maison Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 14px 16px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .audit_input::placeholder { color: rgba(255, 255, 255, 0.35); }
+  .audit_input:focus {
+    outline: 0;
+    border-color: #773CF7;
+    background: #1b1b1b;
+  }
+
+  .audit_input[aria-invalid="true"] { border-color: #ff6b6b; }
+
+  .audit_options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .audit_option {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #212121;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .audit_option:hover { border-color: rgba(255, 255, 255, 0.25); }
+
+  .audit_option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .audit_option__mark {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .audit_option__mark--radio { border-radius: 50%; }
+  .audit_option__mark--check { border-radius: 4px; }
+
+  .audit_option__label {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .audit_option input:checked ~ .audit_option__mark {
+    border-color: #773CF7;
+    background: #773CF7;
+  }
+
+  .audit_option input:checked ~ .audit_option__mark--radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .audit_option input:checked ~ .audit_option__mark--check::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+
+  .audit_option input:focus-visible ~ .audit_option__mark {
+    box-shadow: 0 0 0 3px rgba(119, 60, 247, 0.4);
+  }
+
+  .audit_option:has(input:checked) {
+    border-color: #773CF7;
+    background: rgba(119, 60, 247, 0.08);
+  }
+
+  .audit_error {
+    display: block;
+    min-height: 18px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #ff6b6b;
+  }
+
+  .audit_submit_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .audit_form_error {
+    margin: 0;
+    font-size: 14px;
+    color: #ff6b6b;
+    min-height: 20px;
+  }
+
+  .audit_submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 28px;
+    background: #FFFC10;
+    color: #000;
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .audit_submit:hover { transform: translateY(-1px); }
+  .audit_submit:disabled,
+  .audit_submit.is-loading { opacity: 0.6; cursor: default; transform: none; }
+
+  .audit_success {
+    background: #2C2C2C;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 56px 40px;
+    text-align: center;
+  }
+
+  .audit_success__title {
+    font-family: 'Maison Neue', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    color: #fff;
+    margin: 0 0 16px;
+  }
+
+  .audit_success__body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto;
+    max-width: 520px;
+  }
+
+  .hidden { display: none !important; }
+
+  @media (max-width: 600px) {
+    .audit_form_section { padding: 24px 0 64px; }
+    .audit_section { padding: 28px 20px; }
+    .audit_form { gap: 32px; }
+    .audit_submit { width: 100%; }
+  }
+</style>

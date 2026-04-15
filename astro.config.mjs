@@ -11,7 +11,11 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/api/') && !page.includes('/privacy-policy/'),
+      filter: (page) =>
+        !page.includes('/api/') &&
+        !page.includes('/privacy-policy/') &&
+        !page.includes('/free-seo-audit/') &&
+        !page.includes('/free-website/'),
     }),
   ],
   image: {

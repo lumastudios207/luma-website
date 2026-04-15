@@ -53,29 +53,149 @@ const jsonLd = {
   <!-- ============================================================
        HERO — video background, transparent header overlay
        ============================================================ -->
-  <section class="lp-hero">
+  <section class="lp-hero lp-hero--about-style" first-load-delay>
     <video class="lp-hero__video" autoplay muted loop playsinline>
       <source src="/img/Downtown_Portland.mp4" type="video/mp4">
     </video>
     <div class="lp-hero__overlay"></div>
 
+    <nav class="breadcrumb lp-hero__breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Managed Websites</li>
+        </ol>
+      </div>
+    </nav>
+
     <div class="lp-hero__content container">
-      <h1 class="lp-hero__h1">Turn Your Website Into an Automated Sales Machine</h1>
-      <p class="lp-hero__sub">We build websites for local businesses with <strong item-class-toggle>no upfront costs</strong> — now with marketing automations to ensure you never miss a sales opportunity.</p>
-      <div class="lp-hero__ctas">
-        <a href="#contact" class="btn_anim" data-scroll-to>
-          <span class="default_btn_bg"></span>
-          <span class="cb-btn_cta-title"><span data-text="Get in Touch">Get in Touch</span></span>
-          <span class="cb-btn_cta-ripple"><span style="background-color: #212121;"></span></span>
-        </a>
-        <a href="#pricing" class="btn_anim outline" data-scroll-to>
-          <span class="default_btn_bg"></span>
-          <span class="cb-btn_cta-title"><span data-text="View Plans">View Plans</span></span>
-          <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
-        </a>
+      <div class="wrap_hom_infr relative z_1 text-center">
+        <div class="info_blk_home lp-hero__card">
+          <h1 class="heading_home lp-hero__h1">Turn Your Website Into an <span class="blue_color">Automated Sales Machine</span></h1>
+          <p class="descr_home_fir lp-hero__sub">We build websites for local businesses with <strong item-class-toggle>no upfront costs</strong> — now with marketing automations to ensure you never miss a sales opportunity.</p>
+        </div>
+        <div class="lp-hero__ctas">
+          <a href="#contact" class="btn_anim" data-scroll-to>
+            <span class="default_btn_bg"></span>
+            <span class="cb-btn_cta-title"><span data-text="Get in Touch">Get in Touch</span></span>
+            <span class="cb-btn_cta-ripple"><span style="background-color: #212121;"></span></span>
+          </a>
+          <a href="#pricing" class="btn_anim outline" data-scroll-to>
+            <span class="default_btn_bg"></span>
+            <span class="cb-btn_cta-title"><span data-text="View Plans">View Plans</span></span>
+            <span class="cb-btn_cta-ripple"><span style="background-color: #FFFC10;"></span></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
+  <style>
+    /* Breadcrumb — floats over the video, right below the transparent
+       landing-page nav. Matches services page breadcrumb structure. */
+    .lp-hero__breadcrumb {
+      position: absolute;
+      top: 120px;
+      left: 0;
+      right: 0;
+      z-index: 3;
+    }
+
+    /* Match the header / services-page breadcrumb container width (1104 + 32),
+       so the last crumb's right edge aligns with the Contact nav link. */
+    .lp-hero__breadcrumb .container {
+      width: calc(1104px + 32px);
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 16px;
+      padding-right: 16px;
+      box-sizing: border-box;
+    }
+
+    .lp-hero__breadcrumb .breadcrumb__list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .lp-hero__breadcrumb .breadcrumb__item::after {
+      content: '/';
+      margin-left: 8px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .lp-hero__breadcrumb .breadcrumb__item:last-child::after { display: none; }
+
+    .lp-hero__breadcrumb .breadcrumb__link {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .lp-hero__breadcrumb .breadcrumb__link:hover { color: #fff; }
+
+    .lp-hero--about-style .lp-hero__content {
+      padding-top: 200px;
+      padding-bottom: 96px;
+      align-items: stretch;
+    }
+
+    .lp-hero--about-style .wrap_hom_infr {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .lp-hero__card {
+      background: rgba(33, 33, 33, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 40px;
+    }
+
+    /* Match About-page hero font sizes exactly:
+       h1 uses .about_hero_h1 clamp override;
+       sub inherits global .descr_home_fir (32px / 48px). */
+    .lp-hero--about-style .lp-hero__h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.1;
+      margin: 0 0 20px;
+      max-width: none;
+    }
+
+    .lp-hero--about-style .lp-hero__sub {
+      margin: 0;
+      max-width: none;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 900px) {
+      .lp-hero--about-style .lp-hero__content {
+        padding-top: 128px;
+      }
+      .lp-hero__breadcrumb { top: 96px; }
+    }
+
+    @media (max-width: 600px) {
+      .lp-hero--about-style .lp-hero__content {
+        padding-top: 112px;
+      }
+      .lp-hero__breadcrumb { top: 88px; }
+      .lp-hero__card {
+        padding: 40px 28px 44px;
+      }
+    }
+  </style>
 
   <!-- ============================================================
        FEATURES 4-UP — dark background
