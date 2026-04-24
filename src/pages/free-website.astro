@@ -164,7 +164,8 @@ const MULTI_CONFIG = {
           <div class="info_blk_home">
             <h1 class="heading_home audit_hero_h1">Get a <span class="blue_color">Free Website</span> for Your Business</h1>
             <div class="descr_home_fir audit_hero_sub">
-              We'll design and build you a professional, SEO-ready website at no cost. Tell us about your business and we'll be in touch within 2 business days. Form takes about 4 minutes to fill out.
+              <p>Fill out the form below (takes about 4 minutes) and submit your application to get started!</p>
+              <p>We'll review every submission and pick a small number of businesses that qualify for a free website. You'll get a custom, super-fast, launch-ready website — designed, built, and handed over to you at no cost. There are some limitations on scope, and we can only take on several new builds at this time. Please note that we won't be able to respond to everyone who applies.</p>
             </div>
           </div>
         </div>
@@ -403,7 +404,7 @@ const MULTI_CONFIG = {
 
           <div class="audit_submit_wrap">
             <p class="audit_form_error" id="fw_form_error" role="alert" aria-live="polite"></p>
-            <button type="submit" class="audit_submit">Get My Free Website</button>
+            <button type="submit" class="audit_submit">Submit my application</button>
           </div>
         </form>
 
@@ -607,11 +608,13 @@ const MULTI_CONFIG = {
     font-size: clamp(18px, 2.2vw, 22px);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
-    max-width: 680px;
+    max-width: 880px;
     margin: 0 auto;
   }
+  .audit_hero_sub p { margin: 0 0 16px; }
+  .audit_hero_sub p:last-child { margin-bottom: 0; }
 
-  .audit_form_section { padding: 40px 0 96px; }
+  .audit_form_section { padding: 8px 0 96px; }
 
   .audit_form { display: flex; flex-direction: column; gap: 56px; }
 
@@ -819,7 +822,7 @@ const MULTI_CONFIG = {
   .hidden { display: none !important; }
 
   @media (max-width: 600px) {
-    .audit_form_section { padding: 24px 0 64px; }
+    .audit_form_section { padding: 4px 0 64px; }
     .audit_section { padding: 28px 20px; }
     .audit_form { gap: 32px; }
     .audit_submit { width: 100%; }
